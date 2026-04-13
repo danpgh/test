@@ -380,6 +380,8 @@
       'hb0': 'hbo',
       'hb0 2': 'hbo 2',
       'hb0 3': 'hbo 3',
+      'tv 1000': 'kino tv',
+      'news24': 'digi 24',
       'film now': 'film now',
       'film n0w': 'film now'
     };
@@ -474,7 +476,7 @@
           els.guideList.innerHTML = `<div class="guide-row now"><span class="guide-time">Acum</span><span class="guide-show">${quickNow.title}</span></div><div class="guide-row"><span class="guide-time">Next</span><span class="guide-show">Se incarca...</span></div>`;
         }
         epgState.mode = 'loading';
-        epgState.loadingUntil = Date.now() + 1200;
+        epgState.loadingUntil = Date.now() + 700;
         if (quickNow?.title) updateGuideStatus();
         else updateGuide(channel, { scrollToNow: true });
         fetchProgramTvForChannel(channel).finally(() => { if (epgState.lastChannel?.name === channel.name) updateGuide(channel, { scrollToNow: true }); });
@@ -661,7 +663,7 @@
 
     async function preloadDailyPrograms() {
       const list = channels.slice();
-      const concurrency = 6;
+      const concurrency = 12;
       let idx = 0;
       const worker = async () => {
         while (idx < list.length) {
@@ -753,7 +755,7 @@
     async function loadEpgData() {
       try {
         epgState.mode = 'loading';
-        epgState.loadingUntil = Date.now() + 1200;
+        epgState.loadingUntil = Date.now() + 700;
         updateGuideStatus();
         epgPrograms = loadEpgCache();
         epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
