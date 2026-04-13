@@ -451,6 +451,43 @@
         || (alias ? (epgSeedPrograms[alias] || epgSeedPrograms[alias.replace(/\s+/g, '')]) : null)
         || [];
     }
+    function buildSyntheticProgram(channel) {
+      const now = new Date();
+      const day = todayKey();
+      const startHours = [6, 8, 10, 12, 14, 16, 18, 20, 22];
+      const labelByCategory = {
+        General: ['Stiri', 'Magazin', 'Serial', 'Show live', 'Film de seara'],
+        News: ['Jurnal', 'Breaking News', 'Analiza', 'Interviu', 'Sinteza Zilei'],
+        Sports: ['Studio Sport', 'Live', 'Rezumat', 'Analiza'],
+        Movies: ['Film', 'Premiera', 'Cinema', 'Thriller'],
+        Documentary: ['Documentar', 'Istorie', 'Stiinta', 'Natura'],
+        Kids: ['Desene', 'Aventura', 'Animatie'],
+        Music: ['Top Hits', 'Concert', 'Playlist'],
+        Entertainment: ['Show', 'Reality', 'Comedy'],
+        Lifestyle: ['Lifestyle', 'Calatorii', 'Retete']
+      };
+      const pool = labelByCategory[channel.category] || ['Program'];
+      return startHours.map((hour, idx) => {
+        const h = String(hour).padStart(2, '0');
+        const title = `${pool[idx % pool.length]} ${channel.name}`;
+        return { start: `${day}T${h}:00:00`, title, synthetic: true };
+      }).filter((entry) => {
+        const d = new Date(entry.start);
+        return d.getHours() >= now.getHours() - 4;
+      });
+    }
+    function ensureProgramsForAllChannels() {
+      for (const channel of channels) {
+        const existing = epgPrograms[channel.name];
+        if (Array.isArray(existing) && existing.length) continue;
+        const seed = getSeedEntriesForChannel(channel);
+        if (seed.length) {
+          epgPrograms[channel.name] = normalizeEntriesToToday(seed);
+        } else {
+          epgPrograms[channel.name] = buildSyntheticProgram(channel);
+        }
+      }
+    }
     function loadNowCache() {
       try {
         const raw = localStorage.getItem(NOW_CACHE_KEY);
@@ -512,7 +549,8 @@
         epgState.mode = 'remote';
         epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
         updateGuide(channel, { scrollToNow: true });
-        if ((epgPrograms[channel.name] || []).length < 2) {
+        const existing = epgPrograms[channel.name] || [];
+        if (existing.length < 2 || existing[0]?.synthetic) {
           fetchProgramTvForChannel(channel, { silent: true, force: true }).finally(() => {
             if (epgState.lastChannel?.name === channel.name) updateGuide(channel, { scrollToNow: true });
           });
@@ -662,7 +700,8 @@
     async function fetchProgramTvForChannel(channel, { silent = false, force = false } = {}) {
       try {
         if (!channel?.name) return false;
-        if (!force && epgPrograms[channel.name]?.length) return true;
+        const existing = epgPrograms[channel.name] || [];
+        if (!force && existing.length && !existing[0]?.synthetic) return true;
         if (programTv.loadingSlug.has(channel.name)) return false;
         programTv.loadingSlug.add(channel.name);
 
@@ -724,7 +763,8 @@
         const isoDate = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
         epgPrograms[channel.name] = finalEntries.map((entry) => ({
           start: `${isoDate}T${entry.start}:00`,
-          title: entry.title
+          title: entry.title,
+          synthetic: false
         }));
         saveEpgCache();
         if (!silent || epgState.lastChannel?.name === channel.name) {
@@ -847,11 +887,14 @@
         updateGuideStatus();
         epgPrograms = loadEpgCache();
         loadEpgSeedData();
+        ensureProgramsForAllChannels();
+        saveEpgCache();
         epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
         epgState.updatedAt = null;
       } catch (error) {
         epgPrograms = {};
         loadEpgSeedData();
+        ensureProgramsForAllChannels();
         epgState.mode = 'fallback';
       } finally {
         if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
