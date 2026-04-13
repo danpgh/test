@@ -628,15 +628,23 @@
         if (programTv.loadingSlug.has(channel.name)) return false;
         programTv.loadingSlug.add(channel.name);
 
-        const slugMap = await loadProgramTvChannelIndex();
+        let slugMap = {};
+        try {
+          slugMap = await loadProgramTvChannelIndex();
+        } catch (e) {
+          slugMap = {};
+        }
         const alias = channelAliasToProgramTv[normalizeChannelName(channel.name)] || null;
         const slug = resolveProgramTvSlug(channel, slugMap);
         if (!slug) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
-        const endpoints = [
+        const endpointCandidates = [
           `https://r.jina.ai/https://programtv.ro/canal-tv/${slug}`,
-          `https://r.jina.ai/https://programtv.ro/canal-tv/${slug}/azi`
+          `https://r.jina.ai/https://programtv.ro/canal-tv/${slug}/azi`,
+          `https://r.jina.ai/http://programtv.ro/canal-tv/${slug}`,
+          `https://r.jina.ai/http://programtv.ro/canal-tv/${slug}/azi`
         ];
+        const endpoints = [...new Set(endpointCandidates)];
         const responses = await Promise.allSettled(
           endpoints.map((endpoint) => fetch(endpoint, { cache: 'no-store' }))
         );
