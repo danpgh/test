@@ -385,6 +385,11 @@
       'film now': 'film now',
       'film n0w': 'film now'
     };
+    const directProgramTvSlugs = {
+      'A1 HD': 'antena-1',
+      'TV 1000': 'kino-tv',
+      'NEWS24': 'digi-24'
+    };
 
     function saveState() { localStorage.setItem('iptv-favorites', JSON.stringify([...appState.favorites])); }
     function saveOrder() { localStorage.setItem('iptv-order', JSON.stringify(appState.order)); }
@@ -469,6 +474,11 @@
         epgState.mode = 'remote';
         epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
         updateGuide(channel, { scrollToNow: true });
+        if ((epgPrograms[channel.name] || []).length < 2) {
+          fetchProgramTvForChannel(channel, { silent: true, force: true }).finally(() => {
+            if (epgState.lastChannel?.name === channel.name) updateGuide(channel, { scrollToNow: true });
+          });
+        }
       } else {
         const quickNow = getQuickNow(channel);
         if (quickNow?.title) {
@@ -554,6 +564,38 @@
         || null;
     }
 
+    function resolveProgramTvSlug(channel, slugMap) {
+      if (!channel?.name) return null;
+      if (directProgramTvSlugs[channel.name]) return directProgramTvSlugs[channel.name];
+
+      const normalized = normalizeChannelName(channel.name)
+        .replace(/\bhd\b/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      const alias = channelAliasToProgramTv[normalizeChannelName(channel.name)] || channelAliasToProgramTv[normalized];
+      const candidates = new Set();
+      const pushCandidate = (value) => { if (value) candidates.add(value.trim()); };
+      pushCandidate(normalized);
+      pushCandidate(normalized.replace(/\s+/g, ''));
+      const numericSoft = normalized.replace(/\b\d\b/g, '').replace(/\s+/g, ' ').trim();
+      pushCandidate(numericSoft);
+      pushCandidate(numericSoft.replace(/\s+/g, ''));
+      pushCandidate(normalized.replace(/0/g, 'o'));
+      pushCandidate(normalized.replace(/0/g, 'o').replace(/\s+/g, ''));
+      if (alias) {
+        pushCandidate(alias);
+        pushCandidate(alias.replace(/\s+/g, ''));
+      }
+
+      for (const key of candidates) {
+        if (slugMap[key]) return slugMap[key];
+      }
+
+      const fallbackLabel = alias || normalized;
+      if (!fallbackLabel) return null;
+      return fallbackLabel.replace(/\s+/g, '-');
+    }
+
     function parseProgramTvSchedule(markdown) {
       const lines = markdown.split('\n').map((line) => line.trim());
       const items = [];
@@ -587,32 +629,8 @@
         programTv.loadingSlug.add(channel.name);
 
         const slugMap = await loadProgramTvChannelIndex();
-        const normalized = normalizeChannelName(channel.name)
-          .replace(/\bhd\b/g, '')
-          .replace(/\s+/g, ' ')
-          .trim();
-        const alias = channelAliasToProgramTv[normalizeChannelName(channel.name)] || channelAliasToProgramTv[normalized];
-        const candidates = new Set();
-        const pushCandidate = (value) => { if (value) candidates.add(value.trim()); };
-        pushCandidate(normalized);
-        pushCandidate(normalized.replace(/\s+/g, ''));
-        const numericSoft = normalized.replace(/\b\d\b/g, '').replace(/\s+/g, ' ').trim();
-        pushCandidate(numericSoft);
-        pushCandidate(numericSoft.replace(/\s+/g, ''));
-        pushCandidate(normalized.replace(/0/g, 'o'));
-        pushCandidate(normalized.replace(/0/g, 'o').replace(/\s+/g, ''));
-        if (alias) {
-          pushCandidate(alias);
-          pushCandidate(alias.replace(/\s+/g, ''));
-        }
-
-        let slug = null;
-        for (const key of candidates) {
-          if (slugMap[key]) {
-            slug = slugMap[key];
-            break;
-          }
-        }
+        const alias = channelAliasToProgramTv[normalizeChannelName(channel.name)] || null;
+        const slug = resolveProgramTvSlug(channel, slugMap);
         if (!slug) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
         const endpoints = [
@@ -668,7 +686,7 @@
       const worker = async () => {
         while (idx < list.length) {
           const current = list[idx++];
-          await fetchProgramTvForChannel(current, { silent: true }).catch(() => false);
+          await fetchProgramTvForChannel(current, { silent: true, force: true }).catch(() => false);
         }
       };
       await Promise.all(Array.from({ length: Math.min(concurrency, list.length) }, worker));
