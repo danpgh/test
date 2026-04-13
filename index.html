@@ -368,6 +368,7 @@
     };
 
     let epgPrograms = {};
+    let epgSeedPrograms = {};
     const EPG_CACHE_KEY = 'iptv-epg-cache-v2';
     const NOW_CACHE_KEY = 'iptv-now-cache-v2';
     const programTv = { channelSlugs: null, loadingSlug: new Set(), nowMap: null };
@@ -412,6 +413,43 @@
       try {
         localStorage.setItem(EPG_CACHE_KEY, JSON.stringify({ date: todayKey(), channels: epgPrograms }));
       } catch {}
+    }
+    function normalizeEntriesToToday(entries) {
+      const today = todayKey();
+      return (Array.isArray(entries) ? entries : []).map((entry) => {
+        const startText = String(entry?.start || '');
+        const hhmmssMatch = startText.match(/T(\d{2}:\d{2}(?::\d{2})?)/);
+        const timePart = hhmmssMatch ? hhmmssMatch[1] : '00:00:00';
+        const normalizedTime = timePart.length === 5 ? `${timePart}:00` : timePart;
+        return { ...entry, start: `${today}T${normalizedTime}` };
+      });
+    }
+    function loadEpgSeedData() {
+      try {
+        const raw = document.getElementById('epgData')?.textContent || '{}';
+        const parsed = JSON.parse(raw);
+        const channelsData = parsed.channels || {};
+        const byKey = {};
+        for (const [name, entries] of Object.entries(channelsData)) {
+          const normalized = normalizeChannelName(name);
+          const normalizedNoSpaces = normalized.replace(/\s+/g, '');
+          const normalizedEntries = normalizeEntriesToToday(entries);
+          byKey[normalized] = normalizedEntries;
+          byKey[normalizedNoSpaces] = normalizedEntries;
+        }
+        epgSeedPrograms = byKey;
+      } catch {
+        epgSeedPrograms = {};
+      }
+    }
+    function getSeedEntriesForChannel(channel) {
+      if (!channel?.name) return [];
+      const normalized = normalizeChannelName(channel.name);
+      const alias = channelAliasToProgramTv[normalized] ? normalizeChannelName(channelAliasToProgramTv[normalized]) : '';
+      return epgSeedPrograms[normalized]
+        || epgSeedPrograms[normalized.replace(/\s+/g, '')]
+        || (alias ? (epgSeedPrograms[alias] || epgSeedPrograms[alias.replace(/\s+/g, '')]) : null)
+        || [];
     }
     function loadNowCache() {
       try {
@@ -663,7 +701,22 @@
           const normalizedName = normalizeChannelName(channel.name);
           const aliasNorm = alias ? normalizeChannelName(alias) : '';
           const nowItem = nowMap[normalizedName] || nowMap[normalizedName.replace(/\s+/g, '')] || (aliasNorm ? (nowMap[aliasNorm] || nowMap[aliasNorm.replace(/\s+/g, '')]) : null);
-          if (nowItem?.title) finalEntries = [{ start: nowItem.time || '00:00', title: nowItem.title }];
+          if (nowItem?.title) {
+            const startNow = nowItem.time || '00:00';
+            const [h, m] = startNow.split(':').map((v) => Number(v || 0));
+            const nextH = String((h + 1) % 24).padStart(2, '0');
+            const nextM = String(m).padStart(2, '0');
+            finalEntries = [
+              { start: startNow, title: nowItem.title },
+              { start: `${nextH}:${nextM}`, title: 'Urmeaza' }
+            ];
+          }
+        }
+        if (!finalEntries.length) {
+          finalEntries = getSeedEntriesForChannel(channel).map((entry) => {
+            const match = String(entry.start || '').match(/T(\d{2}:\d{2})/);
+            return { start: match ? match[1] : '00:00', title: entry.title || 'Program' };
+          });
         }
         if (!finalEntries.length) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
@@ -759,8 +812,14 @@
 
       epgState.mode = 'unavailable';
       updateGuideStatus();
-      els.playerMeta.textContent = 'Acum: - • Next: -';
-      els.guideList.innerHTML = '<div class="guide-row"><span class="guide-time">N/A</span><span class="guide-show">Nu sunt date de program pentru acest post.</span></div>';
+      const quickNow = getQuickNow(channel);
+      if (quickNow?.title) {
+        els.playerMeta.textContent = `Acum: ${quickNow.title} • Next: -`;
+        els.guideList.innerHTML = `<div class="guide-row now"><span class="guide-time">Acum</span><span class="guide-show">${quickNow.title}</span></div>`;
+      } else {
+        els.playerMeta.textContent = 'Acum: - • Next: -';
+        els.guideList.innerHTML = '<div class="guide-row"><span class="guide-time">N/A</span><span class="guide-show">Nu sunt date de program pentru acest post.</span></div>';
+      }
     }
 
     function updateGuideStatus() {
@@ -787,10 +846,12 @@
         epgState.loadingUntil = Date.now() + 700;
         updateGuideStatus();
         epgPrograms = loadEpgCache();
+        loadEpgSeedData();
         epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
         epgState.updatedAt = null;
       } catch (error) {
         epgPrograms = {};
+        loadEpgSeedData();
         epgState.mode = 'fallback';
       } finally {
         if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
