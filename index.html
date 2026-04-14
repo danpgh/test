@@ -369,6 +369,7 @@
 
     let epgPrograms = {};
     let epgSeedPrograms = {};
+    let digiGuideMap = {};
     const EPG_CACHE_KEY = 'iptv-epg-cache-v3';
     const NOW_CACHE_KEY = 'iptv-now-cache-v3';
     const programTv = { channelSlugs: null, loadingSlug: new Set(), nowMap: null };
@@ -503,6 +504,57 @@
       try {
         localStorage.setItem(NOW_CACHE_KEY, JSON.stringify({ date: todayKey(), map: map || {} }));
       } catch {}
+    }
+    function parseJsonFromWrappedText(text) {
+      const first = text.indexOf('{');
+      const last = text.lastIndexOf('}');
+      if (first === -1 || last === -1 || last <= first) return null;
+      try { return JSON.parse(text.slice(first, last + 1)); } catch { return null; }
+    }
+    function buildDigiGuideMap(payload) {
+      const out = {};
+      const channelsData = payload?.data?.channels || [];
+      for (const ch of channelsData) {
+        const normalized = normalizeChannelName(ch?.name || '');
+        if (!normalized) continue;
+        const entries = (Array.isArray(ch.epg) ? ch.epg : []).map((item) => ({
+          start: (() => {
+            const d = new Date((Number(item.s) || 0) * 1000);
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            const hh = String(d.getHours()).padStart(2, '0');
+            const mm = String(d.getMinutes()).padStart(2, '0');
+            const ss = String(d.getSeconds()).padStart(2, '0');
+            return `${y}-${m}-${day}T${hh}:${mm}:${ss}`;
+          })(),
+          title: item.n || 'Program',
+          synthetic: false
+        }));
+        out[normalized] = entries;
+        out[normalized.replace(/\s+/g, '')] = entries;
+      }
+      return out;
+    }
+    function getDigiEntriesForChannel(channel) {
+      if (!channel?.name) return [];
+      const normalized = normalizeChannelName(channel.name);
+      const alias = channelAliasToProgramTv[normalized] ? normalizeChannelName(channelAliasToProgramTv[normalized]) : '';
+      return digiGuideMap[normalized]
+        || digiGuideMap[normalized.replace(/\s+/g, '')]
+        || (alias ? (digiGuideMap[alias] || digiGuideMap[alias.replace(/\s+/g, '')]) : null)
+        || [];
+    }
+    async function loadDigiGuideForToday() {
+      const date = todayKey();
+      const url = `https://r.jina.ai/http://www.digionline.ro/ghid-tv-xhr?date=${date}`;
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Digi guide indisponibil');
+      const text = await response.text();
+      const parsed = parseJsonFromWrappedText(text);
+      if (!parsed?.data?.channels?.length) throw new Error('Digi guide gol');
+      digiGuideMap = buildDigiGuideMap(parsed);
+      return digiGuideMap;
     }
     function orderedChannels() {
       if (!appState.order.length) return channels.slice();
@@ -713,6 +765,16 @@
     async function fetchProgramTvForChannel(channel, { silent = false, force = false } = {}) {
       try {
         if (!channel?.name) return false;
+        const digiEntries = getDigiEntriesForChannel(channel);
+        if (digiEntries.length) {
+          epgPrograms[channel.name] = digiEntries;
+          saveEpgCache();
+          if (!silent || epgState.lastChannel?.name === channel.name) {
+            epgState.mode = 'remote';
+            epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
+          }
+          return true;
+        }
         const existing = epgPrograms[channel.name] || [];
         if (!force && existing.length && !existing[0]?.synthetic) return true;
         if (programTv.loadingSlug.has(channel.name)) return false;
@@ -1028,6 +1090,7 @@
     render();
     loadEpgData().then(async () => {
       await Promise.allSettled([
+        withTimeout(loadDigiGuideForToday().catch(() => ({})), 1000, {}),
         withTimeout(loadProgramTvChannelIndex().catch(() => ({})), 1000, {}),
         withTimeout(loadProgramTvNowIndex().catch(() => ({})), 1000, {})
       ]);
