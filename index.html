@@ -639,6 +639,19 @@
         || (normalizedAlias ? (programTv.nowMap[normalizedAlias] || programTv.nowMap[normalizedAlias.replace(/\s+/g, '')]) : null)
         || null;
     }
+    async function withTimeout(promise, ms, fallbackValue) {
+      let timer;
+      try {
+        return await Promise.race([
+          promise,
+          new Promise((resolve) => {
+            timer = setTimeout(() => resolve(fallbackValue), ms);
+          })
+        ]);
+      } finally {
+        if (timer) clearTimeout(timer);
+      }
+    }
 
     function resolveProgramTvSlug(channel, slugMap) {
       if (!channel?.name) return null;
@@ -1014,9 +1027,9 @@
     programTv.nowMap = loadNowCache();
     render();
     loadEpgData().then(async () => {
-      await Promise.all([
-        loadProgramTvChannelIndex().catch(() => ({})),
-        loadProgramTvNowIndex().catch(() => ({}))
+      await Promise.allSettled([
+        withTimeout(loadProgramTvChannelIndex().catch(() => ({})), 1000, {}),
+        withTimeout(loadProgramTvNowIndex().catch(() => ({})), 1000, {})
       ]);
       const startupChannel = channels[0];
       if (startupChannel) {
