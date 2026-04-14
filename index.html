@@ -369,8 +369,8 @@
 
     let epgPrograms = {};
     let epgSeedPrograms = {};
-    const EPG_CACHE_KEY = 'iptv-epg-cache-v2';
-    const NOW_CACHE_KEY = 'iptv-now-cache-v2';
+    const EPG_CACHE_KEY = 'iptv-epg-cache-v3';
+    const NOW_CACHE_KEY = 'iptv-now-cache-v3';
     const programTv = { channelSlugs: null, loadingSlug: new Set(), nowMap: null };
     const channelAliasToProgramTv = {
       'a1': 'antena 1',
@@ -751,12 +751,6 @@
             ];
           }
         }
-        if (!finalEntries.length) {
-          finalEntries = getSeedEntriesForChannel(channel).map((entry) => {
-            const match = String(entry.start || '').match(/T(\d{2}:\d{2})/);
-            return { start: match ? match[1] : '00:00', title: entry.title || 'Program' };
-          });
-        }
         if (!finalEntries.length) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
         const today = new Date();
@@ -885,16 +879,13 @@
         epgState.mode = 'loading';
         epgState.loadingUntil = Date.now() + 700;
         updateGuideStatus();
-        epgPrograms = loadEpgCache();
+        epgPrograms = {};
         loadEpgSeedData();
-        ensureProgramsForAllChannels();
-        saveEpgCache();
-        epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
+        epgState.mode = 'idle';
         epgState.updatedAt = null;
       } catch (error) {
         epgPrograms = {};
         loadEpgSeedData();
-        ensureProgramsForAllChannels();
         epgState.mode = 'fallback';
       } finally {
         if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
@@ -1021,17 +1012,12 @@
     console.info(`IPTV Quick Grid version ${APP_VERSION}`);
     initCategories();
     programTv.nowMap = loadNowCache();
-    loadProgramTvChannelIndex().catch(() => {});
-    loadProgramTvNowIndex().then(() => {
-      if (epgState.lastChannel && !epgPrograms[epgState.lastChannel.name]?.length) {
-        const quickNow = getQuickNow(epgState.lastChannel);
-        if (quickNow?.title) {
-          els.playerMeta.textContent = `Acum: ${quickNow.title} • Next: se incarca...`;
-        }
-      }
-    }).catch(() => {});
     render();
-    loadEpgData().then(() => {
+    loadEpgData().then(async () => {
+      await Promise.all([
+        loadProgramTvChannelIndex().catch(() => ({})),
+        loadProgramTvNowIndex().catch(() => ({}))
+      ]);
       const startupChannel = channels[0];
       if (startupChannel) {
         openStream(startupChannel, { focus: false });
