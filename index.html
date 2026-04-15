@@ -32,9 +32,16 @@
       box-shadow: 0 0 0 2px rgba(111,140,255,.75), 0 14px 30px rgba(0,0,0,.45);
       transition: box-shadow .25s ease;
     }
+    .media-row {
+      display:grid;
+      grid-template-columns:minmax(320px, 0.95fr) minmax(520px, 1.55fr);
+      gap:10px;
+      align-items:start;
+      margin-bottom:12px;
+    }
     .player {
-      width: min(860px, calc(100vw - 24px));
-      margin: 0 auto 10px;
+      width: 100%;
+      margin: 0;
       background:rgba(10,14,24,.95);
       border:1px solid var(--border);
       border-radius:12px;
@@ -44,9 +51,9 @@
       z-index: 2;
     }
     .tv-guide {
-      width: min(860px, calc(100vw - 24px));
+      width: 100%;
       position: relative;
-      margin: 0 auto 12px;
+      margin: 0;
       z-index: 1;
       background: rgba(10,14,24,.95);
       border: 1px solid var(--border);
@@ -119,19 +126,18 @@
     @media (max-width:1400px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
     @media (max-width:1160px) {
       .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-      .player, .tv-guide { width: min(740px, calc(100vw - 20px)); }
       .guide-list { max-height: 280px; }
       .player-wrap { min-height: 300px; max-height: 400px; }
     }
     @media (max-width:900px) {
       .controls { grid-template-columns:1fr; }
+      .media-row { grid-template-columns:1fr; }
       .grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
       .wrap { padding-bottom: 230px; }
     }
     @media (max-width:680px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:430px) {
       .grid { grid-template-columns:1fr; }
-      .player, .tv-guide { width: calc(100vw - 16px); }
       .guide-list { max-height: 180px; }
       .player-wrap { min-height: 220px; max-height: 280px; }
       .wrap { padding-bottom: 20px; }
@@ -149,28 +155,30 @@
       </div>
     </section>
 
-    <section class="player" id="playerPanel">
-      <div class="player-head">
-        <h2 class="player-title" id="playerTitle">Selecteaza un canal</h2>
-        <div class="player-tools">
-          <div class="player-meta" id="playerMeta">Preview live</div>
-          <button id="prevFavBtn" class="player-ch" type="button">CH-</button>
-          <button id="nextFavBtn" class="player-ch" type="button">CH+</button>
-          <button id="playerFullscreenBtn" class="player-ch" type="button">⛶ Full</button>
+    <div class="media-row">
+      <section class="tv-guide" id="tvGuide">
+        <div class="guide-head">
+          <h3 class="guide-title">Program TV</h3>
+          <span class="guide-badge live" id="guideStatus">Program actualizat (10.03.2026, 14:00:00) • 11:33</span>
         </div>
-      </div>
-      <div class="player-wrap">
-        <iframe id="playerFrame" class="player-frame" title="IPTV Preview" allow="autoplay *; fullscreen *" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" loading="eager" src="about:blank"></iframe>
-      </div>
-    </section>
+        <div class="guide-list" id="guideList"><div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Se incarca programul...</span></div></div>
+      </section>
 
-    <section class="tv-guide" id="tvGuide">
-      <div class="guide-head">
-        <h3 class="guide-title">Program TV</h3>
-        <span class="guide-badge live" id="guideStatus">Program actualizat (10.03.2026, 14:00:00) • 11:33</span>
-      </div>
-      <div class="guide-list" id="guideList"><div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Se incarca programul...</span></div></div>
-    </section>
+      <section class="player" id="playerPanel">
+        <div class="player-head">
+          <h2 class="player-title" id="playerTitle">Selecteaza un canal</h2>
+          <div class="player-tools">
+            <div class="player-meta" id="playerMeta">Preview live</div>
+            <button id="prevFavBtn" class="player-ch" type="button">CH-</button>
+            <button id="nextFavBtn" class="player-ch" type="button">CH+</button>
+            <button id="playerFullscreenBtn" class="player-ch" type="button">⛶ Full</button>
+          </div>
+        </div>
+        <div class="player-wrap">
+          <iframe id="playerFrame" class="player-frame" title="IPTV Preview" allow="autoplay *; fullscreen *" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" loading="eager" src="about:blank"></iframe>
+        </div>
+      </section>
+    </div>
 
     <section class="grid" id="channelGrid"></section>
     <p class="hint"><span id="appVersion">v2026-04-01.8</span></p>
@@ -557,10 +565,27 @@
       if (!channel?.name) return [];
       const normalized = normalizeChannelName(channel.name);
       const alias = channelAliasToProgramTv[normalized] ? normalizeChannelName(channelAliasToProgramTv[normalized]) : '';
-      return digiGuideMap[normalized]
+      const direct = digiGuideMap[normalized]
         || digiGuideMap[normalized.replace(/\s+/g, '')]
         || (alias ? (digiGuideMap[alias] || digiGuideMap[alias.replace(/\s+/g, '')]) : null)
-        || [];
+        || null;
+      if (direct) return direct;
+
+      const targetTokens = normalized.split(' ').filter(Boolean);
+      let bestScore = 0;
+      let best = null;
+      for (const [key, entries] of Object.entries(digiGuideMap)) {
+        if (!key.includes(' ')) continue;
+        const keyTokens = key.split(' ').filter(Boolean);
+        if (!keyTokens.length || !targetTokens.length) continue;
+        const overlap = targetTokens.filter((t) => keyTokens.includes(t)).length;
+        const score = overlap / Math.max(targetTokens.length, keyTokens.length);
+        if (score > bestScore) {
+          bestScore = score;
+          best = entries;
+        }
+      }
+      return bestScore >= 0.5 ? (best || []) : [];
     }
     async function loadDigiGuideForToday() {
       const date = todayKey();
