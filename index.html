@@ -372,6 +372,7 @@
     let digiGuideMap = {};
     const EPG_CACHE_KEY = 'iptv-epg-cache-v3';
     const NOW_CACHE_KEY = 'iptv-now-cache-v3';
+    const DIGI_GUIDE_CACHE_KEY = 'iptv-digi-guide-v1';
     const programTv = { channelSlugs: null, loadingSlug: new Set(), nowMap: null };
     const channelAliasToProgramTv = {
       'a1': 'antena 1',
@@ -505,6 +506,22 @@
         localStorage.setItem(NOW_CACHE_KEY, JSON.stringify({ date: todayKey(), map: map || {} }));
       } catch {}
     }
+    function loadDigiGuideCache() {
+      try {
+        const raw = localStorage.getItem(DIGI_GUIDE_CACHE_KEY);
+        if (!raw) return {};
+        const parsed = JSON.parse(raw);
+        if (!parsed || parsed.date !== todayKey() || typeof parsed.map !== 'object') return {};
+        return parsed.map || {};
+      } catch {
+        return {};
+      }
+    }
+    function saveDigiGuideCache(map) {
+      try {
+        localStorage.setItem(DIGI_GUIDE_CACHE_KEY, JSON.stringify({ date: todayKey(), map: map || {} }));
+      } catch {}
+    }
     function parseJsonFromWrappedText(text) {
       const first = text.indexOf('{');
       const last = text.lastIndexOf('}');
@@ -554,7 +571,14 @@
       const parsed = parseJsonFromWrappedText(text);
       if (!parsed?.data?.channels?.length) throw new Error('Digi guide gol');
       digiGuideMap = buildDigiGuideMap(parsed);
+      saveDigiGuideCache(digiGuideMap);
       return digiGuideMap;
+    }
+    function hydrateProgramsFromDigiMap() {
+      for (const channel of channels) {
+        const entries = getDigiEntriesForChannel(channel);
+        if (entries.length) epgPrograms[channel.name] = entries;
+      }
     }
     function orderedChannels() {
       if (!appState.order.length) return channels.slice();
@@ -775,6 +799,23 @@
           }
           return true;
         }
+        if (!Object.keys(digiGuideMap).length) {
+          await withTimeout(loadDigiGuideForToday().catch(() => ({})), 1000, {});
+          const retryEntries = getDigiEntriesForChannel(channel);
+          if (retryEntries.length) {
+            epgPrograms[channel.name] = retryEntries;
+            saveEpgCache();
+            if (!silent || epgState.lastChannel?.name === channel.name) {
+              epgState.mode = 'remote';
+              epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
+            }
+            return true;
+          }
+        }
+
+        if (!silent) epgState.mode = 'unavailable';
+        return false;
+
         const existing = epgPrograms[channel.name] || [];
         if (!force && existing.length && !existing[0]?.synthetic) return true;
         if (programTv.loadingSlug.has(channel.name)) return false;
@@ -955,12 +996,13 @@
         epgState.loadingUntil = Date.now() + 700;
         updateGuideStatus();
         epgPrograms = {};
-        loadEpgSeedData();
-        epgState.mode = 'idle';
+        digiGuideMap = loadDigiGuideCache();
+        hydrateProgramsFromDigiMap();
+        epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
         epgState.updatedAt = null;
       } catch (error) {
         epgPrograms = {};
-        loadEpgSeedData();
+        digiGuideMap = {};
         epgState.mode = 'fallback';
       } finally {
         if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
@@ -1090,19 +1132,16 @@
     render();
     loadEpgData().then(async () => {
       await Promise.allSettled([
-        withTimeout(loadDigiGuideForToday().catch(() => ({})), 1000, {}),
-        withTimeout(loadProgramTvChannelIndex().catch(() => ({})), 1000, {}),
-        withTimeout(loadProgramTvNowIndex().catch(() => ({})), 1000, {})
+        withTimeout(loadDigiGuideForToday().catch(() => ({})), 1000, {})
       ]);
+      hydrateProgramsFromDigiMap();
       const startupChannel = channels[0];
       if (startupChannel) {
         openStream(startupChannel, { focus: false });
       } else {
         updateGuide(null);
       }
-      preloadDailyPrograms().then(() => {
-        if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
-      });
+      if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
     });
 
     setInterval(() => {
