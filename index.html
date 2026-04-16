@@ -34,7 +34,7 @@
     }
     .media-row {
       display:grid;
-      grid-template-columns:minmax(320px, 0.95fr) minmax(520px, 1.55fr);
+      grid-template-columns:minmax(520px, 1.55fr) minmax(320px, 0.95fr);
       gap:10px;
       align-items:start;
       margin-bottom:12px;
@@ -156,14 +156,6 @@
     </section>
 
     <div class="media-row">
-      <section class="tv-guide" id="tvGuide">
-        <div class="guide-head">
-          <h3 class="guide-title">Program TV</h3>
-          <span class="guide-badge live" id="guideStatus">Program actualizat (10.03.2026, 14:00:00) • 11:33</span>
-        </div>
-        <div class="guide-list" id="guideList"><div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Se incarca programul...</span></div></div>
-      </section>
-
       <section class="player" id="playerPanel">
         <div class="player-head">
           <h2 class="player-title" id="playerTitle">Selecteaza un canal</h2>
@@ -177,6 +169,14 @@
         <div class="player-wrap">
           <iframe id="playerFrame" class="player-frame" title="IPTV Preview" allow="autoplay *; fullscreen *" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" loading="eager" src="about:blank"></iframe>
         </div>
+      </section>
+
+      <section class="tv-guide" id="tvGuide">
+        <div class="guide-head">
+          <h3 class="guide-title">Program TV</h3>
+          <span class="guide-badge live" id="guideStatus">Program actualizat (10.03.2026, 14:00:00) • 11:33</span>
+        </div>
+        <div class="guide-list" id="guideList"><div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Se incarca programul...</span></div></div>
       </section>
     </div>
 
@@ -377,11 +377,10 @@
 
     let epgPrograms = {};
     let epgSeedPrograms = {};
-    let digiGuideMap = {};
+    let cinemagiaGuideMap = {};
     const EPG_CACHE_KEY = 'iptv-epg-cache-v3';
-    const NOW_CACHE_KEY = 'iptv-now-cache-v3';
-    const DIGI_GUIDE_CACHE_KEY = 'iptv-digi-guide-v1';
-    const programTv = { channelSlugs: null, loadingSlug: new Set(), nowMap: null };
+    const CINEMAGIA_GUIDE_CACHE_KEY = 'iptv-cinemagia-guide-v1';
+    const programTv = { channelSlugs: null, loadingSlug: new Set() };
     const channelAliasToProgramTv = {
       'a1': 'antena 1',
       'a1 hd': 'antena 1',
@@ -394,12 +393,32 @@
       'tv 1000': 'kino tv',
       'news24': 'digi 24',
       'film now': 'film now',
-      'film n0w': 'film now'
+      'film n0w': 'film now',
+      'supersport 1': 'digi sport 1',
+      'supersport 2': 'digi sport 2',
+      'supersport 3': 'digi sport 3',
+      'supersport 4': 'digi sport 4',
+      'eur0sp0rt 1': 'eurosport 1',
+      'eur0sp0rt 2': 'eurosport 2',
+      'canal d': 'kanal d',
+      'canal d2': 'kanal d2'
     };
     const directProgramTvSlugs = {
       'A1 HD': 'antena-1',
-      'TV 1000': 'kino-tv',
-      'NEWS24': 'digi-24'
+      'TV 1000': 'tv1000',
+      'NEWS24': 'digi-24',
+      'PROTV HD': 'pro-tv',
+      'CANAL D': 'kanal-d',
+      'CANAL D2': 'kanal-d2',
+      'A3 CNN': 'antena-3-cnn',
+      'REALITATEA TV': 'realitatea-plus',
+      'SUPERSPORT 1': 'digi-sport-1',
+      'SUPERSPORT 2': 'digi-sport-2',
+      'SUPERSPORT 3': 'digi-sport-3',
+      'SUPERSPORT 4': 'digi-sport-4',
+      'HB0': 'hbo',
+      'HB0 2': 'hbo-2',
+      'HB0 3': 'hbo-3'
     };
 
     function saveState() { localStorage.setItem('iptv-favorites', JSON.stringify([...appState.favorites])); }
@@ -498,25 +517,9 @@
         }
       }
     }
-    function loadNowCache() {
+    function loadCinemagiaGuideCache() {
       try {
-        const raw = localStorage.getItem(NOW_CACHE_KEY);
-        if (!raw) return null;
-        const parsed = JSON.parse(raw);
-        if (!parsed || parsed.date !== todayKey() || typeof parsed.map !== 'object') return null;
-        return parsed.map || null;
-      } catch {
-        return null;
-      }
-    }
-    function saveNowCache(map) {
-      try {
-        localStorage.setItem(NOW_CACHE_KEY, JSON.stringify({ date: todayKey(), map: map || {} }));
-      } catch {}
-    }
-    function loadDigiGuideCache() {
-      try {
-        const raw = localStorage.getItem(DIGI_GUIDE_CACHE_KEY);
+        const raw = localStorage.getItem(CINEMAGIA_GUIDE_CACHE_KEY);
         if (!raw) return {};
         const parsed = JSON.parse(raw);
         if (!parsed || parsed.date !== todayKey() || typeof parsed.map !== 'object') return {};
@@ -525,56 +528,35 @@
         return {};
       }
     }
-    function saveDigiGuideCache(map) {
+    function saveCinemagiaGuideCache(map) {
       try {
-        localStorage.setItem(DIGI_GUIDE_CACHE_KEY, JSON.stringify({ date: todayKey(), map: map || {} }));
+        localStorage.setItem(CINEMAGIA_GUIDE_CACHE_KEY, JSON.stringify({ date: todayKey(), map: map || {} }));
       } catch {}
     }
-    function parseJsonFromWrappedText(text) {
-      const first = text.indexOf('{');
-      const last = text.lastIndexOf('}');
-      if (first === -1 || last === -1 || last <= first) return null;
-      try { return JSON.parse(text.slice(first, last + 1)); } catch { return null; }
-    }
-    function buildDigiGuideMap(payload) {
+    function buildCinemagiaGuideMap(payload) {
       const out = {};
-      const channelsData = payload?.data?.channels || [];
-      for (const ch of channelsData) {
-        const normalized = normalizeChannelName(ch?.name || '');
+      for (const [channelName, entries] of Object.entries(payload || {})) {
+        const normalized = normalizeChannelName(channelName || '');
         if (!normalized) continue;
-        const entries = (Array.isArray(ch.epg) ? ch.epg : []).map((item) => ({
-          start: (() => {
-            const d = new Date((Number(item.s) || 0) * 1000);
-            const y = d.getFullYear();
-            const m = String(d.getMonth() + 1).padStart(2, '0');
-            const day = String(d.getDate()).padStart(2, '0');
-            const hh = String(d.getHours()).padStart(2, '0');
-            const mm = String(d.getMinutes()).padStart(2, '0');
-            const ss = String(d.getSeconds()).padStart(2, '0');
-            return `${y}-${m}-${day}T${hh}:${mm}:${ss}`;
-          })(),
-          title: item.n || 'Program',
-          synthetic: false
-        }));
         out[normalized] = entries;
         out[normalized.replace(/\s+/g, '')] = entries;
       }
       return out;
     }
-    function getDigiEntriesForChannel(channel) {
+    function getCinemagiaEntriesForChannel(channel) {
       if (!channel?.name) return [];
       const normalized = normalizeChannelName(channel.name);
       const alias = channelAliasToProgramTv[normalized] ? normalizeChannelName(channelAliasToProgramTv[normalized]) : '';
-      const direct = digiGuideMap[normalized]
-        || digiGuideMap[normalized.replace(/\s+/g, '')]
-        || (alias ? (digiGuideMap[alias] || digiGuideMap[alias.replace(/\s+/g, '')]) : null)
+      const direct = cinemagiaGuideMap[normalized]
+        || cinemagiaGuideMap[normalized.replace(/\s+/g, '')]
+        || (alias ? (cinemagiaGuideMap[alias] || cinemagiaGuideMap[alias.replace(/\s+/g, '')]) : null)
         || null;
       if (direct) return direct;
 
       const targetTokens = normalized.split(' ').filter(Boolean);
       let bestScore = 0;
       let best = null;
-      for (const [key, entries] of Object.entries(digiGuideMap)) {
+      for (const [key, entries] of Object.entries(cinemagiaGuideMap)) {
         if (!key.includes(' ')) continue;
         const keyTokens = key.split(' ').filter(Boolean);
         if (!keyTokens.length || !targetTokens.length) continue;
@@ -587,21 +569,9 @@
       }
       return bestScore >= 0.5 ? (best || []) : [];
     }
-    async function loadDigiGuideForToday() {
-      const date = todayKey();
-      const url = `https://r.jina.ai/http://www.digionline.ro/ghid-tv-xhr?date=${date}`;
-      const response = await fetch(url, { cache: 'no-store' });
-      if (!response.ok) throw new Error('Digi guide indisponibil');
-      const text = await response.text();
-      const parsed = parseJsonFromWrappedText(text);
-      if (!parsed?.data?.channels?.length) throw new Error('Digi guide gol');
-      digiGuideMap = buildDigiGuideMap(parsed);
-      saveDigiGuideCache(digiGuideMap);
-      return digiGuideMap;
-    }
-    function hydrateProgramsFromDigiMap() {
+    function hydrateProgramsFromCinemagiaMap() {
       for (const channel of channels) {
-        const entries = getDigiEntriesForChannel(channel);
+        const entries = getCinemagiaEntriesForChannel(channel);
         if (entries.length) epgPrograms[channel.name] = entries;
       }
     }
@@ -690,16 +660,16 @@
 
     async function loadProgramTvChannelIndex() {
       if (programTv.channelSlugs) return programTv.channelSlugs;
-      const response = await fetch('https://r.jina.ai/https://programtv.ro/canale-tv', { cache: 'no-store' });
-      if (!response.ok) throw new Error('Nu s-a putut incarca indexul de canale');
+      const response = await fetch('https://r.jina.ai/http://www.cinemagia.ro/program-tv/', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Nu s-a putut incarca indexul Cinemagia');
       const text = await response.text();
       const slugMap = {};
-      const re = /\[([^\]]+)\]\(https?:\/\/programtv\.ro\/canal-tv\/([^\)\/]+)\)/g;
+      const re = /\[([^\]]+)\]\(https?:\/\/www\.cinemagia\.ro\/program-tv\/([a-z0-9\-]+)\/(?:\s+"[^"]*")?\)/g;
       let m;
       while ((m = re.exec(text)) !== null) {
-        const label = m[1].replace(/→.*/g, '').trim();
+        const label = m[1].trim();
         const slug = m[2].trim();
-        if (!label || !slug) continue;
+        if (!label || !slug || ['filme-la-tv', 'seriale-la-tv', 'grid', 'vertical'].includes(slug)) continue;
         const normalizedLabel = normalizeChannelName(label);
         slugMap[normalizedLabel] = slug;
         slugMap[normalizedLabel.replace(/\s+/g, '')] = slug;
@@ -708,38 +678,6 @@
       return slugMap;
     }
 
-
-    async function loadProgramTvNowIndex() {
-      if (programTv.nowMap) return programTv.nowMap;
-      const response = await fetch('https://r.jina.ai/https://programtv.ro/canal-tv/hbo-2', { cache: 'no-store' });
-      if (!response.ok) throw new Error('Nu s-a putut incarca lista Acum la TV');
-      const text = await response.text();
-      const nowMap = {};
-      const re = /\[###\s+([^\]]+?)\s+LIVE ACUM:\s+(.+?)\s+(\d{2}:\d{2})\]\(https?:\/\/programtv\.ro\/canal-tv\/[^\)]+\)/g;
-      let m;
-      while ((m = re.exec(text)) !== null) {
-        const channelLabel = normalizeChannelName(m[1]);
-        const title = m[2].trim();
-        const time = m[3].trim();
-        if (!channelLabel || !title) continue;
-        nowMap[channelLabel] = { title, time };
-        nowMap[channelLabel.replace(/\s+/g, '')] = { title, time };
-      }
-      programTv.nowMap = nowMap;
-      saveNowCache(nowMap);
-      return nowMap;
-    }
-
-    function getQuickNow(channel) {
-      if (!channel?.name || !programTv.nowMap) return null;
-      const normalizedName = normalizeChannelName(channel.name);
-      const normalizedNoSpaces = normalizedName.replace(/\s+/g, '');
-      const normalizedAlias = channelAliasToProgramTv[normalizedName] ? normalizeChannelName(channelAliasToProgramTv[normalizedName]) : '';
-      return programTv.nowMap[normalizedName]
-        || programTv.nowMap[normalizedNoSpaces]
-        || (normalizedAlias ? (programTv.nowMap[normalizedAlias] || programTv.nowMap[normalizedAlias.replace(/\s+/g, '')]) : null)
-        || null;
-    }
     async function withTimeout(promise, ms, fallbackValue) {
       let timer;
       try {
@@ -752,6 +690,19 @@
       } finally {
         if (timer) clearTimeout(timer);
       }
+    }
+    function getQuickNow(channel) {
+      const entries = getCinemagiaEntriesForChannel(channel);
+      if (!entries.length) return null;
+      const now = new Date();
+      for (let i = 0; i < entries.length; i++) {
+        const start = new Date(entries[i].start);
+        const next = entries[i + 1] ? new Date(entries[i + 1].start) : null;
+        if (start <= now && (!next || now < next)) {
+          return { title: entries[i].title };
+        }
+      }
+      return { title: entries[0].title };
     }
 
     function resolveProgramTvSlug(channel, slugMap) {
@@ -787,60 +738,34 @@
     }
 
     function parseProgramTvSchedule(markdown) {
-      const lines = markdown.split('\n').map((line) => line.trim());
+      const matchList = [...String(markdown).matchAll(/(\d{2}:\d{2})\s+([^0-9\n][^]*?)(?=\s+\d{2}:\d{2}\s+|$)/g)];
       const items = [];
-      for (let i = 0; i < lines.length - 1; i++) {
-        if (!/^\d{2}:\d{2}$/.test(lines[i])) continue;
-        const time = lines[i];
-        let title = '';
-        for (let j = i + 1; j < Math.min(i + 7, lines.length); j++) {
-          const raw = lines[j]
-            .replace(/^\[|\]\(.*$/g, '')
-            .replace(/👉.*$/g, '')
-            .replace(/\s+ACUM$/i, '')
-            .replace(/^-+$/g, '')
-            .trim();
-          if (!raw || /^\* \* \*$/.test(raw) || /^\d{2}:\d{2}$/.test(raw)) continue;
-          if (raw.length < 2) continue;
-          const parts = raw.split(' - ').map((part) => part.trim()).filter(Boolean);
-          title = parts.length >= 2 && parts[0].toLowerCase() === parts[1].toLowerCase() ? parts[0] : raw;
+      const seen = new Set();
+      let repeatedTime = null;
+      for (const match of matchList) {
+        const time = match[1];
+        const rawTitle = match[2]
+          .replace(/\[[^\]]*\]\([^\)]*\)/g, ' ')
+          .replace(/\s+-\s+serial.*/i, '')
+          .replace(/\s+Cu:.*/i, '')
+          .replace(/\s+\(R\).*/i, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+        if (!rawTitle || rawTitle.length < 2) continue;
+        if (seen.has(time) && items.length >= 8) {
+          repeatedTime = time;
           break;
         }
-        if (title) items.push({ start: time, title });
+        seen.add(time);
+        items.push({ start: time, title: rawTitle.slice(0, 120) });
       }
-      return items;
+      if (repeatedTime && items.length > 2) return items;
+      return items.slice(0, 24);
     }
 
     async function fetchProgramTvForChannel(channel, { silent = false, force = false } = {}) {
       try {
         if (!channel?.name) return false;
-        const digiEntries = getDigiEntriesForChannel(channel);
-        if (digiEntries.length) {
-          epgPrograms[channel.name] = digiEntries;
-          saveEpgCache();
-          if (!silent || epgState.lastChannel?.name === channel.name) {
-            epgState.mode = 'remote';
-            epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
-          }
-          return true;
-        }
-        if (!Object.keys(digiGuideMap).length) {
-          await withTimeout(loadDigiGuideForToday().catch(() => ({})), 1000, {});
-          const retryEntries = getDigiEntriesForChannel(channel);
-          if (retryEntries.length) {
-            epgPrograms[channel.name] = retryEntries;
-            saveEpgCache();
-            if (!silent || epgState.lastChannel?.name === channel.name) {
-              epgState.mode = 'remote';
-              epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
-            }
-            return true;
-          }
-        }
-
-        if (!silent) epgState.mode = 'unavailable';
-        return false;
-
         const existing = epgPrograms[channel.name] || [];
         if (!force && existing.length && !existing[0]?.synthetic) return true;
         if (programTv.loadingSlug.has(channel.name)) return false;
@@ -857,10 +782,8 @@
         if (!slug) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
         const endpointCandidates = [
-          `https://r.jina.ai/https://programtv.ro/canal-tv/${slug}`,
-          `https://r.jina.ai/https://programtv.ro/canal-tv/${slug}/azi`,
-          `https://r.jina.ai/http://programtv.ro/canal-tv/${slug}`,
-          `https://r.jina.ai/http://programtv.ro/canal-tv/${slug}/azi`
+          `https://r.jina.ai/http://www.cinemagia.ro/program-tv/${slug}/`,
+          `https://r.jina.ai/https://www.cinemagia.ro/program-tv/${slug}/`
         ];
         const endpoints = [...new Set(endpointCandidates)];
         const responses = await Promise.allSettled(
@@ -876,22 +799,6 @@
           if (parsed.length > finalEntries.length) finalEntries = parsed;
         }
 
-        if (!finalEntries.length) {
-          const nowMap = await loadProgramTvNowIndex().catch(() => ({}));
-          const normalizedName = normalizeChannelName(channel.name);
-          const aliasNorm = alias ? normalizeChannelName(alias) : '';
-          const nowItem = nowMap[normalizedName] || nowMap[normalizedName.replace(/\s+/g, '')] || (aliasNorm ? (nowMap[aliasNorm] || nowMap[aliasNorm.replace(/\s+/g, '')]) : null);
-          if (nowItem?.title) {
-            const startNow = nowItem.time || '00:00';
-            const [h, m] = startNow.split(':').map((v) => Number(v || 0));
-            const nextH = String((h + 1) % 24).padStart(2, '0');
-            const nextM = String(m).padStart(2, '0');
-            finalEntries = [
-              { start: startNow, title: nowItem.title },
-              { start: `${nextH}:${nextM}`, title: 'Urmeaza' }
-            ];
-          }
-        }
         if (!finalEntries.length) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
         const today = new Date();
@@ -901,6 +808,9 @@
           title: entry.title,
           synthetic: false
         }));
+        cinemagiaGuideMap[normalizeChannelName(channel.name)] = epgPrograms[channel.name];
+        cinemagiaGuideMap[normalizeChannelName(channel.name).replace(/\s+/g, '')] = epgPrograms[channel.name];
+        saveCinemagiaGuideCache(cinemagiaGuideMap);
         saveEpgCache();
         if (!silent || epgState.lastChannel?.name === channel.name) {
           epgState.mode = 'remote';
@@ -1021,13 +931,13 @@
         epgState.loadingUntil = Date.now() + 700;
         updateGuideStatus();
         epgPrograms = {};
-        digiGuideMap = loadDigiGuideCache();
-        hydrateProgramsFromDigiMap();
+        cinemagiaGuideMap = buildCinemagiaGuideMap(loadCinemagiaGuideCache());
+        hydrateProgramsFromCinemagiaMap();
         epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
         epgState.updatedAt = null;
       } catch (error) {
         epgPrograms = {};
-        digiGuideMap = {};
+        cinemagiaGuideMap = {};
         epgState.mode = 'fallback';
       } finally {
         if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
@@ -1153,13 +1063,9 @@
     document.getElementById('appVersion').textContent = `v${APP_VERSION}`;
     console.info(`IPTV Quick Grid version ${APP_VERSION}`);
     initCategories();
-    programTv.nowMap = loadNowCache();
     render();
     loadEpgData().then(async () => {
-      await Promise.allSettled([
-        withTimeout(loadDigiGuideForToday().catch(() => ({})), 1000, {})
-      ]);
-      hydrateProgramsFromDigiMap();
+      await Promise.allSettled([withTimeout(preloadDailyPrograms(), 2500, null)]);
       const startupChannel = channels[0];
       if (startupChannel) {
         openStream(startupChannel, { focus: false });
