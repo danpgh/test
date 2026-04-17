@@ -751,8 +751,9 @@
     function textFromHtml(html) {
       const doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
       doc.querySelectorAll('script, style, noscript, svg, iframe, form, header, footer').forEach((el) => el.remove());
-      return (doc.body?.innerText || doc.documentElement?.innerText || '')
-        .replace(/\u00a0/g, ' ');
+      return (doc.body?.textContent || doc.documentElement?.textContent || '')
+        .replace(/\u00a0/g, ' ')
+        .replace(/\r/g, '\n');
     }
 
     function getBestProgramContainerText(html, channelName) {
@@ -763,7 +764,7 @@
       let bestText = '';
       let bestScore = -Infinity;
       for (const el of elements) {
-        const text = (el.innerText || '').replace(/\u00a0/g, ' ').trim();
+        const text = (el.textContent || '').replace(/\u00a0/g, ' ').replace(/\r/g, '\n').trim();
         if (!text || text.length < 80) continue;
         const times = text.match(/\b\d{1,2}:\d{2}\b/g) || [];
         if (times.length < 4) continue;
@@ -860,7 +861,7 @@
       if (!response.ok) throw new Error('Nu s-a putut incarca indexul Cinemagia');
       const text = await response.text();
       const slugMap = {};
-      const re = /href=["']https?:\/\/www\.cinemagia\.ro\/program-tv\/([^"'#?\/]+)\/?["'][^>]*>([^<]{1,120})<\/a>/gi;
+      const re = /href=["'](?:https?:\/\/www\.cinemagia\.ro)?\/program-tv\/([^"'#?\/]+)\/?["'][^>]*>([^<]{1,120})<\/a>/gi;
       let m;
       while ((m = re.exec(text)) !== null) {
         const slug = m[1].trim();
@@ -949,8 +950,13 @@
 
     function parseProgramTvSchedule(markup, channelName) {
       const containerText = getBestProgramContainerText(markup, channelName);
-      const pairs = extractProgramPairsFromText(containerText);
-      const bestRun = selectBestProgramRun(pairs);
+      let pairs = extractProgramPairsFromText(containerText);
+      let bestRun = selectBestProgramRun(pairs);
+      if (bestRun.length < 3) {
+        const fullText = textFromHtml(markup);
+        pairs = extractProgramPairsFromText(fullText);
+        bestRun = selectBestProgramRun(pairs);
+      }
       return bestRun.slice(0, 24);
     }
 
@@ -1261,7 +1267,7 @@
     initCategories();
     render();
     loadEpgData().then(async () => {
-      await Promise.allSettled([withTimeout(preloadDailyPrograms(), 1800, null)]);
+      await Promise.allSettled([withTimeout(preloadDailyPrograms(), 3500, null)]);
       const startupChannel = channels[0];
       if (startupChannel) {
         openStream(startupChannel, { focus: false });
