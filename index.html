@@ -223,7 +223,7 @@
   </script>
 
   <script>
-    const APP_VERSION = '2026-04-17.2';
+    const APP_VERSION = '2026-04-17.1';
     const channels = [
       {name:'PROTV HD',embed:'https://canale-tv.com/channel/pr0tv.html',category:'General',description:'Romanian general entertainment and news.'},
       {name:'A1 HD',embed:'https://canale-tv.com/channel/a1.html',category:'General',description:'Popular Romanian general TV content.'},
@@ -380,44 +380,50 @@
     let cinemagiaGuideMap = {};
     const EPG_CACHE_KEY = 'iptv-epg-cache-v3';
     const CINEMAGIA_GUIDE_CACHE_KEY = 'iptv-cinemagia-guide-v1';
-    const programTv = { channelSlugs: null, loadingSlug: new Set() };
+    const programTv = { channelSlugs: null, loadingSlug: new Set(), lastRefreshByChannel: {}, lastIndexRefreshAt: 0 };
     const channelAliasToProgramTv = {
       'ant1': 'antena 1',
       'a1': 'antena 1',
       'a1 hd': 'antena 1',
       'antena1': 'antena 1',
+      'antena 1 hd': 'antena 1',
       'protv': 'pro tv',
-      'protv hd': 'pro tv',
       'pro tv hd': 'pro tv',
+      'protv hd': 'pro tv',
       'hbo': 'hbo',
       'hb0': 'hbo',
+      'hb0 hd': 'hbo',
       'hb0 2': 'hbo 2',
+      'hb0 2 hd': 'hbo 2',
       'hb0 3': 'hbo 3',
-      'hbo 2 hd': 'hbo 2',
-      'hbo 3 hd': 'hbo 3',
-      'tv1000': 'tv1000',
-      'tv 1000': 'tv1000',
+      'hb0 3 hd': 'hbo 3',
+      'tv1000': 'viasat kino',
+      'tv 1000': 'viasat kino',
+      'kino': 'viasat kino',
+      'kino tv': 'viasat kino',
       'news24': 'digi 24',
+      'news 24': 'digi 24',
       'digi24': 'digi 24',
+      'digi 24 hd': 'digi 24',
       'film now': 'film now',
       'film n0w': 'film now',
       'supersport 1': 'digi sport 1',
       'supersport 2': 'digi sport 2',
       'supersport 3': 'digi sport 3',
       'supersport 4': 'digi sport 4',
+      'prima sport ppv1': 'prima sport ppv1',
+      'prima sport ppv2': 'prima sport ppv2',
+      'prima sport ppv3': 'prima sport ppv3',
       'eur0sp0rt 1': 'eurosport 1',
       'eur0sp0rt 2': 'eurosport 2',
       'eurosport1': 'eurosport 1',
       'eurosport2': 'eurosport 2',
       'canal d': 'kanal d',
-      'canal d2': 'kanal d2',
-      'kanal d': 'kanal d',
-      'kanal d2': 'kanal d2',
-      'a3 cnn': 'antena 3 cnn'
+      'canal d2': 'kanal d2'
     };
     const directProgramTvSlugs = {
       'A1 HD': 'antena-1',
-      'TV 1000': 'tv1000',
+      'TV 1000': 'viasat-kino',
       'NEWS24': 'digi-24',
       'PROTV HD': 'pro-tv',
       'CANAL D': 'kanal-d',
@@ -670,79 +676,123 @@
         .trim();
     }
 
-    function normalizeChannelNameLoose(name) {
+    function normalizeLooseChannelName(name) {
       return normalizeChannelName(name)
-        .replace(/\bhd\b/g, ' ')
-        .replace(/\bhb0\b/g, ' hbo ')
-        .replace(/\beur0sp0rt\b/g, ' eurosport ')
-        .replace(/\bpr0\b/g, ' pro ')
-        .replace(/\bant1\b/g, ' antena 1 ')
-        .replace(/\ba1\b/g, ' antena 1 ')
-        .replace(/\bnews24\b/g, ' digi 24 ')
-        .replace(/\bcanal d\b/g, ' kanal d ')
-        .replace(/\bcanal d2\b/g, ' kanal d2 ')
-        .replace(/\bfilm n0w\b/g, ' film now ')
+        .replace(/\b(hd|tv)\b/g, ' ')
+        .replace(/0/g, 'o')
         .replace(/\s+/g, ' ')
         .trim();
     }
 
-    function buildChannelCandidateNames(name) {
-      const normalized = normalizeChannelName(name);
-      const loose = normalizeChannelNameLoose(name);
-      const alias = channelAliasToProgramTv[normalized] || channelAliasToProgramTv[loose] || '';
-      const values = new Set([normalized, normalized.replace(/\s+/g, ''), loose, loose.replace(/\s+/g, '')]);
-      if (alias) {
-        const aliasNorm = normalizeChannelNameLoose(alias);
-        values.add(aliasNorm);
-        values.add(aliasNorm.replace(/\s+/g, ''));
-      }
-      return [...values].filter(Boolean);
+    function slugToLabel(slug) {
+      return String(slug || '')
+        .replace(/[-_]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
 
-    function scoreChannelNameMatch(left, right) {
-      const a = normalizeChannelNameLoose(left);
-      const b = normalizeChannelNameLoose(right);
+    function scoreChannelMatch(left, right) {
+      const a = normalizeLooseChannelName(left);
+      const b = normalizeLooseChannelName(right);
       if (!a || !b) return 0;
       if (a === b) return 100;
       if (a.replace(/\s+/g, '') === b.replace(/\s+/g, '')) return 96;
       const aTokens = a.split(' ').filter(Boolean);
       const bTokens = b.split(' ').filter(Boolean);
       const overlap = aTokens.filter((token) => bTokens.includes(token)).length;
-      let score = overlap * 12;
-      if (a.includes(b) || b.includes(a)) score += 18;
-      const aCompact = a.replace(/\s+/g, '');
-      const bCompact = b.replace(/\s+/g, '');
-      if (aCompact.includes(bCompact) || bCompact.includes(aCompact)) score += 14;
+      let score = overlap * 10;
+      if (a.includes(b) || b.includes(a)) score += 20;
+      const aNums = (a.match(/\b\d\b/g) || []).join(',');
+      const bNums = (b.match(/\b\d\b/g) || []).join(',');
+      if (aNums && bNums) score += (aNums === bNums ? 15 : -20);
       return score;
     }
 
-    async function loadProgramTvChannelIndex() {
-      if (programTv.channelSlugs) return programTv.channelSlugs;
+    function parseHtmlDocument(text) {
+      return new DOMParser().parseFromString(String(text || ''), 'text/html');
+    }
+
+    function extractTextLinesFromNode(root) {
+      if (!root) return [];
+      const lines = [];
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const value = String(walker.currentNode.nodeValue || '').replace(/\s+/g, ' ').trim();
+        if (value) lines.push(value);
+      }
+      return lines;
+    }
+
+    function looksLikeNoiseLine(value) {
+      const text = normalizeChannelName(value);
+      if (!text) return true;
+      if (text.length <= 1) return true;
+      return [
+        'image', 'follow us', 'urmareste ne pe', 'descarca aplicatia', 'copyright',
+        'termeni si conditii', 'contact', 'cinemagia', 'program tv', 'program cinema',
+        'filme la tv', 'seriale la tv', 'box office', 'forum', 'bloguri',
+        'login inregistrare', 'login', 'inregistrare', 'club', 'tv'
+      ].includes(text);
+    }
+
+    function toIsoEntryForToday(hhmm, title) {
+      const now = new Date();
+      const day = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+      return {
+        start: `${day}T${hhmm}:00`,
+        title: String(title || '').replace(/\s+/g, ' ').trim(),
+        synthetic: false
+      };
+    }
+
+    function shouldRefreshChannel(name, ttlMs = 10 * 60 * 1000) {
+      const last = Number(programTv.lastRefreshByChannel?.[name] || 0);
+      return !last || (Date.now() - last) > ttlMs;
+    }
+
+    function markChannelRefreshed(name) {
+      programTv.lastRefreshByChannel[name] = Date.now();
+    }
+
+    async function loadProgramTvChannelIndex(force = false) {
+      const indexTtlMs = 6 * 60 * 60 * 1000;
+      if (!force && programTv.channelSlugs && (Date.now() - programTv.lastIndexRefreshAt) < indexTtlMs) return programTv.channelSlugs;
+
       const sourceUrl = encodeURIComponent('https://www.cinemagia.ro/program-tv/');
       const response = await fetch(`https://api.allorigins.win/raw?url=${sourceUrl}`, { cache: 'no-store' });
       if (!response.ok) throw new Error('Nu s-a putut incarca indexul Cinemagia');
+
       const text = await response.text();
-      const doc = new DOMParser().parseFromString(text, 'text/html');
+      const doc = parseHtmlDocument(text);
       const slugMap = {};
       const anchors = [...doc.querySelectorAll('a[href*="/program-tv/"]')];
-      for (const anchor of anchors) {
-        const href = anchor.getAttribute('href') || '';
-        const match = href.match(/\/program-tv\/(?:post\/)?([^/?#]+)\/?/i);
+
+      for (const a of anchors) {
+        const href = a.getAttribute('href') || '';
+        const match = href.match(/\/program-tv\/(?:post\/)?([^\/?#]+)\/?$/i);
         if (!match) continue;
-        const slug = match[1].trim().toLowerCase();
-        if (!slug || ['filme-la-tv', 'seriale-la-tv', 'grid', 'vertical'].includes(slug)) continue;
-        const label = (anchor.textContent || '').replace(/\s+/g, ' ').trim();
-        if (!label || /program\s+tv|filme\s+noi|seriale/i.test(label)) continue;
-        const keys = buildChannelCandidateNames(label).concat([
-          slug.replace(/-/g, ' '),
-          slug.replace(/-/g, ''),
-          normalizeChannelNameLoose(slug.replace(/-/g, ' '))
+        const slug = match[1].trim();
+        if (!slug || ['filme-la-tv', 'seriale-la-tv', 'grid', 'vertical', 'azi', 'ieri'].includes(slug)) continue;
+
+        const label = (a.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!label || /^program tv/i.test(label)) continue;
+
+        const keys = new Set([
+          normalizeChannelName(label),
+          normalizeChannelName(label).replace(/\s+/g, ''),
+          normalizeLooseChannelName(label),
+          normalizeLooseChannelName(label).replace(/\s+/g, ''),
+          normalizeChannelName(slugToLabel(slug)),
+          normalizeChannelName(slugToLabel(slug)).replace(/\s+/g, ''),
+          normalizeLooseChannelName(slugToLabel(slug)),
+          normalizeLooseChannelName(slugToLabel(slug)).replace(/\s+/g, '')
         ]);
-        for (const key of keys) {
-          if (key) slugMap[key] = slug;
-        }
+
+        for (const key of [...keys].filter(Boolean)) slugMap[key] = slug;
       }
+
       programTv.channelSlugs = slugMap;
+      programTv.lastIndexRefreshAt = Date.now();
       return slugMap;
     }
 
@@ -777,120 +827,100 @@
       if (!channel?.name) return null;
       if (directProgramTvSlugs[channel.name]) return directProgramTvSlugs[channel.name];
 
-      const candidates = buildChannelCandidateNames(channel.name);
-      for (const key of candidates) {
+      const original = channel.name;
+      const normalized = normalizeChannelName(original);
+      const loose = normalizeLooseChannelName(original);
+      const alias = channelAliasToProgramTv[normalized] || channelAliasToProgramTv[loose] || null;
+
+      const directKeys = [
+        normalized, normalized.replace(/\s+/g, ''),
+        loose, loose.replace(/\s+/g, ''),
+        normalizeChannelName(alias || ''), normalizeLooseChannelName(alias || '')
+      ].filter(Boolean);
+
+      for (const key of directKeys) {
         if (slugMap[key]) return slugMap[key];
+        const compact = key.replace(/\s+/g, '');
+        if (slugMap[compact]) return slugMap[compact];
       }
 
       let bestSlug = null;
       let bestScore = 0;
+      const seen = new Set();
+
       for (const [key, slug] of Object.entries(slugMap || {})) {
-        const score = Math.max(...candidates.map((candidate) => scoreChannelNameMatch(candidate, key)));
+        if (!key || !slug || seen.has(slug)) continue;
+        seen.add(slug);
+        const score = Math.max(
+          scoreChannelMatch(original, key),
+          scoreChannelMatch(alias || '', key),
+          scoreChannelMatch(original, slugToLabel(slug)),
+          scoreChannelMatch(alias || '', slugToLabel(slug))
+        );
         if (score > bestScore) {
           bestScore = score;
           bestSlug = slug;
         }
       }
-      if (bestSlug && bestScore >= 24) return bestSlug;
 
-      const fallbackLabel = normalizeChannelNameLoose(channel.name);
-      return fallbackLabel ? fallbackLabel.replace(/\s+/g, '-') : null;
+      return bestScore >= 24 ? bestSlug : null;
     }
 
-    function parseProgramTvSchedule(markup) {
-      const doc = new DOMParser().parseFromString(String(markup || ''), 'text/html');
-      doc.querySelectorAll('script,style,noscript,template,svg,footer,header,nav,form').forEach((node) => node.remove());
+    function parseProgramTvSchedule(markdown, channelName = '') {
+      const doc = parseHtmlDocument(markdown);
+      const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+      const roots = [
+        doc.querySelector('#content'),
+        doc.querySelector('main'),
+        doc.querySelector('.container'),
+        doc.body
+      ].filter(Boolean);
 
-      const bodyText = (doc.body?.innerText || '')
-        .replace(/\r/g, '\n')
-        .replace(/\t/g, ' ')
-        .replace(/\u00a0/g, ' ')
-        .replace(/[ ]{2,}/g, ' ')
-        .replace(/\n{3,}/g, '\n\n');
-
-      const lines = bodyText
-        .split(/\n+/)
-        .map((line) => line.replace(/\s+/g, ' ').trim())
-        .filter(Boolean);
-
-      const junkPatterns = [
-        /^program\b/i,
-        /^program tv\b/i,
-        /^cinemagia/i,
-        /^filme noi$/i,
-        /^follow us$/i,
-        /^image$/i,
-        /^ap$/i,
-        /^acum$/i,
-        /^azi$/i,
-        /^maine$/i,
-        /^ieri$/i,
-        /^anterioarele$/i,
-        /^urmatoarele$/i,
-        /^cookie/i,
-        /^acest site foloseste/i,
-        /^vezi program/i,
-        /^cu:/i,
-        /^gen:/i
-      ];
-      const ratingPattern = /^(ap|12|15|18|n15|n18)$/i;
-      const looksLikeTime = (value) => /^\d{1,2}:\d{2}$/.test(value);
-      const isJunk = (value) => {
-        if (!value) return true;
-        if (junkPatterns.some((re) => re.test(value))) return true;
-        if (ratingPattern.test(value)) return true;
-        if (/^(live|direct)$/i.test(value)) return true;
-        if (/^\*+$/.test(value)) return true;
-        if (/^(facebook|instagram|youtube|tiktok)$/i.test(value)) return true;
-        return false;
-      };
-      const cleanTitle = (value) => String(value || '')
-        .replace(/^[-•*\s]+/, '')
-        .replace(/\s+-\s+/g, ' - ')
-        .replace(/\s{2,}/g, ' ')
-        .replace(/\b(?:cu:.*)$/i, '')
-        .trim();
+      const lines = [];
+      for (const root of roots.length ? roots : [doc.body]) {
+        for (const line of extractTextLinesFromNode(root)) {
+          if (!looksLikeNoiseLine(line)) lines.push(line);
+        }
+      }
 
       const items = [];
       const seen = new Set();
-      let pendingTime = null;
+
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        if (looksLikeTime(line)) {
-          pendingTime = line.padStart(5, '0');
-          continue;
-        }
-        if (!pendingTime || isJunk(line)) continue;
+        if (!timeRegex.test(line)) continue;
 
-        const title = cleanTitle(line);
-        if (!title || title.length < 2 || title.length > 140) continue;
-        if (/^\d/.test(title)) continue;
+        let title = '';
+        for (let j = i + 1; j < Math.min(lines.length, i + 8); j++) {
+          const candidate = lines[j];
+          if (timeRegex.test(candidate)) break;
+          if (looksLikeNoiseLine(candidate)) continue;
 
-        const dedupeKey = `${pendingTime}|${title.toLowerCase()}`;
-        if (seen.has(dedupeKey)) {
-          pendingTime = null;
-          continue;
+          const normalizedCandidate = normalizeChannelName(candidate);
+          if (normalizedCandidate === normalizeChannelName(channelName)) continue;
+          if (normalizedCandidate.startsWith('cu ') || normalizedCandidate.startsWith('gen film') || normalizedCandidate.startsWith('nota ') || normalizedCandidate.startsWith('imdb ')) continue;
+          if (/^(luni|marti|miercuri|joi|vineri|sambata|duminica|azi|ieri)$/i.test(normalizedCandidate)) continue;
+          if (/^(program|post invalid|focus|live)$/i.test(normalizedCandidate)) continue;
+
+          title = candidate;
+          break;
         }
+
+        if (!title) continue;
+        const dedupeKey = `${line}|${title}`;
+        if (seen.has(dedupeKey)) continue;
         seen.add(dedupeKey);
-        items.push({ start: pendingTime, title });
-        pendingTime = null;
+        items.push({ start: line, title: title.replace(/\s+/g, ' ').trim() });
       }
 
-      const uniqueByTime = [];
-      const usedTimes = new Set();
-      for (const item of items) {
-        if (usedTimes.has(item.start)) continue;
-        usedTimes.add(item.start);
-        uniqueByTime.push(item);
-      }
-      return uniqueByTime.slice(0, 24);
+      return items.slice(0, 48);
     }
 
-    async function fetchProgramTvForChannel(channel, { silent = false, force = false } = {}) {
+    async function fetchProgramTvForChannel(channel, { silent = false, force = false, background = false } = {}) {
       try {
         if (!channel?.name) return false;
         const existing = epgPrograms[channel.name] || [];
-        if (!force && existing.length && !existing[0]?.synthetic) return true;
+        if (!force && existing.length && !existing[0]?.synthetic && !shouldRefreshChannel(channel.name)) return true;
         if (programTv.loadingSlug.has(channel.name)) return false;
         programTv.loadingSlug.add(channel.name);
 
@@ -900,50 +930,50 @@
         } catch (e) {
           slugMap = {};
         }
-        const alias = channelAliasToProgramTv[normalizeChannelName(channel.name)] || null;
-        const slug = resolveProgramTvSlug(channel, slugMap);
-        if (!slug) { if (!silent) epgState.mode = 'unavailable'; return false; }
 
-        const today = new Date();
-        const roDate = `${String(today.getDate()).padStart(2,'0')}.${String(today.getMonth()+1).padStart(2,'0')}.${today.getFullYear()}`;
-        const endpointCandidates = [
-          `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://m.cinemagia.ro/program-tv/${slug}/?from_date=${roDate}`)}`,
-          `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.cinemagia.ro/program-tv/${slug}/`)}`,
-          `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.cinemagia.ro/program-tv/post/${slug}/`)}`
-        ];
-        const endpoints = [...new Set(endpointCandidates)];
-        const responses = await Promise.allSettled(
-          endpoints.map((endpoint) => fetch(endpoint, { cache: 'no-store' }))
-        );
-        let finalEntries = [];
-        for (const item of responses) {
-          if (item.status !== 'fulfilled') continue;
-          const response = item.value;
-          if (!response.ok) continue;
-          const text = await response.text();
-          const parsed = parseProgramTvSchedule(text);
-          if (parsed.length > finalEntries.length) finalEntries = parsed;
+        const slug = resolveProgramTvSlug(channel, slugMap);
+        if (!slug) {
+          if (!silent && !background) epgState.mode = 'unavailable';
+          return false;
         }
 
-        if (!finalEntries.length) { if (!silent) epgState.mode = 'unavailable'; return false; }
+        const endpoints = [
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.cinemagia.ro/program-tv/post/${slug}/`)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.cinemagia.ro/program-tv/${slug}/`)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://m.cinemagia.ro/program-tv/${slug}/`)}`
+        ];
 
-        const isoDate = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
-        epgPrograms[channel.name] = finalEntries.map((entry) => ({
-          start: `${isoDate}T${entry.start}:00`,
-          title: entry.title,
-          synthetic: false
-        }));
+        let bestEntries = [];
+        for (const endpoint of [...new Set(endpoints)]) {
+          try {
+            const response = await fetch(endpoint, { cache: 'no-store' });
+            if (!response.ok) continue;
+            const text = await response.text();
+            const parsed = parseProgramTvSchedule(text, channel.name);
+            if (parsed.length > bestEntries.length) bestEntries = parsed;
+            if (bestEntries.length >= 8) break;
+          } catch (e) {}
+        }
+
+        if (!bestEntries.length) {
+          if (!silent && !background) epgState.mode = 'unavailable';
+          return false;
+        }
+
+        epgPrograms[channel.name] = bestEntries.map((entry) => toIsoEntryForToday(entry.start, entry.title));
         cinemagiaGuideMap[normalizeChannelName(channel.name)] = epgPrograms[channel.name];
         cinemagiaGuideMap[normalizeChannelName(channel.name).replace(/\s+/g, '')] = epgPrograms[channel.name];
         saveCinemagiaGuideCache(cinemagiaGuideMap);
         saveEpgCache();
+        markChannelRefreshed(channel.name);
+
         if (!silent || epgState.lastChannel?.name === channel.name) {
           epgState.mode = 'remote';
           epgState.updatedAt = new Date().toLocaleString('ro-RO', { hour12: false });
         }
         return true;
       } catch (e) {
-        if (!silent) epgState.mode = 'unavailable';
+        if (!silent && !background) epgState.mode = 'unavailable';
         return false;
       } finally {
         if (channel?.name) programTv.loadingSlug.delete(channel.name);
@@ -951,16 +981,16 @@
     }
 
     async function preloadDailyPrograms() {
-      const priority = ['A1 HD', 'TV 1000', 'NEWS24'];
+      const priority = ['PROTV HD', 'A1 HD', 'NEWS24', 'TV 1000', 'HB0', 'SUPERSPORT 1'];
       const byName = new Map(channels.map((c) => [c.name, c]));
       const priorityChannels = priority.map((name) => byName.get(name)).filter(Boolean);
-      const list = priorityChannels.concat(channels.filter((c) => !priority.includes(c.name)));
-      const concurrency = 4;
+      const list = priorityChannels.concat(channels.filter((c) => !priority.includes(c.name))).slice(0, 12);
+      const concurrency = 3;
       let idx = 0;
       const worker = async () => {
         while (idx < list.length) {
           const current = list[idx++];
-          await fetchProgramTvForChannel(current, { silent: true, force: true }).catch(() => false);
+          await fetchProgramTvForChannel(current, { silent: true, force: true, background: true }).catch(() => false);
         }
       };
       await Promise.all(Array.from({ length: Math.min(concurrency, list.length) }, worker));
@@ -1055,9 +1085,18 @@
         epgState.mode = 'loading';
         epgState.loadingUntil = Date.now() + 700;
         updateGuideStatus();
-        epgPrograms = {};
+
+        loadEpgSeedData();
+        epgPrograms = loadEpgCache();
         cinemagiaGuideMap = buildCinemagiaGuideMap(loadCinemagiaGuideCache());
-        hydrateProgramsFromCinemagiaMap();
+
+        if (!Object.keys(epgPrograms).length) {
+          hydrateProgramsFromCinemagiaMap();
+          ensureProgramsForAllChannels();
+        } else {
+          hydrateProgramsFromCinemagiaMap();
+        }
+
         epgState.mode = Object.keys(epgPrograms).length ? 'remote' : 'idle';
         epgState.updatedAt = null;
       } catch (error) {
@@ -1167,7 +1206,6 @@
     }
 
     function initCategories() {
-      els.category.innerHTML = '<option value="all">Toate categoriile</option>';
       const categories = [...new Set(channels.map(c => c.category))].sort();
       for (const cat of categories) {
         const opt = document.createElement('option');
@@ -1191,7 +1229,7 @@
     initCategories();
     render();
     loadEpgData().then(async () => {
-      await Promise.allSettled([withTimeout(preloadDailyPrograms(), 2500, null)]);
+      await Promise.allSettled([withTimeout(preloadDailyPrograms(), 3000, null)]);
       const startupChannel = channels[0];
       if (startupChannel) {
         openStream(startupChannel, { focus: false });
@@ -1205,6 +1243,16 @@
       if (epgState.lastChannel) updateGuide(epgState.lastChannel);
       else updateGuideStatus();
     }, 60000);
+
+    setInterval(() => {
+      const channel = epgState.lastChannel;
+      if (!channel) return;
+      fetchProgramTvForChannel(channel, { silent: true, force: true, background: true })
+        .then((ok) => {
+          if (ok && epgState.lastChannel?.name === channel.name) updateGuide(channel);
+        })
+        .catch(() => {});
+    }, 5 * 60 * 1000);
   </script>
 
 
