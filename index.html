@@ -185,7 +185,7 @@
   </div>
 
   <script>
-    const APP_VERSION = '2026-04-17.xmltv.1';
+    const APP_VERSION = '2026-04-17.xmltv.2';
     const channels = [
 
       {name:'PROTV HD',embed:'https://canale-tv.com/channel/pr0tv.html',category:'General',description:'Romanian general entertainment and news.'},
@@ -308,7 +308,12 @@
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania1.xml',
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania2.xml'
     ];
-    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v1';
+    const XMLTV_FETCH_VARIANTS = [
+      (url) => url,
+      (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+      (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+    ];
+    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v2';
     const EPG_CACHE_MAX_AGE_MS = 30 * 60 * 1000;
     const EPG_BACKGROUND_REFRESH_MS = 15 * 60 * 1000;
 
@@ -353,8 +358,8 @@
     };
 
     const preferredXmlNames = {
-      'PROTV HD': ['pro tv', 'protv'],
-      'A1 HD': ['antena 1', 'a1'],
+      'PROTV HD': ['pro tv', 'protv', 'pro tv.ro', 'protv.ro'],
+      'A1 HD': ['antena 1', 'antena1', 'a1'],
       'TVR1': ['tvr 1', 'tvr1'],
       'TVR2': ['tvr 2', 'tvr2'],
       'TVR 3': ['tvr 3', 'tvr3'],
@@ -369,11 +374,11 @@
       'NATIONAL 24 PLUS': ['national 24 plus'],
       'A3 CNN': ['antena 3 cnn', 'antena 3'],
       'ROMANIA TV': ['romania tv'],
-      'REALITATEA TV': ['realitatea plus', 'realitatea tv'],
+      'REALITATEA TV': ['realitatea plus', 'realitatea tv', 'realitatea'],
       'PRIMA NEWS': ['prima news'],
       'B1 TV': ['b1 tv'],
       'EURONEWS ROMANIA': ['euronews romania'],
-      'NEWS24': ['digi 24', 'news24'],
+      'NEWS24': ['digi 24', 'digi24', 'news24'],
       'SUPERSPORT 1': ['digi sport 1', 'supersport 1'],
       'SUPERSPORT 2': ['digi sport 2', 'supersport 2'],
       'SUPERSPORT 3': ['digi sport 3', 'supersport 3'],
@@ -382,7 +387,7 @@
       'HB0 2': ['hbo 2'],
       'HB0 3': ['hbo 3'],
       'FILM CAFE': ['film cafe'],
-      'TV 1000': ['viasat kino', 'kino tv', 'tv1000', 'tv 1000'],
+      'TV 1000': ['tv1000', 'tv 1000', 'viasat kino', 'kino tv'],
       'FlLM N0W': ['film now'],
       'EUR0SP0RT 1': ['eurosport 1'],
       'EUR0SP0RT 2': ['eurosport 2'],
@@ -434,8 +439,8 @@
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
         .replace(/0/g, 'o')
-        .replace(/1/g, 'i')
-        .replace(/\+/g, ' plus ')
+        .replace(/\bhb[o0]\b/g, 'hbo')
+                .replace(/\+/g, ' plus ')
         .replace(/&/g, ' and ')
         .replace(/\bcnn\b/g, ' cnn ')
         .replace(/\bhd\b/g, ' ')
@@ -798,29 +803,68 @@
       epgState.mode = 'ready';
     }
 
-    async function fetchXmlText() {
-      let lastError = null;
-      for (const source of XMLTV_SOURCES) {
-        try {
-          const response = await fetch(source, { cache: 'no-store' });
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
-          const text = await response.text();
-          if (!text || !text.includes('<tv')) {
-            throw new Error('XML invalid');
-          }
-          if (!text.includes('<programme')) {
-            throw new Error('XML fara programe');
-          }
-          epgState.sourceUsed = source.replace(/^https?:\/\//, '');
-          return text;
-        } catch (error) {
-          lastError = error;
-        }
-      }
-      throw lastError || new Error('Nu s-a putut incarca XMLTV');
-    }
 
-    function resolveXmlChannels(doc) {
+async function fetchTextWithTimeout(url, timeoutMs = 9000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, { cache: 'no-store', signal: controller.signal });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.text();
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function inspectXmlFreshness(doc) {
+  let programmeCount = 0;
+  let maxStop = null;
+  let minStart = null;
+  for (const programme of [...doc.querySelectorAll('programme')].slice(0, 5000)) {
+    const start = parseXmltvDate(programme.getAttribute('start'));
+    const stop = parseXmltvDate(programme.getAttribute('stop'));
+    if (start) {
+      programmeCount++;
+      if (!minStart || start < minStart) minStart = start;
+    }
+    const candidate = stop || start;
+    if (candidate && (!maxStop || candidate > maxStop)) maxStop = candidate;
+  }
+  return { programmeCount, maxStop, minStart };
+}
+
+function isFreshEnough(doc) {
+  const info = inspectXmlFreshness(doc);
+  const now = new Date();
+  if (!info.programmeCount || !info.maxStop) return false;
+  if (info.maxStop < new Date(now.getTime() - 6 * 60 * 60 * 1000)) return false;
+  return true;
+}
+
+
+async function fetchXmlText() {
+  let lastError = null;
+  for (const source of XMLTV_SOURCES) {
+    for (const buildVariant of XMLTV_FETCH_VARIANTS) {
+      const url = buildVariant(source);
+      try {
+        const text = await fetchTextWithTimeout(url, buildVariant === XMLTV_FETCH_VARIANTS[0] ? 8000 : 10000);
+        if (!text || !text.includes('<tv')) throw new Error('XML invalid');
+        if (!text.includes('<programme')) throw new Error('XML fara programe');
+        const doc = new DOMParser().parseFromString(text, 'text/xml');
+        if (doc.querySelector('parsererror')) throw new Error('Parser XMLTV invalid');
+        if (!isFreshEnough(doc)) throw new Error('Feed XMLTV vechi sau fara programe curente');
+        epgState.sourceUsed = url.replace(/^https?:\/\//, '');
+        return { text, doc };
+      } catch (error) {
+        lastError = error;
+      }
+    }
+  }
+  throw lastError || new Error('Nu s-a putut incarca XMLTV');
+}
+
+function resolveXmlChannels(doc) {
       const xmlChannels = [...doc.querySelectorAll('channel')].map((node) => {
         const id = node.getAttribute('id') || '';
         const displayNames = [...node.querySelectorAll('display-name')].map((n) => n.textContent?.trim()).filter(Boolean);
@@ -846,7 +890,7 @@
           }
         }
 
-        if (best && bestScore >= 65) {
+        if (best && bestScore >= 52) {
           matchedIds.add(best.id);
           matchedNames[local.name] = best.name;
           matchedIdByLocal[local.name] = best.id;
@@ -864,7 +908,7 @@
     function buildProgramsFromXml(doc) {
       const matchedIds = resolveXmlChannels(doc);
       const today = new Date();
-      const horizon = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+      const horizon = new Date(today.getTime() + 72 * 60 * 60 * 1000);
       const byId = {};
 
       for (const programme of [...doc.querySelectorAll('programme')]) {
@@ -874,7 +918,7 @@
         const start = parseXmltvDate(programme.getAttribute('start'));
         const stop = parseXmltvDate(programme.getAttribute('stop'));
         if (!start) continue;
-        if (stop && stop < new Date(today.getTime() - 2 * 60 * 60 * 1000)) continue;
+        if (stop && stop < new Date(today.getTime() - 12 * 60 * 60 * 1000)) continue;
         if (start > horizon) continue;
 
         const title = programme.querySelector('title')?.textContent?.trim();
@@ -908,10 +952,10 @@
         updateGuideStatus();
       }
       try {
-        const xmlText = await fetchXmlText();
-        const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
-        if (doc.querySelector('parsererror')) throw new Error('Parser XMLTV invalid');
+        const { doc } = await fetchXmlText();
         buildProgramsFromXml(doc);
+        const totalPrograms = Object.values(epgState.programsByChannel).reduce((sum, arr) => sum + (arr?.length || 0), 0);
+        if (!totalPrograms) throw new Error('Feed XMLTV incarcat, dar fara programe compatibile');
         epgState.updatedAt = new Date();
         epgState.mode = 'ready';
         saveCache();
