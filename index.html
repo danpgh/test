@@ -308,12 +308,7 @@
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania1.xml',
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania2.xml'
     ];
-    const XMLTV_FETCH_VARIANTS = [
-      (url) => url,
-      (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-      (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
-    ];
-    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v2';
+    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v1';
     const EPG_CACHE_MAX_AGE_MS = 30 * 60 * 1000;
     const EPG_BACKGROUND_REFRESH_MS = 15 * 60 * 1000;
 
@@ -358,8 +353,8 @@
     };
 
     const preferredXmlNames = {
-      'PROTV HD': ['pro tv', 'protv', 'pro tv.ro', 'protv.ro'],
-      'A1 HD': ['antena 1', 'antena1', 'a1'],
+      'PROTV HD': ['pro tv', 'protv'],
+      'A1 HD': ['antena 1', 'a1'],
       'TVR1': ['tvr 1', 'tvr1'],
       'TVR2': ['tvr 2', 'tvr2'],
       'TVR 3': ['tvr 3', 'tvr3'],
@@ -374,11 +369,11 @@
       'NATIONAL 24 PLUS': ['national 24 plus'],
       'A3 CNN': ['antena 3 cnn', 'antena 3'],
       'ROMANIA TV': ['romania tv'],
-      'REALITATEA TV': ['realitatea plus', 'realitatea tv', 'realitatea'],
+      'REALITATEA TV': ['realitatea plus', 'realitatea tv'],
       'PRIMA NEWS': ['prima news'],
       'B1 TV': ['b1 tv'],
       'EURONEWS ROMANIA': ['euronews romania'],
-      'NEWS24': ['digi 24', 'digi24', 'news24'],
+      'NEWS24': ['digi 24', 'news24'],
       'SUPERSPORT 1': ['digi sport 1', 'supersport 1'],
       'SUPERSPORT 2': ['digi sport 2', 'supersport 2'],
       'SUPERSPORT 3': ['digi sport 3', 'supersport 3'],
@@ -387,7 +382,7 @@
       'HB0 2': ['hbo 2'],
       'HB0 3': ['hbo 3'],
       'FILM CAFE': ['film cafe'],
-      'TV 1000': ['tv1000', 'tv 1000', 'viasat kino', 'kino tv'],
+      'TV 1000': ['viasat kino', 'kino tv', 'tv1000', 'tv 1000'],
       'FlLM N0W': ['film now'],
       'EUR0SP0RT 1': ['eurosport 1'],
       'EUR0SP0RT 2': ['eurosport 2'],
@@ -434,21 +429,19 @@
     }
 
     function normalizeChannelName(name) {
-      return String(name || '')
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/0/g, 'o')
-        .replace(/\bhb[o0]\b/g, 'hbo')
-                .replace(/\+/g, ' plus ')
-        .replace(/&/g, ' and ')
-        .replace(/\bcnn\b/g, ' cnn ')
-        .replace(/\bhd\b/g, ' ')
-        .replace(/\btv\b/g, ' tv ')
-        .replace(/[^a-z0-9]+/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-    }
+  return String(name || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/0/g, 'o')
+    .replace(/\+/g, ' plus ')
+    .replace(/&/g, ' and ')
+    .replace(/\bcnn\b/g, ' cnn ')
+    .replace(/\bhd\b/g, ' ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
     function tokenSet(value) {
       return new Set(normalizeChannelName(value).split(' ').filter(Boolean));
@@ -803,179 +796,244 @@
       epgState.mode = 'ready';
     }
 
-
-async function fetchTextWithTimeout(url, timeoutMs = 9000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const response = await fetch(url, { cache: 'no-store', signal: controller.signal });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return await response.text();
-  } finally {
-    clearTimeout(timer);
+    async function fetchSourceText(source) {
+  const endpoints = [source];
+  if (source.includes('raw.githubusercontent.com')) {
+    endpoints.push(source.replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/'));
   }
-}
-
-function inspectXmlFreshness(doc) {
-  let programmeCount = 0;
-  let maxStop = null;
-  let minStart = null;
-  for (const programme of [...doc.querySelectorAll('programme')].slice(0, 5000)) {
-    const start = parseXmltvDate(programme.getAttribute('start'));
-    const stop = parseXmltvDate(programme.getAttribute('stop'));
-    if (start) {
-      programmeCount++;
-      if (!minStart || start < minStart) minStart = start;
-    }
-    const candidate = stop || start;
-    if (candidate && (!maxStop || candidate > maxStop)) maxStop = candidate;
-  }
-  return { programmeCount, maxStop, minStart };
-}
-
-function isFreshEnough(doc) {
-  const info = inspectXmlFreshness(doc);
-  const now = new Date();
-  if (!info.programmeCount || !info.maxStop) return false;
-  if (info.maxStop < new Date(now.getTime() - 6 * 60 * 60 * 1000)) return false;
-  return true;
-}
-
-
-async function fetchXmlText() {
   let lastError = null;
-  for (const source of XMLTV_SOURCES) {
-    for (const buildVariant of XMLTV_FETCH_VARIANTS) {
-      const url = buildVariant(source);
-      try {
-        const text = await fetchTextWithTimeout(url, buildVariant === XMLTV_FETCH_VARIANTS[0] ? 8000 : 10000);
-        if (!text || !text.includes('<tv')) throw new Error('XML invalid');
-        if (!text.includes('<programme')) throw new Error('XML fara programe');
-        const doc = new DOMParser().parseFromString(text, 'text/xml');
-        if (doc.querySelector('parsererror')) throw new Error('Parser XMLTV invalid');
-        if (!isFreshEnough(doc)) throw new Error('Feed XMLTV vechi sau fara programe curente');
-        epgState.sourceUsed = url.replace(/^https?:\/\//, '');
-        return { text, doc };
-      } catch (error) {
-        lastError = error;
+  for (const endpoint of endpoints) {
+    try {
+      const response = await fetch(endpoint, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const text = await response.text();
+      if (!text || !text.includes('<tv') || !text.includes('<programme')) {
+        throw new Error('XML invalid');
       }
+      return { endpoint, text };
+    } catch (error) {
+      lastError = error;
     }
   }
   throw lastError || new Error('Nu s-a putut incarca XMLTV');
 }
 
-function resolveXmlChannels(doc) {
-      const xmlChannels = [...doc.querySelectorAll('channel')].map((node) => {
-        const id = node.getAttribute('id') || '';
-        const displayNames = [...node.querySelectorAll('display-name')].map((n) => n.textContent?.trim()).filter(Boolean);
-        return { id, displayNames };
-      }).filter(item => item.id && item.displayNames.length);
+function resolveXmlChannelsForDoc(doc) {
+  const xmlChannels = [...doc.querySelectorAll('channel')].map((node) => {
+    const id = node.getAttribute('id') || '';
+    const displayNames = [...node.querySelectorAll('display-name')].map((n) => n.textContent?.trim()).filter(Boolean);
+    return { id, displayNames };
+  }).filter(item => item.id && item.displayNames.length);
 
-      const matchedIds = new Set();
-      const matchedNames = {};
-      const matchedIdByLocal = {};
-      const unresolved = [];
+  const matchedIds = new Set();
+  const matchedNames = {};
+  const matchedIdByLocal = {};
+  const unresolved = {};
 
-      for (const local of channels) {
-        let best = null;
-        let bestScore = 0;
+  for (const local of channels) {
+    let best = null;
+    let bestScore = 0;
 
-        for (const xml of xmlChannels) {
-          for (const displayName of xml.displayNames) {
-            const score = scoreXmlName(local.name, displayName);
-            if (score > bestScore) {
-              bestScore = score;
-              best = { id: xml.id, name: displayName };
-            }
-          }
-        }
-
-        if (best && bestScore >= 52) {
-          matchedIds.add(best.id);
-          matchedNames[local.name] = best.name;
-          matchedIdByLocal[local.name] = best.id;
-        } else {
-          unresolved.push(local.name);
+    for (const xml of xmlChannels) {
+      for (const displayName of xml.displayNames) {
+        const score = scoreXmlName(local.name, displayName);
+        if (score > bestScore) {
+          bestScore = score;
+          best = { id: xml.id, name: displayName, score };
         }
       }
-
-      epgState.matchedXmlNameByChannel = matchedNames;
-      epgState.matchedXmlIdByChannel = matchedIdByLocal;
-      epgState.unresolvedChannels = unresolved;
-      return matchedIds;
     }
 
-    function buildProgramsFromXml(doc) {
-      const matchedIds = resolveXmlChannels(doc);
-      const today = new Date();
-      const horizon = new Date(today.getTime() + 72 * 60 * 60 * 1000);
-      const byId = {};
+    if (best && bestScore >= 58) {
+      matchedIds.add(best.id);
+      matchedNames[local.name] = best.name;
+      matchedIdByLocal[local.name] = best.id;
+    } else {
+      unresolved[local.name] = bestScore;
+    }
+  }
 
-      for (const programme of [...doc.querySelectorAll('programme')]) {
-        const channelId = programme.getAttribute('channel') || '';
-        if (!matchedIds.has(channelId)) continue;
+  return { matchedIds, matchedNames, matchedIdByLocal, unresolved };
+}
 
-        const start = parseXmltvDate(programme.getAttribute('start'));
-        const stop = parseXmltvDate(programme.getAttribute('stop'));
-        if (!start) continue;
-        if (stop && stop < new Date(today.getTime() - 12 * 60 * 60 * 1000)) continue;
-        if (start > horizon) continue;
+function sanitizeProgrammeText(value) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/^\s+|\s+$/g, '')
+    .slice(0, 220);
+}
 
-        const title = programme.querySelector('title')?.textContent?.trim();
-        if (!title) continue;
-        const desc = programme.querySelector('desc')?.textContent?.trim() || '';
-        const category = programme.querySelector('category')?.textContent?.trim() || '';
+function buildCandidateFromXml(doc, sourceLabel) {
+  const { matchedIds, matchedNames, matchedIdByLocal, unresolved } = resolveXmlChannelsForDoc(doc);
+  const now = new Date();
+  const staleCutoff = new Date(now.getTime() - 12 * 60 * 60 * 1000);
+  const horizon = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+  const byId = {};
 
-        if (!byId[channelId]) byId[channelId] = [];
-        byId[channelId].push({
-          start: start.toISOString(),
-          stop: stop ? stop.toISOString() : null,
-          title,
-          details: [category, desc].filter(Boolean).join(' • ').slice(0, 220)
-        });
+  for (const programme of [...doc.querySelectorAll('programme')]) {
+    const channelId = programme.getAttribute('channel') || '';
+    if (!matchedIds.has(channelId)) continue;
+
+    const start = parseXmltvDate(programme.getAttribute('start'));
+    const stop = parseXmltvDate(programme.getAttribute('stop'));
+    if (!start) continue;
+    if (stop && stop < staleCutoff) continue;
+    if (start > horizon) continue;
+
+    const title = sanitizeProgrammeText(programme.querySelector('title')?.textContent);
+    if (!title) continue;
+    const desc = sanitizeProgrammeText(programme.querySelector('desc')?.textContent || '');
+    const category = sanitizeProgrammeText(programme.querySelector('category')?.textContent || '');
+
+    if (!byId[channelId]) byId[channelId] = [];
+    byId[channelId].push({
+      start: start.toISOString(),
+      stop: stop ? stop.toISOString() : null,
+      title,
+      details: [category, desc].filter(Boolean).join(' • ').slice(0, 220)
+    });
+  }
+
+  const programsByChannel = {};
+  let totalPrograms = 0;
+  let channelsWithPrograms = 0;
+
+  for (const channel of channels) {
+    const xmlId = matchedIdByLocal[channel.name];
+    const items = (byId[xmlId] || []).sort((a, b) => new Date(a.start) - new Date(b.start));
+    programsByChannel[channel.name] = items;
+    totalPrograms += items.length;
+    if (items.length) channelsWithPrograms++;
+  }
+
+  return {
+    sourceLabel,
+    programsByChannel,
+    matchedXmlNameByChannel: matchedNames,
+    matchedXmlIdByChannel: matchedIdByLocal,
+    unresolvedChannels: Object.keys(unresolved),
+    totalPrograms,
+    channelsWithPrograms
+  };
+}
+
+function candidateItemQuality(localChannelName, candidate) {
+  const items = candidate.programsByChannel[localChannelName] || [];
+  const matchName = candidate.matchedXmlNameByChannel[localChannelName] || '';
+  const nameScore = matchName ? scoreXmlName(localChannelName, matchName) : 0;
+  const now = new Date();
+  const hasCurrent = items.some((item, idx) => {
+    const start = new Date(item.start);
+    const next = items[idx + 1] ? new Date(items[idx + 1].start) : null;
+    return start <= now && (!next || now < next);
+  });
+  return (Math.min(items.length, 24) * 4) + nameScore + (hasCurrent ? 30 : 0);
+}
+
+function applyMergedCandidates(candidates) {
+  const programsByChannel = {};
+  const matchedXmlNameByChannel = {};
+  const matchedXmlIdByChannel = {};
+  const unresolvedChannels = [];
+  const usedSources = new Set();
+
+  for (const channel of channels) {
+    let bestCandidate = null;
+    let bestScore = -1;
+
+    for (const candidate of candidates) {
+      const score = candidateItemQuality(channel.name, candidate);
+      if (score > bestScore) {
+        bestScore = score;
+        bestCandidate = candidate;
       }
-
-      const programsByChannel = {};
-      for (const channel of channels) {
-        const xmlId = epgState.matchedXmlIdByChannel[channel.name];
-        const items = (byId[xmlId] || []).sort((a, b) => new Date(a.start) - new Date(b.start));
-        programsByChannel[channel.name] = items;
-      }
-      epgState.programsByChannel = programsByChannel;
     }
 
-    async function refreshEpg({ background = false } = {}) {
-      if (epgState.refreshInFlight) return false;
-      epgState.refreshInFlight = true;
-      if (!background) {
-        epgState.mode = 'loading';
-        updateGuideStatus();
+    if (bestCandidate) {
+      programsByChannel[channel.name] = bestCandidate.programsByChannel[channel.name] || [];
+      if (bestCandidate.matchedXmlNameByChannel[channel.name]) {
+        matchedXmlNameByChannel[channel.name] = bestCandidate.matchedXmlNameByChannel[channel.name];
       }
+      if (bestCandidate.matchedXmlIdByChannel[channel.name]) {
+        matchedXmlIdByChannel[channel.name] = bestCandidate.matchedXmlIdByChannel[channel.name];
+      }
+      if ((bestCandidate.programsByChannel[channel.name] || []).length) {
+        usedSources.add(bestCandidate.sourceLabel);
+      } else {
+        unresolvedChannels.push(channel.name);
+      }
+    } else {
+      programsByChannel[channel.name] = [];
+      unresolvedChannels.push(channel.name);
+    }
+  }
+
+  epgState.programsByChannel = programsByChannel;
+  epgState.matchedXmlNameByChannel = matchedXmlNameByChannel;
+  epgState.matchedXmlIdByChannel = matchedXmlIdByChannel;
+  epgState.unresolvedChannels = unresolvedChannels;
+  epgState.sourceUsed = [...usedSources].join(', ');
+}
+
+async function refreshEpg({ background = false } = {}) {
+  if (epgState.refreshInFlight) return false;
+  epgState.refreshInFlight = true;
+  if (!background) {
+    epgState.mode = 'loading';
+    updateGuideStatus();
+  }
+
+  try {
+    const candidates = [];
+    let lastError = null;
+
+    for (const source of XMLTV_SOURCES) {
       try {
-        const { doc } = await fetchXmlText();
-        buildProgramsFromXml(doc);
-        const totalPrograms = Object.values(epgState.programsByChannel).reduce((sum, arr) => sum + (arr?.length || 0), 0);
-        if (!totalPrograms) throw new Error('Feed XMLTV incarcat, dar fara programe compatibile');
-        epgState.updatedAt = new Date();
-        epgState.mode = 'ready';
-        saveCache();
-        render();
-        if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
-        else updateGuideStatus();
-        return true;
-      } catch (error) {
-        console.error('EPG refresh failed', error);
-        if (!epgState.updatedAt) {
-          epgState.mode = 'error';
-          updateGuideStatus();
+        const { endpoint, text } = await fetchSourceText(source);
+        const doc = new DOMParser().parseFromString(text, 'text/xml');
+        if (doc.querySelector('parsererror')) throw new Error('Parser XMLTV invalid');
+        const candidate = buildCandidateFromXml(doc, endpoint.replace(/^https?:\/\//, ''));
+        if (candidate.totalPrograms > 0) {
+          candidates.push(candidate);
         }
-        return false;
-      } finally {
-        epgState.refreshInFlight = false;
+        if (candidate.channelsWithPrograms >= 35 && candidate.totalPrograms >= 250) {
+          break;
+        }
+      } catch (error) {
+        lastError = error;
       }
     }
 
-    async function initializeEpg() {
+    if (!candidates.length) {
+      throw lastError || new Error('XMLTV fara programe utile');
+    }
+
+    applyMergedCandidates(candidates);
+    const totalPrograms = Object.values(epgState.programsByChannel).reduce((sum, arr) => sum + arr.length, 0);
+    if (!totalPrograms) {
+      throw new Error('Nicio emisiune valida dupa mapare');
+    }
+
+    epgState.updatedAt = new Date();
+    epgState.mode = 'ready';
+    saveCache();
+    render();
+    if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
+    else updateGuideStatus();
+    return true;
+  } catch (error) {
+    console.error('EPG refresh failed', error);
+    if (!epgState.updatedAt) {
+      epgState.mode = 'error';
+      updateGuideStatus();
+    }
+    return false;
+  } finally {
+    epgState.refreshInFlight = false;
+  }
+}
+
+async function initializeEpg() {
       const cache = loadCache();
       if (cache) {
         applyCache(cache);
