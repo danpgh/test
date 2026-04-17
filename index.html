@@ -661,20 +661,20 @@
     async function loadProgramTvChannelIndex() {
       if (programTv.channelSlugs) return programTv.channelSlugs;
       const sourceUrl = encodeURIComponent('https://www.cinemagia.ro/program-tv/');
-      const response = await fetch(`https://api.allorigins.win/raw?url=${sourceUrl}`, { cache: 'no-store' });
+      const response = await fetch(`https://api.allorigins.win/raw?url=${sourceUrl}`, { cache: 'force-cache' });
       if (!response.ok) throw new Error('Nu s-a putut incarca indexul Cinemagia');
       const text = await response.text();
       const slugMap = {};
-      const re = /<option[^>]*value="https?:\/\/www\.cinemagia\.ro\/program-tv\/([^"\/]+)\/"[^>]*>([^<]+)<\/option>/gi;
-      let m;
-      while ((m = re.exec(text)) !== null) {
-        const slug = m[1].trim();
-        const label = m[2].trim();
+
+      const anchorRegex = /<a[^>]+href=["']https?:\/\/www\.cinemagia\.ro\/program-tv\/([^"'\/]+)\/["'][^>]*>([^<]+)<\/a>/gi;
+      let match;
+      while ((match = anchorRegex.exec(text)) !== null) {
+        const slug = (match[1] || '').trim();
+        const label = (match[2] || '').trim();
         if (!label || !slug || ['filme-la-tv', 'seriale-la-tv', 'grid', 'vertical'].includes(slug)) continue;
-        const normalizedLabel = normalizeChannelName(label);
-        slugMap[normalizedLabel] = slug;
-        slugMap[normalizedLabel.replace(/\s+/g, '')] = slug;
+        for (const key of buildChannelSearchKeys(label)) slugMap[key] = slug;
       }
+
       programTv.channelSlugs = slugMap;
       return slugMap;
     }
@@ -710,32 +710,28 @@
       if (!channel?.name) return null;
       if (directProgramTvSlugs[channel.name]) return directProgramTvSlugs[channel.name];
 
-      const normalized = normalizeChannelName(channel.name)
-        .replace(/\bhd\b/g, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-      const alias = channelAliasToProgramTv[normalizeChannelName(channel.name)] || channelAliasToProgramTv[normalized];
-      const candidates = new Set();
-      const pushCandidate = (value) => { if (value) candidates.add(value.trim()); };
-      pushCandidate(normalized);
-      pushCandidate(normalized.replace(/\s+/g, ''));
-      const numericSoft = normalized.replace(/\b\d\b/g, '').replace(/\s+/g, ' ').trim();
-      pushCandidate(numericSoft);
-      pushCandidate(numericSoft.replace(/\s+/g, ''));
-      pushCandidate(normalized.replace(/0/g, 'o'));
-      pushCandidate(normalized.replace(/0/g, 'o').replace(/\s+/g, ''));
+      const normalizedName = normalizeChannelName(channel.name);
+      const alias = channelAliasToProgramTv[normalizedName] || null;
+      const candidates = new Set(buildChannelSearchKeys(channel.name));
       if (alias) {
-        pushCandidate(alias);
-        pushCandidate(alias.replace(/\s+/g, ''));
+        for (const key of buildChannelSearchKeys(alias)) candidates.add(key);
       }
 
-      for (const key of candidates) {
-        if (slugMap[key]) return slugMap[key];
+      let bestSlug = null;
+      let bestScore = 0;
+      for (const [key, slug] of Object.entries(slugMap || {})) {
+        for (const candidate of candidates) {
+          const score = scoreChannelMatch(candidate, key);
+          if (score > bestScore) {
+            bestScore = score;
+            bestSlug = slug;
+          }
+        }
       }
 
-      const fallbackLabel = alias || normalized;
-      if (!fallbackLabel) return null;
-      return fallbackLabel.replace(/\s+/g, '-');
+      if (bestSlug && bestScore >= 0.55) return bestSlug;
+      const fallbackLabel = alias || channel.name;
+      return normalizeChannelName(fallbackLabel).replace(/\s+/g, '-');
     }
 
     function parseProgramTvSchedule(markdown) {
@@ -750,11 +746,10 @@
         .replace(/\s+/g, ' ')
         .trim();
 
-      const mainBlockMatch = String(markdown).match(/<div id="morning-scrollbarContent"[\s\S]*?<\/div>\s*<\/div>/i);
-      const mainBlock = mainBlockMatch ? mainBlockMatch[0] : String(markdown);
-      const firstColumnMatch = mainBlock.match(/<td class="container_events"[^>]*>([\s\S]*?)<\/td>\s*<td class="container_events"/i);
-      const column = firstColumnMatch ? firstColumnMatch[1] : mainBlock;
-      const matchList = [...column.matchAll(/<td class="ora"[^>]*>[\s\S]*?<div>(\d{2}:\d{2})<\/div>[\s\S]*?<td class="event"[^>]*>[\s\S]*?<div class="title">([\s\S]*?)<\/div>/gi)];
+      const html = String(markdown || '');
+      const mainBlockMatch = html.match(/<div[^>]+id="(?:morning-scrollbarContent|program-tv-content)"[\s\S]*?<\/table>/i);
+      const mainBlock = mainBlockMatch ? mainBlockMatch[0] : html;
+      const matchList = [...mainBlock.matchAll(/(?:^|>|\s)(\d{2}:\d{2})\s*<\/div>[\s\S]{0,500}?<div class="title">([\s\S]*?)<\/div>/gi)];
       const items = [];
       const seen = new Set();
       for (const match of matchList) {
@@ -836,8 +831,8 @@
       const priority = ['A1 HD', 'TV 1000', 'NEWS24'];
       const byName = new Map(channels.map((c) => [c.name, c]));
       const priorityChannels = priority.map((name) => byName.get(name)).filter(Boolean);
-      const list = priorityChannels.concat(channels.filter((c) => !priority.includes(c.name)));
-      const concurrency = 12;
+      const list = priorityChannels.concat(channels.filter((c) => !priority.includes(c.name)).slice(0, 12));
+      const concurrency = 4;
       let idx = 0;
       const worker = async () => {
         while (idx < list.length) {
@@ -1049,6 +1044,7 @@
     }
 
     function initCategories() {
+      els.category.innerHTML = '<option value="all">Toate categoriile</option>';
       const categories = [...new Set(channels.map(c => c.category))].sort();
       for (const cat of categories) {
         const opt = document.createElement('option');
