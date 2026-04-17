@@ -1,117 +1,49 @@
 <!DOCTYPE html>
-<!-- saved from url=(0028)https://danpgh.github.io/tv/ -->
-<html lang="ro"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPTV Quick Grid</title>
   <style>
     :root { --bg:#090b12; --panel:#111522; --border:#27304a; --text:#ebefff; --muted:#98a3c7; --accent:#6f8cff; --fav:#ffd166; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:radial-gradient(circle at top right,#1c2548 0%,#0e1220 42%,var(--bg) 100%); color:var(--text); min-height:100vh; }
-    .wrap {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 14px;
-      padding-right: 14px;
-      padding-bottom: 28px;
-    }
+    .wrap { max-width:1600px; margin:0 auto; padding:14px 14px 28px; }
     .panel { background:linear-gradient(180deg, rgba(22,28,44,.92), rgba(14,18,30,.95)); border:1px solid var(--border); border-radius:14px; padding:12px; }
-    h1 { margin:0 0 6px; font-size:1.15rem; }
     .hint { margin:0; color:var(--muted); font-size:.9rem; }
     .top { display:grid; gap:10px; margin-bottom:12px; }
     .controls { display:grid; grid-template-columns:auto 1fr 220px auto; gap:8px; }
     input,select { width:100%; border:1px solid var(--border); border-radius:10px; background:#0f1322; color:var(--text); padding:10px 12px; outline:none; }
     button { border:1px solid var(--border); border-radius:0 !important; background:#131a2d; color:var(--text); padding:7px 9px; font-size:.82rem; cursor:pointer; min-height:38px; }
     button.active { border-color:var(--accent); color:#dce4ff; }
-    .notice { color:#bfcef8; font-size:.84rem; line-height:1.35; }
-    .quick-nav { display:flex; gap:8px; flex-wrap:wrap; }
-    .quick-nav button { padding:5px 10px; font-weight:600; min-width:112px; }
-    .quick-nav button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-
-    .panel-focus {
-      box-shadow: 0 0 0 2px rgba(111,140,255,.75), 0 14px 30px rgba(0,0,0,.45);
-      transition: box-shadow .25s ease;
-    }
-    .media-row {
-      display:grid;
-      grid-template-columns:minmax(520px, 1.55fr) minmax(320px, 0.95fr);
-      gap:10px;
-      align-items:start;
-      margin-bottom:12px;
-    }
-    .player {
-      width: 100%;
-      margin: 0;
-      background:rgba(10,14,24,.95);
-      border:1px solid var(--border);
-      border-radius:12px;
-      overflow:visible;
-      box-shadow:0 14px 30px rgba(0,0,0,.45);
-      position: relative;
-      z-index: 2;
-    }
-    .tv-guide {
-      width: 100%;
-      position: relative;
-      margin: 0;
-      z-index: 1;
-      background: rgba(10,14,24,.95);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 8px;
-      box-shadow: 0 12px 22px rgba(0,0,0,.35);
-    }
+    .panel-focus { box-shadow:0 0 0 2px rgba(111,140,255,.75), 0 14px 30px rgba(0,0,0,.45); transition:box-shadow .25s ease; }
+    .media-row { display:grid; grid-template-columns:minmax(520px,1.55fr) minmax(320px,.95fr); gap:10px; align-items:start; margin-bottom:12px; }
+    .player { width:100%; background:rgba(10,14,24,.95); border:1px solid var(--border); border-radius:12px; overflow:visible; box-shadow:0 14px 30px rgba(0,0,0,.45); position:relative; z-index:2; }
+    .tv-guide { width:100%; position:relative; z-index:1; background:rgba(10,14,24,.95); border:1px solid var(--border); border-radius:12px; padding:8px; box-shadow:0 12px 22px rgba(0,0,0,.35); }
     .guide-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px; }
-    .guide-title { margin: 0; font-size: 1.28rem; color: #c9d3f7; font-weight:700; }
+    .guide-title { margin:0; font-size:1.28rem; color:#c9d3f7; font-weight:700; }
     .guide-badge { font-size:1.05rem; border:1px solid #3a4a7b; background:#1a2444; color:#ccdaff; border-radius:999px; padding:4px 10px; }
     .guide-badge.live { border-color:#2f8762; background:#123527; color:#8df0be; }
-    .guide-list { max-height: 360px; overflow-y: auto; padding-right: 4px; }
-    .guide-row { display: grid; grid-template-columns: 92px 1fr; gap: 10px; font-size: 1.16rem; margin-bottom: 10px; }
-    .guide-row.now .guide-time { color: #8df0be; font-weight: 700; }
-    .guide-row.now .guide-show { color: #f2fff8; }
-    .guide-time { color: #9db0eb; }
-    .guide-show { color: #e1e8ff; line-height:1.35; }
+    .guide-list { max-height:360px; overflow-y:auto; padding-right:4px; }
+    .guide-row { display:grid; grid-template-columns:92px 1fr; gap:10px; font-size:1.05rem; margin-bottom:10px; }
+    .guide-row.now .guide-time { color:#8df0be; font-weight:700; }
+    .guide-row.now .guide-show { color:#f2fff8; }
+    .guide-time { color:#9db0eb; }
+    .guide-show { color:#e1e8ff; line-height:1.35; }
+    .guide-show small { color:var(--muted); font-size:.8em; }
     .player-head { display:flex; justify-content:space-between; gap:10px; align-items:center; padding:8px 10px; }
     .player-title { margin:0; font-size:.95rem; }
     .player-tools { display:flex; align-items:center; gap:8px; }
     .player-meta { color:var(--muted); font-size:.82rem; }
     .player-ch { min-height:30px; padding:5px 10px; font-size:.72rem; font-weight:700; }
-    .player-wrap {
-      position:relative;
-      border-top:1px solid var(--border);
-      overflow:visible;
-      background:#000;
-      aspect-ratio:16/9;
-      min-height: 360px;
-      max-height: 520px;
-      padding-right: 0;
-    }
-    .player-frame {
-      width: calc(100% + 28px);
-      margin-left: -14px;
-      height:100%;
-      border:0;
-      background:#000;
-    }
+    .player-wrap { position:relative; border-top:1px solid var(--border); overflow:visible; background:#000; aspect-ratio:16/9; min-height:360px; max-height:520px; }
+    .player-frame { width:calc(100% + 28px); margin-left:-14px; height:100%; border:0; background:#000; }
     .grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; }
     .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:8px; display:grid; gap:6px; min-height:96px; cursor:pointer; }
     .card.dragging { opacity:.5; border-style:dashed; }
     .title-row { display:flex; align-items:center; gap:8px; }
     .tv-logo { width:22px; height:22px; object-fit:contain; border-radius:3px; background:#0d1323; border:1px solid #2a365a; padding:2px; }
-    .tv-logo-fallback {
-      width:22px;
-      height:22px;
-      border-radius:3px;
-      border:1px solid #2a365a;
-      display:grid;
-      place-items:center;
-      font-size:.55rem;
-      color:#dce6ff;
-      background:linear-gradient(180deg,#253667,#1a2444);
-      font-weight:700;
-      letter-spacing:.02em;
-      text-transform:uppercase;
-    }
+    .tv-logo-fallback { width:22px; height:22px; border-radius:3px; border:1px solid #2a365a; display:grid; place-items:center; font-size:.55rem; color:#dce6ff; background:linear-gradient(180deg,#253667,#1a2444); font-weight:700; letter-spacing:.02em; text-transform:uppercase; }
     .card.active { border-color:var(--accent); }
     .card-header { display:flex; align-items:start; justify-content:space-between; gap:8px; }
     .title { margin:0; font-size:.82rem; line-height:1.2; }
@@ -122,26 +54,11 @@
     .fav { width:32px; height:32px; padding:0; }
     .fav.active { color:var(--fav); border-color:var(--fav); }
     .empty { color:var(--muted); text-align:center; padding:20px 0; }
-
-    @media (max-width:1400px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
-    @media (max-width:1160px) {
-      .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-      .guide-list { max-height: 280px; }
-      .player-wrap { min-height: 300px; max-height: 400px; }
-    }
-    @media (max-width:900px) {
-      .controls { grid-template-columns:1fr; }
-      .media-row { grid-template-columns:1fr; }
-      .grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
-      .wrap { padding-bottom: 230px; }
-    }
-    @media (max-width:680px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media (max-width:430px) {
-      .grid { grid-template-columns:1fr; }
-      .guide-list { max-height: 180px; }
-      .player-wrap { min-height: 220px; max-height: 280px; }
-      .wrap { padding-bottom: 20px; }
-    }
+    @media (max-width:1400px){ .grid{grid-template-columns:repeat(4,minmax(0,1fr));} }
+    @media (max-width:1160px){ .grid{grid-template-columns:repeat(4,minmax(0,1fr));} .guide-list{max-height:280px;} .player-wrap{min-height:300px; max-height:400px;} }
+    @media (max-width:900px){ .controls{grid-template-columns:1fr;} .media-row{grid-template-columns:1fr;} .grid{grid-template-columns:repeat(3,minmax(0,1fr));} .wrap{padding-bottom:230px;} }
+    @media (max-width:680px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    @media (max-width:430px){ .grid{grid-template-columns:1fr;} .guide-list{max-height:180px;} .player-wrap{min-height:220px; max-height:280px;} .wrap{padding-bottom:20px;} }
   </style>
 </head>
 <body>
@@ -167,27 +84,26 @@
           </div>
         </div>
         <div class="player-wrap">
-          <iframe id="playerFrame" class="player-frame" title="IPTV Preview" allow="autoplay *; fullscreen *" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" loading="eager" src="about:blank"></iframe>
+          <iframe id="playerFrame" class="player-frame" title="IPTV Preview" allow="autoplay *; fullscreen *" allowfullscreen webkitallowfullscreen mozallowfullscreen loading="eager" src="about:blank"></iframe>
         </div>
       </section>
 
       <section class="tv-guide" id="tvGuide">
         <div class="guide-head">
           <h3 class="guide-title">Program TV</h3>
-          <span class="guide-badge live" id="guideStatus">Program actualizat (10.03.2026, 14:00:00) • 11:33</span>
+          <span class="guide-badge" id="guideStatus">Se incarca ghidul TV...</span>
         </div>
         <div class="guide-list" id="guideList"><div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Se incarca programul...</span></div></div>
       </section>
     </div>
 
     <section class="grid" id="channelGrid"></section>
-    <p class="hint"><span id="appVersion">v2026-04-01.8</span></p>
+    <p class="hint"><span id="appVersion"></span></p>
   </div>
 
   <script>
-    const APP_VERSION = '2026-04-17.xmltv.2';
+    const APP_VERSION = '2026-04-17.v5-clean';
     const channels = [
-
       {name:'PROTV HD',embed:'https://canale-tv.com/channel/pr0tv.html',category:'General',description:'Romanian general entertainment and news.'},
       {name:'A1 HD',embed:'https://canale-tv.com/channel/a1.html',category:'General',description:'Popular Romanian general TV content.'},
       {name:'TVR1',embed:'https://canale-tv.com/channel/tvr1.html',category:'General',description:'Romanian public broadcaster main channel.'},
@@ -299,18 +215,54 @@
       'PROTV HD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/PRO_TV_Logo.svg/120px-PRO_TV_Logo.svg.png',
       'A1 HD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Antena_1_2016_logo.svg/120px-Antena_1_2016_logo.svg.png',
       'TVR1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/TVR_1_logo_2019.svg/120px-TVR_1_logo_2019.svg.png',
-      'DIGI SPORT 1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Digi_Sport_logo.svg/120px-Digi_Sport_logo.svg.png',
       'BBC NEWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/BBC_News_2022_%28Alt%29.svg/120px-BBC_News_2022_%28Alt%29.svg.png'
     };
 
     const XMLTV_SOURCES = [
+      'https://iptv-org.github.io/epg/guides/ro.xml',
       'https://iptv-epg.org/files/epg-ro.xml',
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania1.xml',
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania2.xml'
     ];
-    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v1';
-    const EPG_CACHE_MAX_AGE_MS = 30 * 60 * 1000;
+    const FETCHERS = [
+      (url) => url,
+      (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+      (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+    ];
+    const EPG_CACHE_KEY = 'iptv-xmltv-v5-cache';
+    const EPG_CACHE_MAX_AGE_MS = 60 * 60 * 1000;
     const EPG_BACKGROUND_REFRESH_MS = 15 * 60 * 1000;
+
+    const aliasMap = {
+      'protv hd': ['pro tv', 'protv'],
+      'a1 hd': ['antena 1', 'a1'],
+      'tvr1': ['tvr 1'],
+      'tvr2': ['tvr 2'],
+      'tvr 3': ['tvr 3'],
+      'tvr international': ['tvr international'],
+      'canal d': ['kanal d', 'canal d'],
+      'canal d2': ['kanal d2', 'canal d2'],
+      'a3 cnn': ['antena 3 cnn', 'antena 3'],
+      'realitatea tv': ['realitatea plus', 'realitatea tv'],
+      'news24': ['digi 24', 'news24'],
+      'supersport 1': ['digi sport 1', 'supersport 1'],
+      'supersport 2': ['digi sport 2', 'supersport 2'],
+      'supersport 3': ['digi sport 3', 'supersport 3'],
+      'supersport 4': ['digi sport 4', 'supersport 4'],
+      'eur0sp0rt 1': ['eurosport 1'],
+      'eur0sp0rt 2': ['eurosport 2'],
+      'hb0': ['hbo'],
+      'hb0 2': ['hbo 2'],
+      'hb0 3': ['hbo 3'],
+      'tv 1000': ['viasat kino', 'kino tv', 'tv1000', 'tv 1000'],
+      'film cafe': ['film cafe'],
+      'flilm now': ['film now'],
+      'flim now': ['film now'],
+      'f1lm b0x': ['filmbox', 'film box'],
+      'f1lm b0x extra': ['filmbox extra'],
+      'f1lm b0x premium': ['filmbox premium'],
+      'fish and hunting tv': ['fish hunting', 'fish and hunting']
+    };
 
     const appState = {
       playing: null,
@@ -344,7 +296,6 @@
       programsByChannel: {},
       matchedXmlNameByChannel: {},
       matchedXmlIdByChannel: {},
-      unresolvedChannels: [],
       updatedAt: null,
       sourceUsed: null,
       mode: 'idle',
@@ -352,155 +303,54 @@
       refreshInFlight: false
     };
 
-    const preferredXmlNames = {
-      'PROTV HD': ['pro tv', 'protv'],
-      'A1 HD': ['antena 1', 'a1'],
-      'TVR1': ['tvr 1', 'tvr1'],
-      'TVR2': ['tvr 2', 'tvr2'],
-      'TVR 3': ['tvr 3', 'tvr3'],
-      'TVR INTERNATIONAL': ['tvr international'],
-      'CANAL D': ['kanal d', 'canal d'],
-      'CANAL D2': ['kanal d2', 'canal d2'],
-      'PRIMA TV': ['prima tv'],
-      'NATIONAL TV': ['national tv'],
-      'ACASA TV': ['acasa', 'acasatv'],
-      'ACASA GOLD': ['acasa gold'],
-      'ANTENA STARS': ['antena stars'],
-      'NATIONAL 24 PLUS': ['national 24 plus'],
-      'A3 CNN': ['antena 3 cnn', 'antena 3'],
-      'ROMANIA TV': ['romania tv'],
-      'REALITATEA TV': ['realitatea plus', 'realitatea tv'],
-      'PRIMA NEWS': ['prima news'],
-      'B1 TV': ['b1 tv'],
-      'EURONEWS ROMANIA': ['euronews romania'],
-      'NEWS24': ['digi 24', 'news24'],
-      'SUPERSPORT 1': ['digi sport 1', 'supersport 1'],
-      'SUPERSPORT 2': ['digi sport 2', 'supersport 2'],
-      'SUPERSPORT 3': ['digi sport 3', 'supersport 3'],
-      'SUPERSPORT 4': ['digi sport 4', 'supersport 4'],
-      'HB0': ['hbo'],
-      'HB0 2': ['hbo 2'],
-      'HB0 3': ['hbo 3'],
-      'FILM CAFE': ['film cafe'],
-      'TV 1000': ['viasat kino', 'kino tv', 'tv1000', 'tv 1000'],
-      'FlLM N0W': ['film now'],
-      'EUR0SP0RT 1': ['eurosport 1'],
-      'EUR0SP0RT 2': ['eurosport 2'],
-      'F1lm B0X': ['filmbox', 'film box'],
-      'F1lm B0X Extra': ['filmbox extra', 'film box extra'],
-      'F1lm B0X Premium': ['filmbox premium', 'film box premium'],
-      'Fish & Hunting TV': ['fish hunting', 'fish & hunting'],
-      'Canal 33': ['canal 33']
-    };
-
-    function saveState() {
-      localStorage.setItem('iptv-favorites', JSON.stringify([...appState.favorites]));
-    }
-
-    function orderedChannels() {
-      if (!appState.order.length) return channels.slice();
-      const rank = new Map(appState.order.map((name, idx) => [name, idx]));
-      return channels.slice().sort((a, b) => (rank.get(a.name) ?? 9999) - (rank.get(b.name) ?? 9999) || a.name.localeCompare(b.name));
-    }
-
-    function saveOrder() {
-      localStorage.setItem('iptv-order', JSON.stringify(appState.order));
-    }
-
-    function moveChannelBefore(draggedName, targetName) {
-      const list = orderedChannels().map(c => c.name);
-      const from = list.indexOf(draggedName);
-      const to = list.indexOf(targetName);
-      if (from === -1 || to === -1 || from === to) return;
-      const [item] = list.splice(from, 1);
-      list.splice(to, 0, item);
-      appState.order = list;
-      saveOrder();
-    }
-
-    function isFavorite(name) {
-      return appState.favorites.has(name);
-    }
-
-    function toggleFavorite(name) {
-      appState.favorites.has(name) ? appState.favorites.delete(name) : appState.favorites.add(name);
-      saveState();
-      render();
-    }
-
     function normalizeChannelName(name) {
-  return String(name || '')
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/0/g, 'o')
-    .replace(/\+/g, ' plus ')
-    .replace(/&/g, ' and ')
-    .replace(/\bcnn\b/g, ' cnn ')
-    .replace(/\bhd\b/g, ' ')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+      return String(name || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/0/g, 'o')
+        .replace(/\+/g, ' plus ')
+        .replace(/&/g, ' and ')
+        .replace(/\bhd\b/g, ' ')
+        .replace(/\.ro\b/g, ' ')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
 
     function tokenSet(value) {
       return new Set(normalizeChannelName(value).split(' ').filter(Boolean));
     }
 
-    function buildNameCandidates(channelName) {
-      const direct = preferredXmlNames[channelName] || [];
-      const normalized = normalizeChannelName(channelName);
-      const noSpaces = normalized.replace(/\s+/g, '');
-      const out = new Set([normalized, noSpaces]);
-      for (const item of direct) {
-        const n = normalizeChannelName(item);
-        out.add(n);
-        out.add(n.replace(/\s+/g, ''));
+    function buildCandidates(localName) {
+      const normalized = normalizeChannelName(localName);
+      const list = new Set([normalized, normalized.replace(/\s+/g, '')]);
+      const aliases = aliasMap[normalized] || [];
+      for (const alias of aliases) {
+        const n = normalizeChannelName(alias);
+        list.add(n);
+        list.add(n.replace(/\s+/g, ''));
       }
-      if (normalized.includes('hbo')) {
-        out.add(normalized.replace('hbo', 'hb0'));
-        out.add(normalized.replace('hbo', 'hb0').replace(/\s+/g, ''));
-      }
-      return [...out].filter(Boolean);
+      return [...list].filter(Boolean);
     }
 
-    function scoreXmlName(localName, xmlName) {
-      const localCandidates = buildNameCandidates(localName);
+    function scoreMatch(localName, xmlName) {
       const xmlNorm = normalizeChannelName(xmlName);
       const xmlCompact = xmlNorm.replace(/\s+/g, '');
-      if (!xmlNorm) return 0;
-
-      for (const candidate of localCandidates) {
-        if (candidate === xmlNorm || candidate === xmlCompact) return 100;
+      const candidates = buildCandidates(localName);
+      for (const c of candidates) {
+        if (c === xmlNorm || c === xmlCompact) return 100;
+        if (xmlNorm.includes(c) || c.includes(xmlNorm)) return 88;
       }
-
       const localTokens = tokenSet(localName);
       const xmlTokens = tokenSet(xmlName);
-      if (!localTokens.size || !xmlTokens.size) return 0;
-
       let overlap = 0;
-      for (const token of localTokens) {
-        if (xmlTokens.has(token)) overlap++;
-      }
-
-      let score = (overlap / Math.max(localTokens.size, xmlTokens.size)) * 60;
-
-      const bestCandidate = localCandidates.find(candidate =>
-        candidate && (xmlNorm.includes(candidate) || xmlCompact.includes(candidate) || candidate.includes(xmlNorm))
-      );
-      if (bestCandidate) score += 25;
-
-      if (/\b\d\b/.test(normalizeChannelName(localName))) {
-        const localNumber = (normalizeChannelName(localName).match(/\b(\d)\b/) || [])[1];
-        const xmlNumber = (xmlNorm.match(/\b(\d)\b/) || [])[1];
-        if (localNumber && xmlNumber) {
-          score += localNumber === xmlNumber ? 12 : -25;
-        }
-      }
-
-      if (xmlNorm.includes('radio')) score -= 20;
-      if (xmlNorm.includes('international') && !normalizeChannelName(localName).includes('international')) score -= 8;
-
+      for (const t of localTokens) if (xmlTokens.has(t)) overlap++;
+      const max = Math.max(localTokens.size, xmlTokens.size) || 1;
+      let score = (overlap / max) * 75;
+      const localNum = normalizeChannelName(localName).match(/\b(\d)\b/)?.[1] || '';
+      const xmlNum = xmlNorm.match(/\b(\d)\b/)?.[1] || '';
+      if (localNum || xmlNum) score += localNum === xmlNum ? 10 : -25;
       return score;
     }
 
@@ -514,21 +364,32 @@
       return Number.isNaN(date.getTime()) ? null : date;
     }
 
-    function formatClock(date) {
-      return date.toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit', hour12: false });
+    function formatClock(date) { return date.toLocaleTimeString('ro-RO', { hour:'2-digit', minute:'2-digit', hour12:false }); }
+    function formatStamp(date) { return date.toLocaleString('ro-RO', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false }); }
+    function escapeHtml(value) { return String(value || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+    function saveState() { localStorage.setItem('iptv-favorites', JSON.stringify([...appState.favorites])); }
+    function saveOrder() { localStorage.setItem('iptv-order', JSON.stringify(appState.order)); }
+    function getProgramsForChannel(name) { return epgState.programsByChannel[name] || []; }
+
+    function orderedChannels() {
+      if (!appState.order.length) return channels.slice();
+      const rank = new Map(appState.order.map((name, idx) => [name, idx]));
+      return channels.slice().sort((a, b) => (rank.get(a.name) ?? 9999) - (rank.get(b.name) ?? 9999) || a.name.localeCompare(b.name));
     }
 
-    function formatStamp(date) {
-      return date.toLocaleString('ro-RO', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      });
+    function moveChannelBefore(draggedName, targetName) {
+      const list = orderedChannels().map(c => c.name);
+      const from = list.indexOf(draggedName);
+      const to = list.indexOf(targetName);
+      if (from === -1 || to === -1 || from === to) return;
+      const [item] = list.splice(from, 1);
+      list.splice(to, 0, item);
+      appState.order = list;
+      saveOrder();
     }
+
+    function isFavorite(name) { return appState.favorites.has(name); }
+    function toggleFavorite(name) { appState.favorites.has(name) ? appState.favorites.delete(name) : appState.favorites.add(name); saveState(); render(); }
 
     function buildStreamUrl(url) {
       const u = new URL(url);
@@ -541,18 +402,36 @@
       if (!panel) return;
       panel.classList.add('panel-focus');
       setTimeout(() => panel.classList.remove('panel-focus'), 1200);
-      panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      panel.scrollIntoView({ behavior:'smooth', block:'center' });
     }
 
-    function getProgramsForChannel(channelName) {
-      return epgState.programsByChannel[channelName] || [];
+    function filteredChannels() {
+      const q = appState.search.toLowerCase();
+      return orderedChannels()
+        .filter(c => appState.category === 'all' || c.category === appState.category)
+        .filter(c => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q))
+        .filter(c => !appState.favoritesOnly || isFavorite(c.name));
+    }
+
+    function initialsForChannel(name) {
+      const cleaned = String(name || '').replace(/\b(HD|TV)\b/gi,'').replace(/[^A-Za-z0-9 ]+/g,' ').trim();
+      const parts = cleaned.split(/\s+/).filter(Boolean);
+      if (!parts.length) return 'TV';
+      return parts.slice(0,2).map(part => part[0]).join('').toUpperCase();
+    }
+
+    function getLogoHtml(channelName) {
+      const logoUrl = channelLogos[channelName];
+      const initials = initialsForChannel(channelName);
+      if (!logoUrl) return `<span class="tv-logo-fallback" aria-hidden="true">${initials}</span>`;
+      return `<img class="tv-logo" src="${logoUrl}" alt="${channelName} logo" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tv-logo-fallback',textContent:'${initials}','ariaHidden':'true'}));" />`;
     }
 
     function updateGuideStatus(extraText = '') {
       const nowText = formatClock(new Date());
       if (epgState.mode === 'loading') {
         els.guideStatus.classList.remove('live');
-        els.guideStatus.textContent = `Se incarca programul XMLTV... • ${nowText}`;
+        els.guideStatus.textContent = `Se incarca ghidul TV... • ${nowText}`;
         return;
       }
       if (epgState.mode === 'ready' && epgState.updatedAt) {
@@ -578,12 +457,12 @@
         return;
       }
 
-      const items = getProgramsForChannel(channel.name).slice().sort((a, b) => new Date(a.start) - new Date(b.start));
+      const items = getProgramsForChannel(channel.name).slice().sort((a,b) => new Date(a.start) - new Date(b.start));
       if (!items.length) {
-        const matchName = epgState.matchedXmlNameByChannel[channel.name];
+        const mapped = epgState.matchedXmlNameByChannel[channel.name];
         els.playerMeta.textContent = 'Acum: - • Next: -';
-        els.guideList.innerHTML = `<div class="guide-row"><span class="guide-time">N/A</span><span class="guide-show">Nu sunt date de program pentru acest post${matchName ? ` (mapat la ${matchName})` : ''}.</span></div>`;
-        updateGuideStatus(matchName ? `mapat: ${matchName}` : '');
+        els.guideList.innerHTML = `<div class="guide-row"><span class="guide-time">N/A</span><span class="guide-show">Nu sunt date de program pentru acest post.${mapped ? ` Mapat: ${escapeHtml(mapped)}` : ''}</span></div>`;
+        updateGuideStatus(mapped ? `mapat: ${mapped}` : '');
         return;
       }
 
@@ -599,105 +478,20 @@
           nextShow = items[idx + 1]?.title || null;
         }
         const label = isNow ? 'Acum' : formatClock(start);
-        return `<div class="guide-row ${isNow ? 'now' : ''}"><span class="guide-time">${label}</span><span class="guide-show">${escapeHtml(item.title)}${item.details ? `<br><small style="color:#98a3c7;">${escapeHtml(item.details)}</small>` : ''}</span></div>`;
+        return `<div class="guide-row ${isNow ? 'now' : ''}"><span class="guide-time">${label}</span><span class="guide-show">${escapeHtml(item.title)}${item.details ? `<br><small>${escapeHtml(item.details)}</small>` : ''}</span></div>`;
       });
-
       if (!currentShow) {
         currentShow = items[0]?.title || '-';
         nextShow = items[1]?.title || null;
       }
-
       els.playerMeta.textContent = `Acum: ${currentShow || '-'} • Next: ${nextShow || '-'}`;
       els.guideList.innerHTML = rows.join('');
-      const matchName = epgState.matchedXmlNameByChannel[channel.name];
-      updateGuideStatus(matchName ? `mapat: ${matchName}` : '');
-
+      const mapped = epgState.matchedXmlNameByChannel[channel.name];
+      updateGuideStatus(mapped ? `mapat: ${mapped}` : '');
       if (scrollToNow) {
         const currentRow = els.guideList.querySelector('.guide-row.now');
-        if (currentRow) {
-          els.guideList.scrollTop = Math.max(0, currentRow.offsetTop - 8);
-        } else {
-          els.guideList.scrollTop = 0;
-        }
+        els.guideList.scrollTop = currentRow ? Math.max(0, currentRow.offsetTop - 8) : 0;
       }
-    }
-
-    function escapeHtml(value) {
-      return String(value || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function openStream(channel, { autoLaunch = false, focus = true } = {}) {
-      appState.playing = channel.name;
-      epgState.lastChannel = channel;
-      els.playerTitle.textContent = channel.name;
-      const directUrl = buildStreamUrl(channel.embed);
-      if (els.playerFrame.src !== directUrl) {
-        els.playerFrame.src = directUrl;
-      }
-      if (autoLaunch) {
-        const opened = window.open(directUrl, '_blank', 'noopener');
-        if (!opened) els.playerMeta.textContent = `${channel.category} • popup blocat`;
-      }
-      if (focus) focusPanel(els.playerPanel);
-      updateGuide(channel, { scrollToNow: true });
-      render();
-    }
-
-    function filteredChannels() {
-      const q = appState.search.toLowerCase();
-      return orderedChannels()
-        .filter(c => appState.category === 'all' || c.category === appState.category)
-        .filter(c => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q))
-        .filter(c => !appState.favoritesOnly || isFavorite(c.name));
-    }
-
-    function navigateFavorite(step) {
-      const favorites = orderedChannels().filter((c) => isFavorite(c.name));
-      if (!favorites.length) {
-        els.playerMeta.textContent = 'Nu ai canale favorite. Marcheaza canale cu ★.';
-        return;
-      }
-      const currentIndex = favorites.findIndex((c) => c.name === appState.playing);
-      const nextIndex = currentIndex === -1 ? 0 : (currentIndex + step + favorites.length) % favorites.length;
-      openStream(favorites[nextIndex]);
-    }
-
-    function isPlayerFullscreen() {
-      return document.fullscreenElement === els.playerFrame || document.webkitFullscreenElement === els.playerFrame;
-    }
-
-    async function togglePlayerFullscreen() {
-      try {
-        if (!isPlayerFullscreen()) {
-          await (els.playerFrame.requestFullscreen?.() || els.playerFrame.webkitRequestFullscreen?.());
-        } else {
-          await (document.exitFullscreen?.() || document.webkitExitFullscreen?.());
-        }
-      } catch (err) {
-        console.warn('Fullscreen indisponibil', err);
-      }
-    }
-
-    function initialsForChannel(name) {
-      const cleaned = String(name || '')
-        .replace(/\b(HD|TV)\b/gi, '')
-        .replace(/[^A-Za-z0-9 ]+/g, ' ')
-        .trim();
-      const parts = cleaned.split(/\s+/).filter(Boolean);
-      if (!parts.length) return 'TV';
-      return parts.slice(0, 2).map((part) => part[0]).join('').toUpperCase();
-    }
-
-    function getLogoHtml(channelName) {
-      const logoUrl = channelLogos[channelName];
-      const initials = initialsForChannel(channelName);
-      if (!logoUrl) return `<span class="tv-logo-fallback" aria-hidden="true">${initials}</span>`;
-      return `<img class="tv-logo" src="${logoUrl}" alt="${channelName} logo" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tv-logo-fallback',textContent:'${initials}','ariaHidden':'true'}));" />`;
     }
 
     function render() {
@@ -707,19 +501,17 @@
         els.grid.innerHTML = '<div class="empty">Nu exista canale pentru filtrul selectat.</div>';
         return;
       }
-
       for (const c of list) {
         const card = document.createElement('article');
         card.className = `card ${appState.playing === c.name ? 'active' : ''}`;
         card.draggable = true;
         card.dataset.channel = c.name;
-        const logoHtml = getLogoHtml(c.name);
         const hasGuide = !!getProgramsForChannel(c.name).length;
         const mapped = epgState.matchedXmlNameByChannel[c.name];
         card.innerHTML = `
-          <div class="card-header"><div class="title-row">${logoHtml}<h3 class="title">${c.name}</h3></div><span class="badge">${c.category}</span></div>
+          <div class="card-header"><div class="title-row">${getLogoHtml(c.name)}<h3 class="title">${c.name}</h3></div><span class="badge">${c.category}</span></div>
           <p class="desc">${c.description}</p>
-          <p class="desc" style="margin-top:-2px;">${hasGuide ? 'Program disponibil' : (mapped ? `Mapat: ${mapped}` : 'Fara EPG')}</p>
+          <p class="desc" style="margin-top:-2px;">${hasGuide ? 'Program disponibil' : (mapped ? `Mapat: ${escapeHtml(mapped)}` : 'Fara EPG')}</p>
           <div class="actions">
             <button class="open" type="button">▶ Open stream</button>
             <button class="fav ${isFavorite(c.name) ? 'active' : ''}" type="button" title="Favorite">★</button>
@@ -759,13 +551,54 @@
       }
     }
 
+    function openStream(channel, { autoLaunch = false, focus = true } = {}) {
+      appState.playing = channel.name;
+      epgState.lastChannel = channel;
+      els.playerTitle.textContent = channel.name;
+      const directUrl = buildStreamUrl(channel.embed);
+      if (els.playerFrame.src !== directUrl) els.playerFrame.src = directUrl;
+      if (autoLaunch) {
+        const opened = window.open(directUrl, '_blank', 'noopener');
+        if (!opened) els.playerMeta.textContent = `${channel.category} • popup blocat`;
+      }
+      if (focus) focusPanel(els.playerPanel);
+      updateGuide(channel, { scrollToNow: true });
+      render();
+    }
+
+    function navigateFavorite(step) {
+      const favorites = orderedChannels().filter((c) => isFavorite(c.name));
+      if (!favorites.length) {
+        els.playerMeta.textContent = 'Nu ai canale favorite. Marcheaza canale cu ★.';
+        return;
+      }
+      const currentIndex = favorites.findIndex((c) => c.name === appState.playing);
+      const nextIndex = currentIndex === -1 ? 0 : (currentIndex + step + favorites.length) % favorites.length;
+      openStream(favorites[nextIndex]);
+    }
+
+    function isPlayerFullscreen() {
+      return document.fullscreenElement === els.playerFrame || document.webkitFullscreenElement === els.playerFrame;
+    }
+
+    async function togglePlayerFullscreen() {
+      try {
+        if (!isPlayerFullscreen()) {
+          await (els.playerFrame.requestFullscreen?.() || els.playerFrame.webkitRequestFullscreen?.());
+        } else {
+          await (document.exitFullscreen?.() || document.webkitExitFullscreen?.());
+        }
+      } catch (err) {
+        console.warn('Fullscreen indisponibil', err);
+      }
+    }
+
     function loadCache() {
       try {
         const raw = localStorage.getItem(EPG_CACHE_KEY);
         if (!raw) return null;
         const parsed = JSON.parse(raw);
-        if (!parsed || typeof parsed !== 'object') return null;
-        if (!parsed.fetchedAt || !parsed.programsByChannel) return null;
+        if (!parsed || !parsed.fetchedAt || !parsed.programsByChannel) return null;
         return parsed;
       } catch {
         return null;
@@ -780,8 +613,7 @@
           sourceUsed: epgState.sourceUsed,
           programsByChannel: epgState.programsByChannel,
           matchedXmlNameByChannel: epgState.matchedXmlNameByChannel,
-          matchedXmlIdByChannel: epgState.matchedXmlIdByChannel,
-          unresolvedChannels: epgState.unresolvedChannels
+          matchedXmlIdByChannel: epgState.matchedXmlIdByChannel
         }));
       } catch {}
     }
@@ -790,259 +622,157 @@
       epgState.programsByChannel = cache.programsByChannel || {};
       epgState.matchedXmlNameByChannel = cache.matchedXmlNameByChannel || {};
       epgState.matchedXmlIdByChannel = cache.matchedXmlIdByChannel || {};
-      epgState.unresolvedChannels = cache.unresolvedChannels || [];
       epgState.updatedAt = cache.updatedAt ? new Date(cache.updatedAt) : null;
       epgState.sourceUsed = cache.sourceUsed || null;
       epgState.mode = 'ready';
     }
 
-    async function fetchSourceText(source) {
-  const endpoints = [source];
-  if (source.includes('raw.githubusercontent.com')) {
-    endpoints.push(source.replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/'));
-  }
-  let lastError = null;
-  for (const endpoint of endpoints) {
-    try {
-      const response = await fetch(endpoint, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const text = await response.text();
-      if (!text || !text.includes('<tv') || !text.includes('<programme')) {
-        throw new Error('XML invalid');
-      }
-      return { endpoint, text };
-    } catch (error) {
-      lastError = error;
-    }
-  }
-  throw lastError || new Error('Nu s-a putut incarca XMLTV');
-}
-
-function resolveXmlChannelsForDoc(doc) {
-  const xmlChannels = [...doc.querySelectorAll('channel')].map((node) => {
-    const id = node.getAttribute('id') || '';
-    const displayNames = [...node.querySelectorAll('display-name')].map((n) => n.textContent?.trim()).filter(Boolean);
-    return { id, displayNames };
-  }).filter(item => item.id && item.displayNames.length);
-
-  const matchedIds = new Set();
-  const matchedNames = {};
-  const matchedIdByLocal = {};
-  const unresolved = {};
-
-  for (const local of channels) {
-    let best = null;
-    let bestScore = 0;
-
-    for (const xml of xmlChannels) {
-      for (const displayName of xml.displayNames) {
-        const score = scoreXmlName(local.name, displayName);
-        if (score > bestScore) {
-          bestScore = score;
-          best = { id: xml.id, name: displayName, score };
+    async function fetchTextWithFallback(url) {
+      let lastError = null;
+      for (const makeUrl of FETCHERS) {
+        const finalUrl = makeUrl(url);
+        try {
+          const res = await fetch(finalUrl, { cache:'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const text = await res.text();
+          if (!text || !text.includes('<tv')) throw new Error('XML invalid');
+          return { text, fetchUrl: finalUrl };
+        } catch (err) {
+          lastError = err;
         }
       }
+      throw lastError || new Error('fetch failed');
     }
 
-    if (best && bestScore >= 58) {
-      matchedIds.add(best.id);
-      matchedNames[local.name] = best.name;
-      matchedIdByLocal[local.name] = best.id;
-    } else {
-      unresolved[local.name] = bestScore;
-    }
-  }
+    function resolveXmlChannels(doc) {
+      const xmlChannels = [...doc.querySelectorAll('channel')].map(node => ({
+        id: node.getAttribute('id') || '',
+        displayNames: [...node.querySelectorAll('display-name')].map(n => n.textContent?.trim()).filter(Boolean)
+      })).filter(item => item.id && item.displayNames.length);
 
-  return { matchedIds, matchedNames, matchedIdByLocal, unresolved };
-}
-
-function sanitizeProgrammeText(value) {
-  return String(value || '')
-    .replace(/\s+/g, ' ')
-    .replace(/^\s+|\s+$/g, '')
-    .slice(0, 220);
-}
-
-function buildCandidateFromXml(doc, sourceLabel) {
-  const { matchedIds, matchedNames, matchedIdByLocal, unresolved } = resolveXmlChannelsForDoc(doc);
-  const now = new Date();
-  const staleCutoff = new Date(now.getTime() - 12 * 60 * 60 * 1000);
-  const horizon = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
-  const byId = {};
-
-  for (const programme of [...doc.querySelectorAll('programme')]) {
-    const channelId = programme.getAttribute('channel') || '';
-    if (!matchedIds.has(channelId)) continue;
-
-    const start = parseXmltvDate(programme.getAttribute('start'));
-    const stop = parseXmltvDate(programme.getAttribute('stop'));
-    if (!start) continue;
-    if (stop && stop < staleCutoff) continue;
-    if (start > horizon) continue;
-
-    const title = sanitizeProgrammeText(programme.querySelector('title')?.textContent);
-    if (!title) continue;
-    const desc = sanitizeProgrammeText(programme.querySelector('desc')?.textContent || '');
-    const category = sanitizeProgrammeText(programme.querySelector('category')?.textContent || '');
-
-    if (!byId[channelId]) byId[channelId] = [];
-    byId[channelId].push({
-      start: start.toISOString(),
-      stop: stop ? stop.toISOString() : null,
-      title,
-      details: [category, desc].filter(Boolean).join(' • ').slice(0, 220)
-    });
-  }
-
-  const programsByChannel = {};
-  let totalPrograms = 0;
-  let channelsWithPrograms = 0;
-
-  for (const channel of channels) {
-    const xmlId = matchedIdByLocal[channel.name];
-    const items = (byId[xmlId] || []).sort((a, b) => new Date(a.start) - new Date(b.start));
-    programsByChannel[channel.name] = items;
-    totalPrograms += items.length;
-    if (items.length) channelsWithPrograms++;
-  }
-
-  return {
-    sourceLabel,
-    programsByChannel,
-    matchedXmlNameByChannel: matchedNames,
-    matchedXmlIdByChannel: matchedIdByLocal,
-    unresolvedChannels: Object.keys(unresolved),
-    totalPrograms,
-    channelsWithPrograms
-  };
-}
-
-function candidateItemQuality(localChannelName, candidate) {
-  const items = candidate.programsByChannel[localChannelName] || [];
-  const matchName = candidate.matchedXmlNameByChannel[localChannelName] || '';
-  const nameScore = matchName ? scoreXmlName(localChannelName, matchName) : 0;
-  const now = new Date();
-  const hasCurrent = items.some((item, idx) => {
-    const start = new Date(item.start);
-    const next = items[idx + 1] ? new Date(items[idx + 1].start) : null;
-    return start <= now && (!next || now < next);
-  });
-  return (Math.min(items.length, 24) * 4) + nameScore + (hasCurrent ? 30 : 0);
-}
-
-function applyMergedCandidates(candidates) {
-  const programsByChannel = {};
-  const matchedXmlNameByChannel = {};
-  const matchedXmlIdByChannel = {};
-  const unresolvedChannels = [];
-  const usedSources = new Set();
-
-  for (const channel of channels) {
-    let bestCandidate = null;
-    let bestScore = -1;
-
-    for (const candidate of candidates) {
-      const score = candidateItemQuality(channel.name, candidate);
-      if (score > bestScore) {
-        bestScore = score;
-        bestCandidate = candidate;
+      const matchedNames = {};
+      const matchedIds = {};
+      for (const local of channels) {
+        let best = null;
+        let bestScore = 0;
+        for (const xml of xmlChannels) {
+          for (const displayName of xml.displayNames) {
+            const score = scoreMatch(local.name, displayName);
+            if (score > bestScore) {
+              bestScore = score;
+              best = { id: xml.id, name: displayName };
+            }
+          }
+        }
+        if (best && bestScore >= 62) {
+          matchedNames[local.name] = best.name;
+          matchedIds[local.name] = best.id;
+        }
       }
+      return { matchedNames, matchedIds };
     }
 
-    if (bestCandidate) {
-      programsByChannel[channel.name] = bestCandidate.programsByChannel[channel.name] || [];
-      if (bestCandidate.matchedXmlNameByChannel[channel.name]) {
-        matchedXmlNameByChannel[channel.name] = bestCandidate.matchedXmlNameByChannel[channel.name];
+    function buildProgramsFromXml(doc) {
+      const { matchedNames, matchedIds } = resolveXmlChannels(doc);
+      const now = new Date();
+      const minTime = new Date(now.getTime() - 6 * 60 * 60 * 1000);
+      const maxTime = new Date(now.getTime() + 36 * 60 * 60 * 1000);
+      const byId = {};
+
+      for (const programme of [...doc.querySelectorAll('programme')]) {
+        const channelId = programme.getAttribute('channel') || '';
+        if (!Object.values(matchedIds).includes(channelId)) continue;
+        const start = parseXmltvDate(programme.getAttribute('start'));
+        const stop = parseXmltvDate(programme.getAttribute('stop'));
+        if (!start) continue;
+        if (start > maxTime) continue;
+        if (stop && stop < minTime) continue;
+        const title = programme.querySelector('title')?.textContent?.trim();
+        if (!title) continue;
+        const desc = programme.querySelector('desc')?.textContent?.trim() || '';
+        const category = programme.querySelector('category')?.textContent?.trim() || '';
+        if (!byId[channelId]) byId[channelId] = [];
+        byId[channelId].push({
+          start: start.toISOString(),
+          stop: stop ? stop.toISOString() : null,
+          title,
+          details: [category, desc].filter(Boolean).join(' • ').slice(0, 220)
+        });
       }
-      if (bestCandidate.matchedXmlIdByChannel[channel.name]) {
-        matchedXmlIdByChannel[channel.name] = bestCandidate.matchedXmlIdByChannel[channel.name];
+
+      const programsByChannel = {};
+      let channelsWithPrograms = 0;
+      for (const channel of channels) {
+        const xmlId = matchedIds[channel.name];
+        const items = (byId[xmlId] || []).sort((a,b) => new Date(a.start) - new Date(b.start));
+        programsByChannel[channel.name] = items;
+        if (items.length) channelsWithPrograms++;
       }
-      if ((bestCandidate.programsByChannel[channel.name] || []).length) {
-        usedSources.add(bestCandidate.sourceLabel);
-      } else {
-        unresolvedChannels.push(channel.name);
-      }
-    } else {
-      programsByChannel[channel.name] = [];
-      unresolvedChannels.push(channel.name);
+      return { programsByChannel, matchedNames, matchedIds, channelsWithPrograms };
     }
-  }
 
-  epgState.programsByChannel = programsByChannel;
-  epgState.matchedXmlNameByChannel = matchedXmlNameByChannel;
-  epgState.matchedXmlIdByChannel = matchedXmlIdByChannel;
-  epgState.unresolvedChannels = unresolvedChannels;
-  epgState.sourceUsed = [...usedSources].join(', ');
-}
+    async function chooseBestSource() {
+      let best = null;
+      let lastError = null;
+      for (const source of XMLTV_SOURCES) {
+        try {
+          const { text, fetchUrl } = await fetchTextWithFallback(source);
+          const doc = new DOMParser().parseFromString(text, 'text/xml');
+          if (doc.querySelector('parsererror')) throw new Error('Parser XML invalid');
+          const built = buildProgramsFromXml(doc);
+          if (!best || built.channelsWithPrograms > best.channelsWithPrograms) {
+            best = { ...built, sourceUsed: source, fetchUrl };
+          }
+          if (built.channelsWithPrograms >= 10) break;
+        } catch (err) {
+          lastError = err;
+        }
+      }
+      if (!best) throw lastError || new Error('Nu s-a gasit sursa XMLTV valida');
+      return best;
+    }
 
-async function refreshEpg({ background = false } = {}) {
-  if (epgState.refreshInFlight) return false;
-  epgState.refreshInFlight = true;
-  if (!background) {
-    epgState.mode = 'loading';
-    updateGuideStatus();
-  }
-
-  try {
-    const candidates = [];
-    let lastError = null;
-
-    for (const source of XMLTV_SOURCES) {
+    async function refreshEpg({ background = false } = {}) {
+      if (epgState.refreshInFlight) return false;
+      epgState.refreshInFlight = true;
+      if (!background) {
+        epgState.mode = 'loading';
+        updateGuideStatus();
+      }
       try {
-        const { endpoint, text } = await fetchSourceText(source);
-        const doc = new DOMParser().parseFromString(text, 'text/xml');
-        if (doc.querySelector('parsererror')) throw new Error('Parser XMLTV invalid');
-        const candidate = buildCandidateFromXml(doc, endpoint.replace(/^https?:\/\//, ''));
-        if (candidate.totalPrograms > 0) {
-          candidates.push(candidate);
-        }
-        if (candidate.channelsWithPrograms >= 35 && candidate.totalPrograms >= 250) {
-          break;
-        }
+        const best = await chooseBestSource();
+        epgState.programsByChannel = best.programsByChannel;
+        epgState.matchedXmlNameByChannel = best.matchedNames;
+        epgState.matchedXmlIdByChannel = best.matchedIds;
+        epgState.updatedAt = new Date();
+        epgState.sourceUsed = best.sourceUsed.replace(/^https?:\/\//, '');
+        epgState.mode = best.channelsWithPrograms ? 'ready' : 'error';
+        if (!best.channelsWithPrograms) throw new Error('Zero canale cu program');
+        saveCache();
+        render();
+        if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
+        else updateGuideStatus(`${best.channelsWithPrograms} canale cu EPG`);
+        return true;
       } catch (error) {
-        lastError = error;
+        console.error('EPG refresh failed', error);
+        if (!epgState.updatedAt) {
+          epgState.mode = 'error';
+          updateGuideStatus();
+        }
+        return false;
+      } finally {
+        epgState.refreshInFlight = false;
       }
     }
 
-    if (!candidates.length) {
-      throw lastError || new Error('XMLTV fara programe utile');
-    }
-
-    applyMergedCandidates(candidates);
-    const totalPrograms = Object.values(epgState.programsByChannel).reduce((sum, arr) => sum + arr.length, 0);
-    if (!totalPrograms) {
-      throw new Error('Nicio emisiune valida dupa mapare');
-    }
-
-    epgState.updatedAt = new Date();
-    epgState.mode = 'ready';
-    saveCache();
-    render();
-    if (epgState.lastChannel) updateGuide(epgState.lastChannel, { scrollToNow: true });
-    else updateGuideStatus();
-    return true;
-  } catch (error) {
-    console.error('EPG refresh failed', error);
-    if (!epgState.updatedAt) {
-      epgState.mode = 'error';
-      updateGuideStatus();
-    }
-    return false;
-  } finally {
-    epgState.refreshInFlight = false;
-  }
-}
-
-async function initializeEpg() {
+    async function initializeEpg() {
       const cache = loadCache();
       if (cache) {
         applyCache(cache);
         render();
         if (epgState.lastChannel) updateGuide(epgState.lastChannel);
         else updateGuideStatus();
-        if (Date.now() - cache.fetchedAt > EPG_CACHE_MAX_AGE_MS) {
-          refreshEpg({ background: true });
-        }
+        if (Date.now() - cache.fetchedAt > EPG_CACHE_MAX_AGE_MS) refreshEpg({ background:true });
       } else {
         epgState.mode = 'loading';
         updateGuideStatus();
@@ -1066,11 +796,8 @@ async function initializeEpg() {
     render();
     initializeEpg().then(() => {
       const startupChannel = channels[0];
-      if (startupChannel) {
-        openStream(startupChannel, { focus: false });
-      } else {
-        updateGuide(null);
-      }
+      if (startupChannel) openStream(startupChannel, { focus:false });
+      else updateGuide(null);
     });
 
     setInterval(() => {
@@ -1079,9 +806,8 @@ async function initializeEpg() {
     }, 60000);
 
     setInterval(() => {
-      refreshEpg({ background: true });
+      refreshEpg({ background:true });
     }, EPG_BACKGROUND_REFRESH_MS);
   </script>
-
-
-</body></html>
+</body>
+</html>
