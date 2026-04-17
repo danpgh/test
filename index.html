@@ -742,7 +742,7 @@
     function cleanProgramTitle(line) {
       return String(line || '')
         .replace(/^\[[^\]]+\]\s*/, '')
-        .replace(/\s+\-\s+[^-]+$/u, '')
+        .replace(/\s+-\s+[^-]+$/u, '')
         .replace(/\s+\(R\)$/u, '')
         .replace(/\s{2,}/g, ' ')
         .trim();
