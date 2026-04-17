@@ -304,8 +304,9 @@
     };
 
     const XMLTV_SOURCES = [
-      'https://iptv-org.github.io/epg/guides/ro.xml',
-      'https://epg.pw/xmltv/epg_RO.xml'
+      'https://iptv-epg.org/files/epg-ro.xml',
+      'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania1.xml',
+      'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania2.xml'
     ];
     const EPG_CACHE_KEY = 'iptv-xmltv-cache-v1';
     const EPG_CACHE_MAX_AGE_MS = 30 * 60 * 1000;
@@ -804,8 +805,11 @@
           const response = await fetch(source, { cache: 'no-store' });
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           const text = await response.text();
-          if (!text || !text.includes('<tv') || !text.includes('<programme')) {
+          if (!text || !text.includes('<tv')) {
             throw new Error('XML invalid');
+          }
+          if (!text.includes('<programme')) {
+            throw new Error('XML fara programe');
           }
           epgState.sourceUsed = source.replace(/^https?:\/\//, '');
           return text;
