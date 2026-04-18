@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-04-18T12:00:00Z",
+  "source": "sample-local-seed",
+  "unresolved": [
+    "PPV 1",
+    "PPV 2",
+    "PPV 3",
+    "SPORT EXTRA"
+  ],
+  "channels": {
+    "PROTV HD": [
+      {"start": "2026-04-18T10:00:00Z", "stop": "2026-04-18T11:00:00Z", "title": "Stiri PROTV", "details": "Actualitati"},
+      {"start": "2026-04-18T11:00:00Z", "stop": "2026-04-18T13:00:00Z", "title": "La Maruta", "details": "Talk show"},
+      {"start": "2026-04-18T13:00:00Z", "stop": "2026-04-18T16:00:00Z", "title": "Film: Ford v Ferrari", "details": "Drama sportiva"},
+      {"start": "2026-04-18T16:00:00Z", "stop": "2026-04-18T18:00:00Z", "title": "Romanii au talent", "details": "Entertainment"}
+    ],
+    "A1 HD": [
+      {"start": "2026-04-18T10:30:00Z", "stop": "2026-04-18T11:30:00Z", "title": "Observator", "details": "Jurnal"},
+      {"start": "2026-04-18T11:30:00Z", "stop": "2026-04-18T14:00:00Z", "title": "Mireasa", "details": "Reality show"},
+      {"start": "2026-04-18T14:00:00Z", "stop": "2026-04-18T16:00:00Z", "title": "Asia Express", "details": "Aventura"}
+    ],
+    "TVR1": [
+      {"start": "2026-04-18T10:00:00Z", "stop": "2026-04-18T12:00:00Z", "title": "Telejurnal", "details": "Stiri"},
+      {"start": "2026-04-18T12:00:00Z", "stop": "2026-04-18T14:00:00Z", "title": "Vorbeste corect", "details": "Cultural"},
+      {"start": "2026-04-18T14:00:00Z", "stop": "2026-04-18T16:00:00Z", "title": "Film romanesc", "details": "Cinema"}
+    ],
+    "NEWS24": [
+      {"start": "2026-04-18T10:00:00Z", "stop": "2026-04-18T12:00:00Z", "title": "Jurnal Digi24", "details": "Stiri"},
+      {"start": "2026-04-18T12:00:00Z", "stop": "2026-04-18T14:00:00Z", "title": "In fata ta", "details": "Interviuri"},
+      {"start": "2026-04-18T14:00:00Z", "stop": "2026-04-18T16:00:00Z", "title": "Studio politic", "details": "Analiza"}
+    ],
+    "HB0": [
+      {"start": "2026-04-18T10:15:00Z", "stop": "2026-04-18T13:00:00Z", "title": "Film: The Dark Knight", "details": "Actiune"},
+      {"start": "2026-04-18T13:00:00Z", "stop": "2026-04-18T15:30:00Z", "title": "Film: Parasite", "details": "Thriller"},
+      {"start": "2026-04-18T15:30:00Z", "stop": "2026-04-18T18:00:00Z", "title": "Film: La La Land", "details": "Musical"}
+    ],
+    "HB0 2": [
+      {"start": "2026-04-18T11:00:00Z", "stop": "2026-04-18T13:00:00Z", "title": "Film: Dune", "details": "SF"},
+      {"start": "2026-04-18T13:00:00Z", "stop": "2026-04-18T15:30:00Z", "title": "Film: Oppenheimer", "details": "Drama"}
+    ],
+    "HB0 3": [
+      {"start": "2026-04-18T10:00:00Z", "stop": "2026-04-18T12:00:00Z", "title": "Serial HBO", "details": "Episod nou"},
+      {"start": "2026-04-18T12:00:00Z", "stop": "2026-04-18T14:30:00Z", "title": "Film: Joker", "details": "Drama"}
+    ],
+    "FILM CAFE": [
+      {"start": "2026-04-18T10:30:00Z", "stop": "2026-04-18T13:00:00Z", "title": "Film: Inception", "details": "SF / Thriller"},
+      {"start": "2026-04-18T13:00:00Z", "stop": "2026-04-18T15:30:00Z", "title": "Film: The Imitation Game", "details": "Drama biografica"}
+    ]
+  }
+}
