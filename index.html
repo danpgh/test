@@ -391,10 +391,12 @@
       'hb0 2': 'hbo 2',
       'hb0 3': 'hbo 3',
       'tv 1000': 'kino tv',
-      'film cafe': 'film cafe',
       'news24': 'digi 24',
       'film now': 'film now',
       'film n0w': 'film now',
+      'film cafe': 'film cafe',
+      'filmcafe': 'film cafe',
+      'kino tv': 'viasat kino',
       'supersport 1': 'digi sport 1',
       'supersport 2': 'digi sport 2',
       'supersport 3': 'digi sport 3',
@@ -406,8 +408,7 @@
     };
     const directProgramTvSlugs = {
       'A1 HD': 'antena-1',
-      'TV 1000': 'kino-tv',
-      'FILM CAFE': 'film-cafe',
+      'TV 1000': 'viasat-kino',
       'NEWS24': 'digi-24',
       'PROTV HD': 'pro-tv',
       'CANAL D': 'kanal-d',
@@ -420,7 +421,8 @@
       'SUPERSPORT 4': 'digi-sport-4',
       'HB0': 'hbo',
       'HB0 2': 'hbo-2',
-      'HB0 3': 'hbo-3'
+      'HB0 3': 'hbo-3',
+      'FILM CAFE': 'film-cafe'
     };
 
     function saveState() { localStorage.setItem('iptv-favorites', JSON.stringify([...appState.favorites])); }
