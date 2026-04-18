@@ -62,20 +62,20 @@
       box-shadow: 0 12px 22px rgba(0,0,0,.35);
     }
     .guide-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px; }
-    .guide-title { margin: 0; font-size: 1.8rem; color: #c9d3f7; font-weight:700; }
-    .guide-badge { font-size:1.18rem; border:1px solid #3a4a7b; background:#1a2444; color:#ccdaff; border-radius:999px; padding:6px 12px; }
+    .guide-title { margin: 0; font-size: 1.28rem; color: #c9d3f7; font-weight:700; }
+    .guide-badge { font-size:1.05rem; border:1px solid #3a4a7b; background:#1a2444; color:#ccdaff; border-radius:999px; padding:4px 10px; }
     .guide-badge.live { border-color:#2f8762; background:#123527; color:#8df0be; }
-    .guide-list { max-height: 420px; overflow-y: auto; padding-right: 6px; }
-    .guide-row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; font-size: 1.42rem; margin-bottom: 14px; }
-    .guide-row.now .guide-time { color: #8df0be; font-weight: 800; }
-    .guide-row.now .guide-show { color: #f2fff8; font-weight: 700; }
-    .guide-time { color: #9db0eb; font-size: 1.28rem; }
-    .guide-show { color: #e1e8ff; line-height:1.42; font-size: 1.42rem; }
-    .player-head { display:flex; justify-content:space-between; gap:10px; align-items:center; padding:10px 12px; }
-    .player-title { margin:0; font-size:1.22rem; }
+    .guide-list { max-height: 360px; overflow-y: auto; padding-right: 4px; }
+    .guide-row { display: grid; grid-template-columns: 92px 1fr; gap: 10px; font-size: 1.16rem; margin-bottom: 10px; }
+    .guide-row.now .guide-time { color: #8df0be; font-weight: 700; }
+    .guide-row.now .guide-show { color: #f2fff8; }
+    .guide-time { color: #9db0eb; }
+    .guide-show { color: #e1e8ff; line-height:1.35; }
+    .player-head { display:flex; justify-content:space-between; gap:10px; align-items:center; padding:8px 10px; }
+    .player-title { margin:0; font-size:.95rem; }
     .player-tools { display:flex; align-items:center; gap:8px; }
-    .player-meta { color:var(--muted); font-size:1.08rem; }
-    .player-ch { min-height:34px; padding:6px 12px; font-size:.84rem; font-weight:700; }
+    .player-meta { color:var(--muted); font-size:.82rem; }
+    .player-ch { min-height:30px; padding:5px 10px; font-size:.72rem; font-weight:700; }
     .player-wrap {
       position:relative;
       border-top:1px solid var(--border);
@@ -126,37 +126,19 @@
     @media (max-width:1400px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
     @media (max-width:1160px) {
       .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-      .guide-list { max-height: 320px; }
-      .guide-title { font-size: 1.55rem; }
-      .guide-row { font-size: 1.22rem; grid-template-columns: 96px 1fr; }
-      .guide-time { font-size: 1.12rem; }
-      .guide-show { font-size: 1.22rem; }
-      .player-meta { font-size: .98rem; }
+      .guide-list { max-height: 280px; }
       .player-wrap { min-height: 300px; max-height: 400px; }
     }
     @media (max-width:900px) {
       .controls { grid-template-columns:1fr; }
       .media-row { grid-template-columns:1fr; }
       .grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
-      .guide-title { font-size: 1.45rem; }
-      .guide-badge { font-size: 1rem; }
-      .guide-row { font-size: 1.08rem; grid-template-columns: 84px 1fr; gap: 10px; }
-      .guide-time { font-size: 1rem; }
-      .guide-show { font-size: 1.08rem; }
-      .player-title { font-size: 1.08rem; }
-      .player-meta { font-size: .92rem; }
       .wrap { padding-bottom: 230px; }
     }
     @media (max-width:680px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:430px) {
       .grid { grid-template-columns:1fr; }
-      .guide-list { max-height: 220px; }
-      .guide-title { font-size: 1.28rem; }
-      .guide-row { font-size: .96rem; grid-template-columns: 72px 1fr; margin-bottom: 10px; }
-      .guide-time { font-size: .9rem; }
-      .guide-show { font-size: .96rem; }
-      .player-title { font-size: 1rem; }
-      .player-meta { font-size: .86rem; }
+      .guide-list { max-height: 180px; }
       .player-wrap { min-height: 220px; max-height: 280px; }
       .wrap { padding-bottom: 20px; }
     }
@@ -326,7 +308,7 @@
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania1.xml',
       'https://raw.githubusercontent.com/globetvapp/epg/main/Romania/romania2.xml'
     ];
-    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v1';
+    const EPG_CACHE_KEY = 'iptv-xmltv-cache-v2';
     const EPG_CACHE_MAX_AGE_MS = 30 * 60 * 1000;
     const EPG_BACKGROUND_REFRESH_MS = 15 * 60 * 1000;
 
@@ -572,13 +554,12 @@
       const nowText = formatClock(new Date());
       if (epgState.mode === 'loading') {
         els.guideStatus.classList.remove('live');
-        els.guideStatus.textContent = `Se incarca programul XMLTV... • ${nowText}`;
+        els.guideStatus.textContent = `Se incarca programul... • ${nowText}`;
         return;
       }
       if (epgState.mode === 'ready' && epgState.updatedAt) {
         els.guideStatus.classList.add('live');
-        const source = epgState.sourceUsed ? ` • sursa: ${epgState.sourceUsed}` : '';
-        els.guideStatus.textContent = `Program actualizat (${formatStamp(epgState.updatedAt)})${source} • ${nowText}${extraText ? ' • ' + extraText : ''}`;
+        els.guideStatus.textContent = `Program actualizat (${formatStamp(epgState.updatedAt)}) • ${nowText}${extraText ? ' • ' + extraText : ''}`;
         return;
       }
       if (epgState.mode === 'error') {
@@ -619,7 +600,7 @@
           nextShow = items[idx + 1]?.title || null;
         }
         const label = isNow ? 'Acum' : formatClock(start);
-        return `<div class="guide-row ${isNow ? 'now' : ''}"><span class="guide-time">${label}</span><span class="guide-show">${escapeHtml(item.title)}${item.details ? `<br><small style="color:#98a3c7; font-size:.82em;">${escapeHtml(item.details)}</small>` : ''}</span></div>`;
+        return `<div class="guide-row ${isNow ? 'now' : ''}"><span class="guide-time">${label}</span><span class="guide-show">${escapeHtml(item.title)}${item.details ? `<br><small style="color:#98a3c7;">${escapeHtml(item.details)}</small>` : ''}</span></div>`;
       });
 
       if (!currentShow) {
@@ -842,8 +823,9 @@
       const xmlChannels = [...doc.querySelectorAll('channel')].map((node) => {
         const id = node.getAttribute('id') || '';
         const displayNames = [...node.querySelectorAll('display-name')].map((n) => n.textContent?.trim()).filter(Boolean);
-        return { id, displayNames };
-      }).filter(item => item.id && item.displayNames.length);
+        const allNames = [...new Set([id, ...displayNames].filter(Boolean))];
+        return { id, displayNames, allNames };
+      }).filter(item => item.id && item.allNames.length);
 
       const matchedIds = new Set();
       const matchedNames = {};
@@ -855,16 +837,16 @@
         let bestScore = 0;
 
         for (const xml of xmlChannels) {
-          for (const displayName of xml.displayNames) {
-            const score = scoreXmlName(local.name, displayName);
+          for (const candidateName of xml.allNames) {
+            const score = scoreXmlName(local.name, candidateName, xml.id);
             if (score > bestScore) {
               bestScore = score;
-              best = { id: xml.id, name: displayName };
+              best = { id: xml.id, name: candidateName };
             }
           }
         }
 
-        if (best && bestScore >= 65) {
+        if (best && bestScore >= 45) {
           matchedIds.add(best.id);
           matchedNames[local.name] = best.name;
           matchedIdByLocal[local.name] = best.id;
@@ -881,8 +863,8 @@
 
     function buildProgramsFromXml(doc) {
       const matchedIds = resolveXmlChannels(doc);
-      const today = new Date();
-      const horizon = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+      const now = new Date();
+      const horizon = new Date(now.getTime() + 48 * 60 * 60 * 1000);
       const byId = {};
 
       for (const programme of [...doc.querySelectorAll('programme')]) {
@@ -892,7 +874,7 @@
         const start = parseXmltvDate(programme.getAttribute('start'));
         const stop = parseXmltvDate(programme.getAttribute('stop'));
         if (!start) continue;
-        if (stop && stop < new Date(today.getTime() - 2 * 60 * 60 * 1000)) continue;
+        if (stop && stop < new Date(now.getTime() - 12 * 60 * 60 * 1000)) continue;
         if (start > horizon) continue;
 
         const title = programme.querySelector('title')?.textContent?.trim();
@@ -930,6 +912,8 @@
         const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
         if (doc.querySelector('parsererror')) throw new Error('Parser XMLTV invalid');
         buildProgramsFromXml(doc);
+        const totalPrograms = Object.values(epgState.programsByChannel).reduce((sum, arr) => sum + arr.length, 0);
+        if (!totalPrograms) throw new Error('Feed incarcat, dar fara programe mapate');
         epgState.updatedAt = new Date();
         epgState.mode = 'ready';
         saveCache();
