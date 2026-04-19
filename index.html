@@ -35,7 +35,7 @@
     .player-tools { display:flex; align-items:center; gap:8px; }
     .player-meta { color:var(--muted); font-size:1.15rem; font-weight:500; }
     .player-ch { min-height:30px; padding:5px 10px; font-size:.72rem; font-weight:700; }
-    .player-wrap { position:relative; border-top:1px solid var(--border); overflow:visible; background:#000; aspect-ratio:16/9; min-height:360px; max-height:520px; }
+    .player-wrap { position:relative; border-top:1px solid var(--border); overflow:visible; background:#000; aspect-ratio:16/9; min-height:270px; max-height:390px; }
     .player-frame { width:calc(100% + 28px); margin-left:-14px; height:100%; border:0; background:#000; }
     .grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; }
     .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:8px; display:grid; gap:6px; min-height:96px; cursor:pointer; }
@@ -54,7 +54,7 @@
     .fav.active { color:var(--fav); border-color:var(--fav); }
     .empty { color:var(--muted); text-align:center; padding:20px 0; }
     @media (max-width:1400px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
-    @media (max-width:1160px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } .guide-list { max-height:320px; } .player-wrap { min-height:300px; max-height:400px; } .guide-row { grid-template-columns:96px 1fr; font-size:1.18rem; } .guide-show { font-size:1.18rem; } .player-meta { font-size:1rem; } }
+    @media (max-width:1160px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } .guide-list { max-height:320px; } . { min-height:300px; max-height:400px; } .guide-row { grid-template-columns:96px 1fr; font-size:1.18rem; } .guide-show { font-size:1.18rem; } .player-meta { font-size:1rem; } }
     @media (max-width:900px) { .controls { grid-template-columns:1fr; } .media-row { grid-template-columns:1fr; } .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .wrap { padding-bottom:230px; } }
     @media (max-width:680px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:430px) { .grid { grid-template-columns:1fr; } .guide-list { max-height:220px; } .player-wrap { min-height:220px; max-height:280px; } .wrap { padding-bottom:20px; } .guide-row { grid-template-columns:82px 1fr; font-size:1.02rem; gap:8px; } .guide-show { font-size:1.02rem; } .guide-time { font-size:.95rem; } .player-meta { font-size:.96rem; } }
