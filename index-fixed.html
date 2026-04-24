@@ -12,32 +12,14 @@
     .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
     .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
     .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
-
     .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
     .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
-
-    /* now-row-at-top */
 `;
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        function c(){
-          var g=document.getElementById('guideList');
-          if(!g)return;
-          var n=g.querySelector('.guide-row.now');
-          if(!n){
-            var rows=g.querySelectorAll('.guide-row');
-            for(var i=0;i<rows.length;i++){
-              var tm=rows[i].querySelector('.guide-time');
-              if(tm && tm.textContent.trim().toLowerCase()==='acum'){n=rows[i];break;}
-            }
-          }
-          if(!n)return;
-          var t=n.offsetTop-35;
-          if(t<0)t=0;
-          g.scrollTop=t;
-        }
-        setTimeout(c,700);setTimeout(c,1500);setTimeout(c,3000);setInterval(c,4000);
+        function f(){var g=document.getElementById('guideList');if(!g)return;var n=g.querySelector('.guide-row.now');if(!n){var a=g.querySelectorAll('.guide-row');for(var i=0;i<a.length;i++){var x=a[i].querySelector('.guide-time');if(x&&x.textContent.trim().toLowerCase()==='acum'){n=a[i];break;}}}if(!n)return;var A=g.getBoundingClientRect();var B=n.getBoundingClientRect();g.scrollTop=g.scrollTop+B.top-A.top-24;}
+        setTimeout(f,700);setTimeout(f,1500);setTimeout(f,3000);setInterval(f,4000);
       });
   </script>
 </head>
