@@ -13,25 +13,15 @@
     .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
     .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
 
-    /* fonturi program OK (nu modificate drastic) */
     .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
-
     .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
+
+    /* push */
 `;
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        function c(){
-          var g=document.getElementById('guideList');
-          var n=g&&g.querySelector('.guide-row.now');
-          if(!g||!n)return;
-          var h=g.clientHeight;
-          var o=n.offsetTop;
-          var rh=n.offsetHeight;
-          var t=o-(h/2)+(rh/2)+(h*0.2);
-          if(t<0)t=0;
-          g.scrollTop=t;
-        }
+        function c(){var g=document.getElementById('guideList');var n=g&&g.querySelector('.guide-row.now');if(!g||!n)return;var h=g.clientHeight;var o=n.offsetTop;var rh=n.offsetHeight;var t=o-(h/2)+(rh/2)+(h*0.25);if(t<0)t=0;g.scrollTop=t;}
         setTimeout(c,700);setTimeout(c,1500);setInterval(c,4000);
       });
   </script>
