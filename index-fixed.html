@@ -3,64 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IPTV Quick Grid - fixed</title>
+  <title>Layout fixed</title>
   <script>
     fetch('index.html', { cache: 'no-store' })
       .then(r => r.text())
       .then(html => {
-        html = html.replace(
-          '</style>',
-          `
-    /* Fix: cadrul playerului sta exact in jurul playerului */
+        const css = `
     .media-row {
-      grid-template-columns: minmax(390px, 1.35fr) minmax(320px, 1fr);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: minmax(300px, 3fr) minmax(260px, 2fr);
+      gap: 10px;
       align-items: stretch;
     }
-
-    .player {
-      overflow: hidden;
-    }
-
+    .player { overflow: hidden; }
     .player-wrap {
       overflow: hidden;
       aspect-ratio: 16 / 9;
-      min-height: auto;
+      min-height: 0;
       max-height: none;
     }
-
     .player-frame {
       width: 100%;
       margin-left: 0;
       height: 100%;
       display: block;
     }
-
-    /* Fix: cadrul programului ajustat in consecinta */
     .tv-guide {
       min-height: 100%;
       display: flex;
       flex-direction: column;
     }
-
     .guide-list {
       flex: 1;
       max-height: none;
     }
-
-    /* Fix: "Acum" centrat in coloana din dreapta */
-    .guide-time {
-      text-align: center;
-    }
-
+    .guide-time { text-align: center; }
     @media (max-width:1160px) {
-      .player-wrap { min-height: auto; max-height: none; }
+      .media-row {
+        max-width: 100%;
+        grid-template-columns: minmax(300px, 3fr) minmax(260px, 2fr);
+      }
+      .player-wrap { min-height: 0; max-height: none; }
     }
-
+    @media (max-width:900px) {
+      .media-row { grid-template-columns: 1fr; }
+    }
     @media (max-width:430px) {
-      .player-wrap { min-height: auto; max-height: none; }
+      .player-wrap { min-height: 0; max-height: none; }
     }
-  </style>`
-        );
+`;
+        html = html.replace('</style>', css + '</style>');
         document.open();
         document.write(html);
         document.close();
