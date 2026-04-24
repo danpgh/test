@@ -311,7 +311,7 @@
       const now = formatClock(new Date());
       if (epgState.generatedAt) {
         els.guideStatus.classList.add('live');
-        els.guideStatus.textContent = `Program local actualizat (${formatStamp(epgState.generatedAt)}) • ${now}`;
+        els.guideStatus.textContent = ``;
       } else {
         els.guideStatus.classList.remove('live');
         els.guideStatus.textContent = `Nu exista epg.json valid • ${now}`;
