@@ -32,6 +32,22 @@
         document.open();
         document.write(html);
         document.close();
+
+        function centerNowInGuide() {
+          const guideList = document.getElementById('guideList');
+          const nowRow = guideList?.querySelector('.guide-row.now');
+          if (!guideList || !nowRow) return;
+
+          const containerHeight = guideList.clientHeight;
+          const rowOffset = nowRow.offsetTop;
+          const rowHeight = nowRow.offsetHeight;
+
+          guideList.scrollTop = rowOffset - (containerHeight / 2) + (rowHeight / 2);
+        }
+
+        setTimeout(centerNowInGuide, 700);
+        setTimeout(centerNowInGuide, 1500);
+        setInterval(centerNowInGuide, 4000);
       });
   </script>
 </head>
