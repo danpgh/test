@@ -9,54 +9,18 @@
       .then(r => r.text())
       .then(html => {
         const css = `
-    .media-row {
-      max-width: 1240px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 10px;
-      grid-template-columns: minmax(300px, 3fr) minmax(260px, 2fr);
-      align-items: start;
-      background: #101624;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-    }
-    .player { overflow: hidden; box-shadow: none; }
-    .player-wrap { overflow: hidden; aspect-ratio: 16 / 9; min-height: 0; max-height: none; }
-    .player-frame { width: 100%; margin-left: 0; height: 100%; display: block; }
-    .tv-guide { box-shadow: none; height: 490px; max-height: 490px; display: flex; flex-direction: column; }
-    .guide-list { flex: 1; max-height: none; overflow-y: auto; }
+    .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
+    .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
+    .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
 
-    /* PROGRAM (mare, vizibil de la distanta) */
-    .guide-row { font-size: 2.2em !important; }
-    .guide-time { text-align: center; font-size: 2em !important; }
-    .guide-show { font-size: 2.2em !important; }
-
-    /* HEADER mic (1/3 din dimensiunea curenta) */
-    .guide-title { font-size: 0.7rem !important; }
-    .guide-badge { font-size: 0.5rem !important; }
-
-    @media (max-width:900px) { .media-row { grid-template-columns: 1fr; } .tv-guide { height: auto; max-height: none; } }
+    .guide-row{font-size:1.8em!important;} .guide-time{font-size:1.6em!important;text-align:center;} .guide-show{font-size:1.8em!important;}
+    .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
 `;
         html = html.replace('</style>', css + '</style>');
-        document.open();
-        document.write(html);
-        document.close();
+        document.open(); document.write(html); document.close();
 
-        function centerNowInGuide() {
-          const guideList = document.getElementById('guideList');
-          const nowRow = guideList?.querySelector('.guide-row.now');
-          if (!guideList || !nowRow) return;
-
-          const containerHeight = guideList.clientHeight;
-          const rowOffset = nowRow.offsetTop;
-          const rowHeight = nowRow.offsetHeight;
-
-          guideList.scrollTop = rowOffset - (containerHeight / 2) + (rowHeight / 2) + 120;
-        }
-
-        setTimeout(centerNowInGuide, 700);
-        setTimeout(centerNowInGuide, 1500);
-        setInterval(centerNowInGuide, 4000);
+        function c(){var g=document.getElementById('guideList');var n=g&&g.querySelector('.guide-row.now');if(!g||!n)return;var h=g.clientHeight;var o=n.offsetTop;var rh=n.offsetHeight;g.scrollTop=o-(h/2)+(rh/2)+220;}
+        setTimeout(c,700);setTimeout(c,1500);setInterval(c,4000);
       });
   </script>
 </head>
