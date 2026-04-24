@@ -10,49 +10,23 @@
       .then(html => {
         const css = `
     .media-row {
-      max-width: 1200px;
+      max-width: 1240px;
       margin-left: auto;
       margin-right: auto;
+      padding: 10px;
       grid-template-columns: minmax(300px, 3fr) minmax(260px, 2fr);
-      gap: 10px;
-      align-items: stretch;
+      align-items: start;
+      background: #101624;
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
-    .player { overflow: hidden; }
-    .player-wrap {
-      overflow: hidden;
-      aspect-ratio: 16 / 9;
-      min-height: 0;
-      max-height: none;
-    }
-    .player-frame {
-      width: 100%;
-      margin-left: 0;
-      height: 100%;
-      display: block;
-    }
-    .tv-guide {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .guide-list {
-      flex: 1;
-      max-height: none;
-    }
+    .player { overflow: hidden; box-shadow: none; }
+    .player-wrap { overflow: hidden; aspect-ratio: 16 / 9; min-height: 0; max-height: none; }
+    .player-frame { width: 100%; margin-left: 0; height: 100%; display: block; }
+    .tv-guide { box-shadow: none; height: 490px; max-height: 490px; display: flex; flex-direction: column; }
+    .guide-list { flex: 1; max-height: none; overflow-y: auto; }
     .guide-time { text-align: center; }
-    @media (max-width:1160px) {
-      .media-row {
-        max-width: 100%;
-        grid-template-columns: minmax(300px, 3fr) minmax(260px, 2fr);
-      }
-      .player-wrap { min-height: 0; max-height: none; }
-    }
-    @media (max-width:900px) {
-      .media-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width:430px) {
-      .player-wrap { min-height: 0; max-height: none; }
-    }
+    @media (max-width:900px) { .media-row { grid-template-columns: 1fr; } .tv-guide { height: auto; max-height: none; } }
 `;
         html = html.replace('</style>', css + '</style>');
         document.open();
