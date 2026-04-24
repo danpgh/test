@@ -16,12 +16,12 @@
     .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
     .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
 
-    /* push */
+    /* now-position-fixed */
 `;
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        function c(){var g=document.getElementById('guideList');var n=g&&g.querySelector('.guide-row.now');if(!g||!n)return;var h=g.clientHeight;var o=n.offsetTop;var rh=n.offsetHeight;var t=o-(h/2)+(rh/2)+(h*0.25);if(t<0)t=0;g.scrollTop=t;}
+        function c(){var g=document.getElementById('guideList');var n=g&&g.querySelector('.guide-row.now');if(!g||!n)return;var t=n.offsetTop-70;if(t<0)t=0;g.scrollTop=t;}
         setTimeout(c,700);setTimeout(c,1500);setInterval(c,4000);
       });
   </script>
