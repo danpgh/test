@@ -25,7 +25,12 @@
     .player-frame { width: 100%; margin-left: 0; height: 100%; display: block; }
     .tv-guide { box-shadow: none; height: 490px; max-height: 490px; display: flex; flex-direction: column; }
     .guide-list { flex: 1; max-height: none; overflow-y: auto; }
-    .guide-time { text-align: center; }
+
+    /* text mai mic (jumatate) */
+    .guide-row { font-size: 0.7em !important; }
+    .guide-time { text-align: center; font-size: 0.7em !important; }
+    .guide-show { font-size: 0.7em !important; }
+
     @media (max-width:900px) { .media-row { grid-template-columns: 1fr; } .tv-guide { height: auto; max-height: none; } }
 `;
         html = html.replace('</style>', css + '</style>');
@@ -42,7 +47,8 @@
           const rowOffset = nowRow.offsetTop;
           const rowHeight = nowRow.offsetHeight;
 
-          guideList.scrollTop = rowOffset - (containerHeight / 2) + (rowHeight / 2);
+          /* mai jos (offset +40px) */
+          guideList.scrollTop = rowOffset - (containerHeight / 2) + (rowHeight / 2) + 40;
         }
 
         setTimeout(centerNowInGuide, 700);
