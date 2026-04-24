@@ -13,7 +13,11 @@
     .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
     .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
 
-    .guide-row{font-size:1.8em!important;} .guide-time{font-size:1.6em!important;text-align:center;} .guide-show{font-size:1.8em!important;}
+    /* fonturi reduse drastic */
+    .guide-row{font-size:1.1em!important;}
+    .guide-time{font-size:1em!important;text-align:center;}
+    .guide-show{font-size:1.1em!important;}
+
     .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
 `;
         html = html.replace('</style>', css + '</style>');
