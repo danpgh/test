@@ -3,25 +3,528 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Layout fixed</title>
-  <script>
-    fetch('index.html', { cache: 'no-store' })
-      .then(r => r.text())
-      .then(html => {
-        const css = `
-    .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
-    .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
-    .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
-    .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
-    .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
-`;
-        html = html.replace('</style>', css + '</style>');
-        document.open(); document.write(html); document.close();
-
-        function f(){var g=document.getElementById('guideList');if(!g)return;var n=g.querySelector('.guide-row.now');if(!n){var a=g.querySelectorAll('.guide-row');for(var i=0;i<a.length;i++){var x=a[i].querySelector('.guide-time');if(x&&x.textContent.trim().toLowerCase()==='acum'){n=a[i];break;}}}if(!n)return;var A=g.getBoundingClientRect();var B=n.getBoundingClientRect();g.scrollTop=g.scrollTop+B.top-A.top-24;}
-        setTimeout(f,700);setTimeout(f,1500);setTimeout(f,3000);setInterval(f,4000);
-      });
-  </script>
+  <title>IPTV Quick Grid</title>
+  <style>
+    :root { --bg:#090b12; --panel:#111522; --border:#27304a; --text:#ebefff; --muted:#98a3c7; --accent:#6f8cff; --fav:#ffd166; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:radial-gradient(circle at top right,#1c2548 0%,#0e1220 42%,var(--bg) 100%); color:var(--text); min-height:100vh; }
+    .wrap { max-width:1600px; margin:0 auto; padding:14px 14px 28px; }
+    .panel { background:linear-gradient(180deg, rgba(22,28,44,.92), rgba(14,18,30,.95)); border:1px solid var(--border); border-radius:14px; padding:12px; }
+    .hint { margin:0; color:var(--muted); font-size:.9rem; }
+    .top { display:grid; gap:10px; margin-bottom:12px; }
+    .controls { display:grid; grid-template-columns:auto 1fr 220px auto; gap:8px; }
+    input,select { width:100%; border:1px solid var(--border); border-radius:10px; background:#0f1322; color:var(--text); padding:10px 12px; outline:none; }
+    button { border:1px solid var(--border); border-radius:0 !important; background:#131a2d; color:var(--text); padding:7px 9px; font-size:.82rem; cursor:pointer; min-height:38px; }
+    button.active { border-color:var(--accent); color:#dce4ff; }
+    .panel-focus { box-shadow:0 0 0 2px rgba(111,140,255,.75), 0 14px 30px rgba(0,0,0,.45); transition: box-shadow .25s ease; }
+    .media-row { display:grid; grid-template-columns:minmax(390px, 1.55fr) minmax(320px, 0.95fr); gap:10px; align-items:start; margin-bottom:12px; }
+    .player { width:100%; background:rgba(10,14,24,.95); border:1px solid var(--border); border-radius:12px; overflow:visible; box-shadow:0 14px 30px rgba(0,0,0,.45); position:relative; z-index:2; }
+    .tv-guide { width:100%; z-index:1; background:rgba(10,14,24,.95); border:1px solid var(--border); border-radius:12px; padding:8px; box-shadow:0 12px 22px rgba(0,0,0,.35); }
+    .guide-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px; }
+    .guide-title { margin:0; font-size:1.9rem; color:#c9d3f7; font-weight:700; }
+    .guide-badge { font-size:1.05rem; border:1px solid #3a4a7b; background:#1a2444; color:#ccdaff; border-radius:999px; padding:4px 10px; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .guide-badge.live { border-color:#2f8762; background:#123527; color:#8df0be; }
+    .guide-list { max-height:360px; overflow-y:auto; padding-right:4px; }
+    .guide-row { display:grid; grid-template-columns:110px 1fr; gap:12px; font-size:1.32rem; margin-bottom:14px; }
+    .guide-row.now .guide-time { color:#8df0be; font-weight:700; }
+    .guide-row.now .guide-show { color:#f2fff8; }
+    .guide-time { color:#9db0eb; font-size:1.18rem; font-weight:600; }
+    .guide-show { color:#e1e8ff; line-height:1.4; font-size:1.32rem; }
+    .player-head { display:flex; justify-content:space-between; gap:10px; align-items:center; padding:8px 10px; }
+    .player-title { margin:0; font-size:1.2rem; }
+    .player-tools { display:flex; align-items:center; gap:8px; }
+    .player-meta { color:var(--muted); font-size:1.15rem; font-weight:500; }
+    .player-ch { min-height:30px; padding:5px 10px; font-size:.72rem; font-weight:700; }
+    .player-wrap { position:relative; border-top:1px solid var(--border); overflow:visible; background:#000; aspect-ratio:16/9; min-height:270px; max-height:390px; }
+    .player-frame { width:calc(100% + 28px); margin-left:-14px; height:100%; border:0; background:#000; }
+    .grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:8px; display:grid; gap:6px; min-height:96px; cursor:pointer; }
+    .card.dragging { opacity:.5; border-style:dashed; }
+    .title-row { display:flex; align-items:center; gap:8px; }
+    .tv-logo { width:22px; height:22px; object-fit:contain; border-radius:3px; background:#0d1323; border:1px solid #2a365a; padding:2px; }
+    .tv-logo-fallback { width:22px; height:22px; border-radius:3px; border:1px solid #2a365a; display:grid; place-items:center; font-size:.55rem; color:#dce6ff; background:linear-gradient(180deg,#253667,#1a2444); font-weight:700; letter-spacing:.02em; text-transform:uppercase; }
+    .card.active { border-color:var(--accent); }
+    .card-header { display:flex; align-items:start; justify-content:space-between; gap:8px; }
+    .title { margin:0; font-size:.82rem; line-height:1.2; }
+    .badge { font-size:.62rem; color:#c7d3ff; background:#222c49; border:1px solid #3a4a7b; border-radius:999px; padding:1px 6px; white-space:nowrap; }
+    .desc { margin:0; font-size:.68rem; color:var(--muted); line-height:1.2; }
+    .actions { display:flex; gap:5px; margin-top:auto; }
+    .open { flex:1; background:linear-gradient(180deg,#5e79f5,#4a63cf); border-color:#4861ca; color:#f1f4ff; font-weight:600; font-size:.72rem; }
+    .fav { width:32px; height:32px; padding:0; }
+    .fav.active { color:var(--fav); border-color:var(--fav); }
+    .empty { color:var(--muted); text-align:center; padding:20px 0; }
+    @media (max-width:1400px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+    @media (max-width:1160px) { .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } .guide-list { max-height:320px; } . { min-height:300px; max-height:400px; } .guide-row { grid-template-columns:96px 1fr; font-size:1.18rem; } .guide-show { font-size:1.18rem; } .player-meta { font-size:1rem; } }
+    @media (max-width:900px) { .controls { grid-template-columns:1fr; } .media-row { grid-template-columns:1fr; } .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .wrap { padding-bottom:230px; } }
+    @media (max-width:680px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:430px) { .grid { grid-template-columns:1fr; } .guide-list { max-height:220px; } .player-wrap { min-height:220px; max-height:280px; } .wrap { padding-bottom:20px; } .guide-row { grid-template-columns:82px 1fr; font-size:1.02rem; gap:8px; } .guide-show { font-size:1.02rem; } .guide-time { font-size:.95rem; } .player-meta { font-size:.96rem; } }
+  </style>
 </head>
-<body></body>
+<body>
+  <div class="wrap">
+    <section class="panel top">
+      <div class="controls">
+        <button id="goToProgram" type="button">📺 Program</button>
+        <input id="searchInput" placeholder="Cauta post..." />
+        <select id="categorySelect"><option value="all">Toate categoriile</option></select>
+        <button id="showFavorites">★ Doar favorite</button>
+      </div>
+    </section>
+
+    <div class="media-row">
+      <section class="player" id="playerPanel">
+        <div class="player-head">
+          <h2 class="player-title" id="playerTitle">Selecteaza un canal</h2>
+          <div class="player-tools">
+            <div class="player-meta" id="playerMeta">Preview live</div>
+            <button id="prevFavBtn" class="player-ch" type="button">CH-</button>
+            <button id="nextFavBtn" class="player-ch" type="button">CH+</button>
+            <button id="playerFullscreenBtn" class="player-ch" type="button">⛶ Full</button>
+          </div>
+        </div>
+        <div class="player-wrap">
+          <iframe id="playerFrame" class="player-frame" title="IPTV Preview" allow="autoplay *; fullscreen *" allowfullscreen webkitallowfullscreen mozallowfullscreen loading="eager" src="about:blank"></iframe>
+        </div>
+      </section>
+
+      <section class="tv-guide" id="tvGuide">
+        <div class="guide-head">
+          <h3 class="guide-title">Program TV</h3>
+          <span class="guide-badge" id="guideStatus">Se incarca ghidul local...</span>
+        </div>
+        <div class="guide-list" id="guideList"><div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Se incarca programul...</span></div></div>
+      </section>
+    </div>
+
+    <section class="grid" id="channelGrid"></section>
+    <p class="hint"><span id="appVersion"></span></p>
+  </div>
+
+  <script>
+    const APP_VERSION = '2026-04-18.local-epg.1';
+    const channels = [
+      {name:'PROTV HD',embed:'https://canale-tv.com/channel/pr0tv.html',category:'General',description:'Romanian general entertainment and news.'},
+      {name:'A1 HD',embed:'https://canale-tv.com/channel/a1.html',category:'General',description:'Popular Romanian general TV content.'},
+      {name:'TVR1',embed:'https://canale-tv.com/channel/tvr1.html',category:'General',description:'Romanian public broadcaster main channel.'},
+      {name:'TVR2',embed:'https://canale-tv.com/channel/tvr2.html',category:'General',description:'Public TV with entertainment and culture.'},
+      {name:'CANAL D',embed:'https://canale-tv.com/channel/canald.html',category:'General',description:'General entertainment, reality, and shows.'},
+      {name:'CANAL D2',embed:'https://canale-tv.com/channel/canald2.html',category:'General',description:'Companion channel for Canal D programming.'},
+      {name:'PRIMA TV',embed:'https://canale-tv.com/channel/primatv.html',category:'General',description:'Mainstream Romanian TV entertainment.'},
+      {name:'NATIONAL TV',embed:'https://canale-tv.com/channel/nationaltv.html',category:'General',description:'General audience entertainment channel.'},
+      {name:'TVR 3',embed:'https://canale-tv.com/channel/tvr3.html',category:'General',description:'Regional and cultural public broadcasting.'},
+      {name:'TVR INTERNATIONAL',embed:'https://canale-tv.com/channel/tvrinter.html',category:'General',description:'International public TVR feed.'},
+      {name:'PROCINEMA',embed:'https://canale-tv.com/channel/procinema.html',category:'Movies',description:'Movie-focused channel with varied cinema.'},
+      {name:'ACASA TV',embed:'https://canale-tv.com/channel/acasatv.html',category:'General',description:'Family and entertainment content.'},
+      {name:'ACASA GOLD',embed:'https://canale-tv.com/channel/acasagold.html',category:'General',description:'Classic and lifestyle entertainment selection.'},
+      {name:'ANTENA STARS',embed:'https://canale-tv.com/channel/astars.html',category:'General',description:'Entertainment and celebrity-focused content.'},
+      {name:'NATIONAL 24 PLUS',embed:'https://canale-tv.com/channel/national24plus.html',category:'News',description:'Romanian rolling news and updates.'},
+      {name:'A3 CNN',embed:'https://canale-tv.com/channel/a3cnn.html',category:'News',description:'News, politics, and breaking events.'},
+      {name:'ROMANIA TV',embed:'https://canale-tv.com/channel/romaniatv.html',category:'News',description:'24-hour Romanian news channel.'},
+      {name:'REALITATEA TV',embed:'https://canale-tv.com/channel/realitateatv.html',category:'News',description:'Live news and talk programs.'},
+      {name:'PRIMA NEWS',embed:'https://canale-tv.com/channel/primanews.html',category:'News',description:'Current affairs and continuous news.'},
+      {name:'B1 TV',embed:'https://canale-tv.com/channel/b1tv.html',category:'News',description:'Talk shows and news coverage.'},
+      {name:'EURONEWS ROMANIA',embed:'https://canale-tv.com/channel/euronewsromnia.html',category:'News',description:'International and Romanian news reports.'},
+      {name:'NEWS24',embed:'https://canale-tv.com/channel/digi24.html',category:'News',description:'Fast-paced live news programming.'},
+      {name:'CNN',embed:'https://canale-tv.com/channel/cnn.html',category:'News',description:'Global breaking news network.'},
+      {name:'BBC NEWS',embed:'https://canale-tv.com/channel/bbcnews.html',category:'News',description:'International news and reports.'},
+      {name:'CBS REALITY',embed:'https://canale-tv.com/channel/cbsreality.html',category:'Documentary',description:'Reality and factual entertainment.'},
+      {name:'SUPERSPORT 1',embed:'https://canale-tv.com/channel/dgsp1.html',category:'Sports',description:'Live sports broadcasts and analysis.'},
+      {name:'SUPERSPORT 2',embed:'https://canale-tv.com/channel/dgsp2.html',category:'Sports',description:'Additional live matches and sports events.'},
+      {name:'SUPERSPORT 3',embed:'https://canale-tv.com/channel/dgsp3.html',category:'Sports',description:'Extended sports coverage lineup.'},
+      {name:'SUPERSPORT 4',embed:'https://canale-tv.com/channel/dgsp4.html',category:'Sports',description:'Sports events and commentary.'},
+      {name:'PRO ARENA',embed:'https://canale-tv.com/channel/proarena.html',category:'Sports',description:'Major competitions and sports updates.'},
+      {name:'TVR SPORT',embed:'https://canale-tv.com/channel/tvrsport.html',category:'Sports',description:'Public broadcaster sports channel.'},
+      {name:'PRIMA SPORT 1',embed:'https://canale-tv.com/channel/primasp1.html',category:'Sports',description:'Live sports and football coverage.'},
+      {name:'PRIMA SPORT 2',embed:'https://canale-tv.com/channel/primasp2.html',category:'Sports',description:'Secondary feed for sports events.'},
+      {name:'PRIMA SPORT 3',embed:'https://canale-tv.com/channel/primasp3.html',category:'Sports',description:'Additional sports competitions.'},
+      {name:'PRIMA SPORT 4',embed:'https://canale-tv.com/channel/primasp4.html',category:'Sports',description:'Extended sports package channel.'},
+      {name:'PRIMA SPORT 5',embed:'https://canale-tv.com/channel/primasp5.html',category:'Sports',description:'Extra coverage for overlapping matches.'},
+      {name:'PPV 1',embed:'https://canale-tv.com/channel/ppv1.html',category:'Sports',description:'Pay-per-view style special events.'},
+      {name:'PPV 2',embed:'https://canale-tv.com/channel/ppv2.html',category:'Sports',description:'Additional premium sports events.'},
+      {name:'PPV 3',embed:'https://canale-tv.com/channel/ppv3.html',category:'Sports',description:'Special sports event stream.'},
+      {name:'SPORT EXTRA',embed:'https://canale-tv.com/channel/sportextra.html',category:'Sports',description:'Supplementary sports events and analysis.'},
+      {name:'EUR0SP0RT 1',embed:'https://canale-tv.com/channel/eurosp1.html',category:'Sports',description:'International sports competitions.'},
+      {name:'EUR0SP0RT 2',embed:'https://canale-tv.com/channel/eurosp2.html',category:'Sports',description:'Additional multi-sport programming.'},
+      {name:'HB0',embed:'https://canale-tv.com/channel/hb.html',category:'Movies',description:'Premium movies and original series.'},
+      {name:'HB0 2',embed:'https://canale-tv.com/channel/hb2.html',category:'Movies',description:'Alternate HBO movie and series lineup.'},
+      {name:'HB0 3',embed:'https://canale-tv.com/channel/hb3.html',category:'Movies',description:'Additional premium entertainment feed.'},
+      {name:'DIVA',embed:'https://canale-tv.com/channel/diva.html',category:'Movies',description:'Drama and lifestyle entertainment.'},
+      {name:'HAPPY TV',embed:'https://canale-tv.com/channel/happy.html',category:'Movies',description:'Light entertainment and movies.'},
+      {name:'FILM CAFE',embed:'https://canale-tv.com/channel/filmcafe.html',category:'Movies',description:'Feature films and cinema classics.'},
+      {name:'TV 1000',embed:'https://canale-tv.com/channel/tv1000.html',category:'Movies',description:'International movie catalog channel.'},
+      {name:'FlLM N0W',embed:'https://canale-tv.com/channel/fnow.html',category:'Movies',description:'Recent films and popular titles.'},
+      {name:'EPIC DRAMA',embed:'https://canale-tv.com/channel/epdrama.html',category:'Movies',description:'Period and modern drama series.'},
+      {name:'AMC',embed:'https://canale-tv.com/channel/amc.html',category:'Movies',description:'Series and cinematic entertainment.'},
+      {name:'SH0WTIME 1',embed:'https://canale-tv.com/channel/show1.html',category:'Movies',description:'Premium movies and original productions.'},
+      {name:'SH0WTIME 2',embed:'https://canale-tv.com/channel/show2.html',category:'Movies',description:'Second premium entertainment feed.'},
+      {name:'AXN HD',embed:'https://canale-tv.com/channel/axn.html',category:'Movies',description:'Action and drama series channel.'},
+      {name:'AXN SPIN',embed:'https://canale-tv.com/channel/axnspin.html',category:'Movies',description:'Youth-focused series and movies.'},
+      {name:'AXN BLACK',embed:'https://canale-tv.com/channel/axnblack.html',category:'Movies',description:'Dark thrillers and crime series.'},
+      {name:'AXN WHITE',embed:'https://canale-tv.com/channel/axnwhite.html',category:'Movies',description:'Drama and romantic series channel.'},
+      {name:'CINEMAX',embed:'https://canale-tv.com/channel/cmax.html',category:'Movies',description:'Cinema and premium films.'},
+      {name:'CINEMAX 2',embed:'https://canale-tv.com/channel/cmax2.html',category:'Movies',description:'Alternative Cinemax movie feed.'},
+      {name:'BOLYWOOD TV',embed:'https://canale-tv.com/channel/bolywoodtv.html',category:'Movies',description:'Bollywood films and entertainment.'},
+      {name:'COMEDY CENTRAL',embed:'https://canale-tv.com/channel/ccentral.html',category:'Entertainment',description:'Comedy shows and sitcoms.'},
+      {name:'WARNER TV',embed:'https://canale-tv.com/channel/wornertv.html',category:'Entertainment',description:'Warner series and films selection.'},
+      {name:'BBC FIRST',embed:'https://canale-tv.com/channel/bfirst.html',category:'Entertainment',description:'British drama and premium series.'},
+      {name:'MINIMAX',embed:'https://canale-tv.com/channel/minimax.html',category:'Kids',description:'Kids cartoons and educational shows.'},
+      {name:'CARTOON NETWORK',embed:'https://canale-tv.com/channel/cartoonnet.html',category:'Kids',description:'Animated series for children.'},
+      {name:'DISNEY CHANNEL',embed:'https://canale-tv.com/channel/disneych.html',category:'Kids',description:'Family and kids Disney content.'},
+      {name:'TEEN NICK',embed:'https://canale-tv.com/channel/teennick.html',category:'Kids',description:'Teen-focused series and shows.'},
+      {name:'NICKELODEON',embed:'https://canale-tv.com/channel/nickelodeon.html',category:'Kids',description:'Kids entertainment and cartoons.'},
+      {name:'DISNEY JR',embed:'https://canale-tv.com/channel/disneyjr.html',category:'Kids',description:'Preschool Disney shows.'},
+      {name:'CARTOONITO',embed:'https://canale-tv.com/channel/cartonito.html',category:'Kids',description:'Young children animation content.'},
+      {name:'NICKTOONS',embed:'https://canale-tv.com/channel/nicktoons.html',category:'Kids',description:'Cartoons and animated classics.'},
+      {name:'NICK JR',embed:'https://canale-tv.com/channel/nickjr.html',category:'Kids',description:'Preschool and early-learning programs.'},
+      {name:'JIM JAM',embed:'https://canale-tv.com/channel/jimjam.html',category:'Kids',description:'Early childhood cartoons and music.'},
+      {name:'DUCK TV',embed:'https://canale-tv.com/channel/ducktv.html',category:'Kids',description:'Toddler-safe visual programming.'},
+      {name:'DISCOVERY CH',embed:'https://canale-tv.com/channel/discoverych.html',category:'Documentary',description:'Science, tech, and reality docs.'},
+      {name:'HISTORY CHANNEL',embed:'https://canale-tv.com/channel/historych.html',category:'Documentary',description:'Historical series and documentaries.'},
+      {name:'NAT GEO PEOPLE',embed:'https://canale-tv.com/channel/netgeopeople.html',category:'Documentary',description:'Human stories and cultures worldwide.'},
+      {name:'NATIONAL GEOGRAPHIC',embed:'https://canale-tv.com/channel/natgeo.html',category:'Documentary',description:'Science, nature, and exploration.'},
+      {name:'ID INVESTIGATION',embed:'https://canale-tv.com/channel/idinvest.html',category:'Documentary',description:'True crime documentary channel.'},
+      {name:'CRIME & INVESTIGATION',embed:'https://canale-tv.com/channel/crimeinvest.html',category:'Documentary',description:'Crime stories and investigations.'},
+      {name:'TLC',embed:'https://canale-tv.com/channel/tlc.html',category:'Documentary',description:'Lifestyle and real-life series.'},
+      {name:'NAT GEO WILD',embed:'https://canale-tv.com/channel/natgeowild.html',category:'Documentary',description:'Wildlife and nature documentaries.'},
+      {name:'BBC EARTH',embed:'https://canale-tv.com/channel/bbcearth.html',category:'Documentary',description:'Premium nature and earth stories.'},
+      {name:'VIASAT HISTORY',embed:'https://canale-tv.com/channel/viahist.html',category:'Documentary',description:'History-focused documentary content.'},
+      {name:'VIASAT NATURE',embed:'https://canale-tv.com/channel/vianature.html',category:'Documentary',description:'Natural world and wildlife series.'},
+      {name:'VIASAT EXPLORER',embed:'https://canale-tv.com/channel/viaexplorer.html',category:'Documentary',description:'Adventure and exploration programming.'},
+      {name:'TRAVEL MIX',embed:'https://canale-tv.com/channel/travelmix.html',category:'Lifestyle',description:'Travel destinations and experiences.'},
+      {name:'PAPRIKA',embed:'https://canale-tv.com/channel/paprika.html',category:'Lifestyle',description:'Cooking and culinary inspiration.'},
+      {name:'HGTV',embed:'https://canale-tv.com/channel/hgtv.html',category:'Lifestyle',description:'Home design and renovation shows.'},
+      {name:'TARAF TV',embed:'https://canale-tv.com/channel/taraf.html',category:'Music',description:'Traditional and popular music.'},
+      {name:'FAVORIT TV',embed:'https://canale-tv.com/channel/favorit.html',category:'Music',description:'Romanian music and entertainment.'},
+      {name:'ETNO TV',embed:'https://canale-tv.com/channel/etno.html',category:'Music',description:'Folk and ethnic music programming.'},
+      {name:'HIT MUSIC',embed:'https://canale-tv.com/channel/hitmusic.html',category:'Music',description:'Modern chart hits and clips.'},
+      {name:'BALCAN MUSIC',embed:'https://canale-tv.com/channel/balcanmuz.html',category:'Music',description:'Balkan music selections.'},
+      {name:'UTV',embed:'https://canale-tv.com/channel/utv.html',category:'Music',description:'Music videos and pop culture.'},
+      {name:'KISS TV',embed:'https://canale-tv.com/channel/kisstv.html',category:'Music',description:'Trending hits and music videos.'},
+      {name:'MUSIC CHANNEL',embed:'https://canale-tv.com/channel/musicch.html',category:'Music',description:'Continuous music block channel.'},
+      {name:'ZU TV',embed:'https://canale-tv.com/channel/zutv.html',category:'Music',description:'Romanian and international hits.'},
+      {name:'Fish & Hunting TV',embed:'https://canale-tv.com/channel/fishy.html',category:'Lifestyle',description:'Fishing and hunting themed content.'},
+      {name:'F1lm B0X',embed:'https://canale-tv.com/channel/fbox1.html',category:'Movies',description:'International movie programming.'},
+      {name:'F1lm B0X Extra',embed:'https://canale-tv.com/channel/fbox-extra.html',category:'Movies',description:'Expanded FilmBox movie library.'},
+      {name:'F1lm B0X Premium',embed:'https://canale-tv.com/channel/fbox-premium.html',category:'Movies',description:'Premium curated films selection.'},
+      {name:'Canal 33',embed:'https://canale-tv.com/channel/canal-33.html',category:'General',description:'Romanian cultural and social programs.'},
+      {name:'Dizi',embed:'https://canale-tv.com/channel/dizy.html',category:'Entertainment',description:'Turkish drama and serial content.'}
+    ];
+
+    const channelLogos = {
+      'PROTV HD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/PRO_TV_Logo.svg/120px-PRO_TV_Logo.svg.png',
+      'A1 HD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Antena_1_2016_logo.svg/120px-Antena_1_2016_logo.svg.png',
+      'TVR1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/TVR_1_logo_2019.svg/120px-TVR_1_logo_2019.svg.png',
+      'BBC NEWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/BBC_News_2022_%28Alt%29.svg/120px-BBC_News_2022_%28Alt%29.svg.png'
+    };
+
+    const appState = {
+      playing: null,
+      search: '',
+      category: 'all',
+      favoritesOnly: false,
+      favorites: new Set(JSON.parse(localStorage.getItem('iptv-favorites') || '[]')),
+      order: JSON.parse(localStorage.getItem('iptv-order') || '[]')
+    };
+
+    const els = {
+      grid: document.getElementById('channelGrid'),
+      search: document.getElementById('searchInput'),
+      category: document.getElementById('categorySelect'),
+      showFav: document.getElementById('showFavorites'),
+      goToProgram: document.getElementById('goToProgram'),
+      playerFrame: document.getElementById('playerFrame'),
+      playerFullscreenBtn: document.getElementById('playerFullscreenBtn'),
+      prevFavBtn: document.getElementById('prevFavBtn'),
+      nextFavBtn: document.getElementById('nextFavBtn'),
+      playerTitle: document.getElementById('playerTitle'),
+      playerMeta: document.getElementById('playerMeta'),
+      guideList: document.getElementById('guideList'),
+      guideStatus: document.getElementById('guideStatus'),
+      playerPanel: document.getElementById('playerPanel'),
+      tvGuide: document.getElementById('tvGuide'),
+      playerWrap: document.querySelector('.player-wrap')
+    };
+
+    const epgState = {
+      programsByChannel: {},
+      updatedAt: null,
+      generatedAt: null,
+      unresolvedChannels: []
+    };
+
+    function saveState() { localStorage.setItem('iptv-favorites', JSON.stringify([...appState.favorites])); }
+    function saveOrder() { localStorage.setItem('iptv-order', JSON.stringify(appState.order)); }
+
+    function orderedChannels() {
+      if (!appState.order.length) return channels.slice();
+      const rank = new Map(appState.order.map((name, idx) => [name, idx]));
+      return channels.slice().sort((a, b) => (rank.get(a.name) ?? 9999) - (rank.get(b.name) ?? 9999) || a.name.localeCompare(b.name));
+    }
+
+    function moveChannelBefore(draggedName, targetName) {
+      const list = orderedChannels().map(c => c.name);
+      const from = list.indexOf(draggedName);
+      const to = list.indexOf(targetName);
+      if (from === -1 || to === -1 || from === to) return;
+      const [item] = list.splice(from, 1);
+      list.splice(to, 0, item);
+      appState.order = list;
+      saveOrder();
+    }
+
+    function isFavorite(name) { return appState.favorites.has(name); }
+    function toggleFavorite(name) {
+      appState.favorites.has(name) ? appState.favorites.delete(name) : appState.favorites.add(name);
+      saveState();
+      render();
+    }
+
+    function buildStreamUrl(url) {
+      const u = new URL(url);
+      u.searchParams.set('autoplay', '1');
+      u.searchParams.set('muted', '1');
+      return u.toString();
+    }
+
+    function formatClock(date) {
+      return date.toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit', hour12: false });
+    }
+
+    function formatStamp(dateLike) {
+      if (!dateLike) return '-';
+      const date = new Date(dateLike);
+      if (Number.isNaN(date.getTime())) return String(dateLike);
+      return date.toLocaleString('ro-RO', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      });
+    }
+
+    function focusPanel(panel) {
+      if (!panel) return;
+      panel.classList.add('panel-focus');
+      setTimeout(() => panel.classList.remove('panel-focus'), 1200);
+      panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function updateGuideStatus() {
+      const now = formatClock(new Date());
+      if (epgState.generatedAt) {
+        els.guideStatus.classList.add('live');
+        els.guideStatus.textContent = `Program local actualizat (${formatStamp(epgState.generatedAt)}) • ${now}`;
+      } else {
+        els.guideStatus.classList.remove('live');
+        els.guideStatus.textContent = `Nu exista epg.json valid • ${now}`;
+      }
+    }
+
+    function updateGuide(channel, { scrollToNow = false } = {}) {
+      if (!channel) {
+        els.playerMeta.textContent = 'Acum: - • Next: -';
+        els.guideList.innerHTML = '<div class="guide-row"><span class="guide-time">Acum</span><span class="guide-show">Selecteaza un canal</span></div>';
+        updateGuideStatus();
+        return;
+      }
+      const items = (epgState.programsByChannel[channel.name] || []).slice().sort((a, b) => new Date(a.start) - new Date(b.start));
+      if (!items.length) {
+        els.playerMeta.textContent = 'Acum: - • Next: -';
+        els.guideList.innerHTML = '<div class="guide-row"><span class="guide-time">N/A</span><span class="guide-show">Nu sunt date de program pentru acest post.</span></div>';
+        updateGuideStatus();
+        return;
+      }
+      const now = new Date();
+      let currentShow = null;
+      let nextShow = null;
+      const rows = items.map((item, idx) => {
+        const start = new Date(item.start);
+        const next = items[idx + 1] ? new Date(items[idx + 1].start) : (item.stop ? new Date(item.stop) : null);
+        const isNow = start <= now && (!next || now < next);
+        if (isNow) {
+          currentShow = item.title;
+          nextShow = items[idx + 1]?.title || null;
+        }
+        const label = isNow ? 'Acum' : formatClock(start);
+        return `<div class="guide-row ${isNow ? 'now' : ''}"><span class="guide-time">${label}</span><span class="guide-show">${escapeHtml(item.title)}${item.details ? `<br><small style="color:#98a3c7;">${escapeHtml(item.details)}</small>` : ''}</span></div>`;
+      });
+      if (!currentShow) {
+        currentShow = items[0]?.title || '-';
+        nextShow = items[1]?.title || null;
+      }
+      els.playerMeta.textContent = `Acum: ${currentShow || '-'} • Next: ${nextShow || '-'}`;
+      els.guideList.innerHTML = rows.join('');
+      updateGuideStatus();
+      if (scrollToNow) {
+        const currentRow = els.guideList.querySelector('.guide-row.now');
+        els.guideList.scrollTop = currentRow ? Math.max(0, currentRow.offsetTop - 8) : 0;
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function openStream(channel, { autoLaunch = false, focus = true } = {}) {
+      appState.playing = channel.name;
+      els.playerTitle.textContent = channel.name;
+      const directUrl = buildStreamUrl(channel.embed);
+      if (els.playerFrame.src !== directUrl) els.playerFrame.src = directUrl;
+      if (autoLaunch) {
+        const opened = window.open(directUrl, '_blank', 'noopener');
+        if (!opened) els.playerMeta.textContent = `${channel.category} • popup blocat`;
+      }
+      if (focus) focusPanel(els.playerPanel);
+      updateGuide(channel, { scrollToNow: true });
+      render();
+    }
+
+    function filteredChannels() {
+      const q = appState.search.toLowerCase();
+      return orderedChannels()
+        .filter(c => appState.category === 'all' || c.category === appState.category)
+        .filter(c => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q))
+        .filter(c => !appState.favoritesOnly || isFavorite(c.name));
+    }
+
+    function navigateFavorite(step) {
+      const favorites = orderedChannels().filter((c) => isFavorite(c.name));
+      if (!favorites.length) {
+        els.playerMeta.textContent = 'Nu ai canale favorite. Marcheaza canale cu ★.';
+        return;
+      }
+      const currentIndex = favorites.findIndex((c) => c.name === appState.playing);
+      const nextIndex = currentIndex === -1 ? 0 : (currentIndex + step + favorites.length) % favorites.length;
+      openStream(favorites[nextIndex]);
+    }
+
+    function isPlayerFullscreen() {
+      return document.fullscreenElement === els.playerFrame || document.webkitFullscreenElement === els.playerFrame;
+    }
+
+    async function togglePlayerFullscreen() {
+      try {
+        if (!isPlayerFullscreen()) {
+          await (els.playerFrame.requestFullscreen?.() || els.playerFrame.webkitRequestFullscreen?.());
+        } else {
+          await (document.exitFullscreen?.() || document.webkitExitFullscreen?.());
+        }
+      } catch (err) {
+        console.warn('Fullscreen indisponibil', err);
+      }
+    }
+
+    function initialsForChannel(name) {
+      const cleaned = String(name || '').replace(/\b(HD|TV)\b/gi, '').replace(/[^A-Za-z0-9 ]+/g, ' ').trim();
+      const parts = cleaned.split(/\s+/).filter(Boolean);
+      if (!parts.length) return 'TV';
+      return parts.slice(0, 2).map((part) => part[0]).join('').toUpperCase();
+    }
+
+    function getLogoHtml(channelName) {
+      const logoUrl = channelLogos[channelName];
+      const initials = initialsForChannel(channelName);
+      if (!logoUrl) return `<span class="tv-logo-fallback" aria-hidden="true">${initials}</span>`;
+      return `<img class="tv-logo" src="${logoUrl}" alt="${channelName} logo" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tv-logo-fallback',textContent:'${initials}','ariaHidden':'true'}));" />`;
+    }
+
+    function render() {
+      const list = filteredChannels();
+      els.grid.innerHTML = '';
+      if (!list.length) {
+        els.grid.innerHTML = '<div class="empty">Nu exista canale pentru filtrul selectat.</div>';
+        return;
+      }
+      for (const c of list) {
+        const card = document.createElement('article');
+        card.className = `card ${appState.playing === c.name ? 'active' : ''}`;
+        card.draggable = true;
+        card.dataset.channel = c.name;
+        const logoHtml = getLogoHtml(c.name);
+        const hasGuide = !!(epgState.programsByChannel[c.name] || []).length;
+        card.innerHTML = `
+          <div class="card-header"><div class="title-row">${logoHtml}<h3 class="title">${c.name}</h3></div><span class="badge">${c.category}</span></div>
+          <p class="desc">${c.description}</p>
+          <p class="desc" style="margin-top:-2px;">${hasGuide ? 'Program disponibil' : 'Fara EPG'}</p>
+          <div class="actions">
+            <button class="open" type="button">▶ Open stream</button>
+            <button class="fav ${isFavorite(c.name) ? 'active' : ''}" type="button" title="Favorite">★</button>
+          </div>
+        `;
+        card.querySelector('.open').addEventListener('click', (e) => { e.stopPropagation(); openStream(c); });
+        card.addEventListener('click', () => openStream(c));
+        card.querySelector('.fav').addEventListener('click', (e) => { e.stopPropagation(); toggleFavorite(c.name); });
+        card.addEventListener('dragstart', (e) => {
+          card.classList.add('dragging');
+          e.dataTransfer?.setData('text/plain', c.name);
+          e.dataTransfer.effectAllowed = 'move';
+        });
+        card.addEventListener('dragend', () => card.classList.remove('dragging'));
+        card.addEventListener('dragover', (e) => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; });
+        card.addEventListener('drop', (e) => {
+          e.preventDefault();
+          const dragged = e.dataTransfer?.getData('text/plain');
+          if (!dragged || dragged === c.name) return;
+          moveChannelBefore(dragged, c.name);
+          render();
+        });
+        els.grid.append(card);
+      }
+      els.showFav.classList.toggle('active', appState.favoritesOnly);
+    }
+
+    function initCategories() {
+      const categories = [...new Set(channels.map(c => c.category))].sort();
+      for (const cat of categories) {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat;
+        els.category.append(opt);
+      }
+    }
+
+    async function loadLocalEpg() {
+      const response = await fetch(`./epg.json?v=${Date.now()}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`epg.json HTTP ${response.status}`);
+      const payload = await response.json();
+      epgState.programsByChannel = payload.channels || {};
+      epgState.generatedAt = payload.generatedAt || null;
+      epgState.updatedAt = payload.generatedAt || null;
+      epgState.unresolvedChannels = payload.unresolved || [];
+      updateGuideStatus();
+      render();
+      return true;
+    }
+
+    els.search.addEventListener('input', (e) => { appState.search = e.target.value.trim(); render(); });
+    els.category.addEventListener('change', (e) => { appState.category = e.target.value; render(); });
+    els.showFav.addEventListener('click', () => { appState.favoritesOnly = !appState.favoritesOnly; render(); });
+    els.goToProgram.addEventListener('click', () => focusPanel(els.tvGuide));
+    els.playerFullscreenBtn.addEventListener('click', togglePlayerFullscreen);
+    els.prevFavBtn.addEventListener('click', () => navigateFavorite(-1));
+    els.nextFavBtn.addEventListener('click', () => navigateFavorite(1));
+    els.playerWrap.addEventListener('dblclick', togglePlayerFullscreen);
+    els.playerFrame.addEventListener('dblclick', togglePlayerFullscreen);
+
+    document.getElementById('appVersion').textContent = `v${APP_VERSION}`;
+    initCategories();
+    render();
+
+    loadLocalEpg().catch((error) => {
+      console.error(error);
+      updateGuideStatus();
+    }).finally(() => {
+      const startupChannel = channels[0];
+      if (startupChannel) openStream(startupChannel, { focus: false });
+      else updateGuide(null);
+    });
+
+    setInterval(() => {
+      if (appState.playing) {
+        const current = channels.find(c => c.name === appState.playing);
+        updateGuide(current);
+      } else {
+        updateGuideStatus();
+      }
+    }, 60000);
+  </script>
+</body>
 </html>
