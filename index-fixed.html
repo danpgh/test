@@ -26,14 +26,14 @@
     .tv-guide { box-shadow: none; height: 490px; max-height: 490px; display: flex; flex-direction: column; }
     .guide-list { flex: 1; max-height: none; overflow-y: auto; }
 
-    /* fonturi mai mari (clar vizibile) */
-    .guide-row { font-size: 1.25em !important; }
-    .guide-time { text-align: center; font-size: 1.2em !important; }
-    .guide-show { font-size: 1.25em !important; }
+    /* PROGRAM (mare, vizibil de la distanta) */
+    .guide-row { font-size: 2.2em !important; }
+    .guide-time { text-align: center; font-size: 2em !important; }
+    .guide-show { font-size: 2.2em !important; }
 
-    /* header mare */
-    .guide-title { font-size: 2rem !important; }
-    .guide-badge { font-size: 1.2rem !important; }
+    /* HEADER mic (1/3 din dimensiunea curenta) */
+    .guide-title { font-size: 0.7rem !important; }
+    .guide-badge { font-size: 0.5rem !important; }
 
     @media (max-width:900px) { .media-row { grid-template-columns: 1fr; } .tv-guide { height: auto; max-height: none; } }
 `;
@@ -51,7 +51,6 @@
           const rowOffset = nowRow.offsetTop;
           const rowHeight = nowRow.offsetHeight;
 
-          /* mutat mai jos (aprox 3-4 linii) */
           guideList.scrollTop = rowOffset - (containerHeight / 2) + (rowHeight / 2) + 120;
         }
 
