@@ -26,10 +26,14 @@
     .tv-guide { box-shadow: none; height: 490px; max-height: 490px; display: flex; flex-direction: column; }
     .guide-list { flex: 1; max-height: none; overflow-y: auto; }
 
-    /* text mai mic (jumatate) */
-    .guide-row { font-size: 0.7em !important; }
-    .guide-time { text-align: center; font-size: 0.7em !important; }
-    .guide-show { font-size: 0.7em !important; }
+    /* revenire font lista la normal */
+    .guide-row { font-size: 1em !important; }
+    .guide-time { text-align: center; font-size: 1em !important; }
+    .guide-show { font-size: 1em !important; }
+
+    /* titlu Program TV mai mic */
+    .guide-title { font-size: 1rem !important; }
+    .guide-badge { font-size: 0.8rem !important; }
 
     @media (max-width:900px) { .media-row { grid-template-columns: 1fr; } .tv-guide { height: auto; max-height: none; } }
 `;
@@ -47,7 +51,6 @@
           const rowOffset = nowRow.offsetTop;
           const rowHeight = nowRow.offsetHeight;
 
-          /* mai jos (offset +40px) */
           guideList.scrollTop = rowOffset - (containerHeight / 2) + (rowHeight / 2) + 40;
         }
 
