@@ -22,33 +22,40 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        // 🔥 Persist FAVORITES FILTER
-        function persistFavFilter(){
-          try{
-            var btn = document.getElementById('showFavorites');
-            if(!btn || !window.appState) return;
+        // 🔥 Robust favorites persistence (patch render)
+        function fixFavorites(){
+          if (!window.appState || typeof render !== 'function') return;
+          const btn = document.getElementById('showFavorites');
+          if (!btn) return;
 
-            // load
-            var saved = localStorage.getItem('iptv-favorites-only');
-            if(saved !== null){
-              appState.favoritesOnly = saved === '1';
-              if(appState.favoritesOnly) btn.classList.add('active');
-              else btn.classList.remove('active');
-              if(typeof render === 'function') render();
-            }
+          const saved = localStorage.getItem('iptv-favorites-only');
+          if (saved !== null) {
+            appState.favoritesOnly = saved === '1';
+          }
 
-            // save on click
-            btn.addEventListener('click', function(){
-              setTimeout(function(){
-                localStorage.setItem('iptv-favorites-only', appState.favoritesOnly ? '1' : '0');
-              }, 50);
-            });
-          }catch(e){}
+          const originalRender = render;
+          window.render = function(){
+            originalRender();
+            if (appState.favoritesOnly) btn.classList.add('active');
+            else btn.classList.remove('active');
+          };
+
+          render();
+
+          btn.addEventListener('click', function(){
+            setTimeout(function(){
+              localStorage.setItem('iptv-favorites-only', appState.favoritesOnly ? '1' : '0');
+            }, 50);
+          });
         }
-        setTimeout(persistFavFilter,500);
-        setTimeout(persistFavFilter,1500);
+        const favFix = setInterval(function(){
+          if(window.appState && typeof render==='function'){
+            fixFavorites();
+            clearInterval(favFix);
+          }
+        },200);
 
-        // 🔥 EPG mapping REAL (runtime)
+        // existing EPG mapping
         function mapEPG(){
           if (window.epgState && epgState.programsByChannel) {
             if (epgState.programsByChannel['TV 1000']) {
