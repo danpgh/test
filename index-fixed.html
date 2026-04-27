@@ -8,9 +8,12 @@
     fetch('index.html', { cache: 'no-store' })
       .then(r => r.text())
       .then(html => {
-        // 🔧 mapping TV1000 -> KINO TV (fara sa atingem index.html)
+        // UI rename
         html = html.replace("name:'TV 1000'","name:'KINO TV'");
         html = html.replace("International movie catalog channel.","Kino TV (fost TV 1000). ");
+
+        // 🔥 EPG mapping real
+        html = html.replace(/TV 1000/g, 'KINO TV');
 
         const css = `
     .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
