@@ -17,6 +17,13 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
+        // 🔥 reaplică mapping după fiecare render
+const epgWatcher = setInterval(() => {
+  if (window.epgState && epgState.programsByChannel) {
+    mapEPG();
+  }
+}, 500);
+        
         function removeButtons(){
           const b1 = document.getElementById('goToProgram'); if(b1) b1.remove();
           const b2 = document.getElementById('playerFullscreenBtn'); if(b2) b2.remove();
@@ -56,7 +63,7 @@
         setInterval(fixFavorites,500);
 
         // 🔥 EPG MAPPING FIX
-        function mapEPG(){
+function mapEPG(){
   if (!window.epgState || !epgState.programsByChannel) return;
 
   const p = epgState.programsByChannel;
