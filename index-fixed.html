@@ -13,10 +13,6 @@
 
         const css = `
     .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
-    .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
-    .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
-    .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
-    .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
 `;
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
@@ -27,7 +23,6 @@
         }
         setInterval(removeButtons,500);
 
-        // 🔥 ROBUST KEYBOARD
         function keyControl(){
           document.addEventListener('keydown', function(e){
             if (e.target && (e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA')) return;
@@ -60,12 +55,26 @@
         }
         setInterval(fixFavorites,500);
 
+        // 🔥 EPG MAPPING FIX
         function mapEPG(){
-          if (window.epgState && epgState.programsByChannel) {
-            if (epgState.programsByChannel['TV 1000']) {
-              epgState.programsByChannel['KINO TV'] = epgState.programsByChannel['TV 1000'];
+          if (!window.epgState || !epgState.programsByChannel) return;
+          const p = epgState.programsByChannel;
+
+          function map(to, fromList){
+            for (let f of fromList){
+              if (p[f]){
+                p[to] = p[f];
+                return;
+              }
             }
           }
+
+          map('KINO TV', ['VIASAT KINO', 'VIASAT KINO TV']);
+          map('PROCINEMA', ['PROCINEMA', 'PRO CINEMA']);
+          map('SHOWTIME 1', ['SHOWTIME 1', 'SHOWTIME ONE']);
+          map('SHOWTIME 2', ['SHOWTIME 2']);
+          map('BOLLYWOOD', ['BOLLYWOOD TV', 'ZEE CINEMA']);
+          map('AXN', ['AXN', 'AXN CE', 'AXN HD']);
         }
         setInterval(mapEPG,1000);
 
