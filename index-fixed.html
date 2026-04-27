@@ -8,14 +8,16 @@
     fetch('index.html', { cache: 'no-store' })
       .then(r => r.text())
       .then(html => {
+        // 🔧 mapping TV1000 -> KINO TV (fara sa atingem index.html)
+        html = html.replace("name:'TV 1000'","name:'KINO TV'");
+        html = html.replace("International movie catalog channel.","Kino TV (fost TV 1000). ");
+
         const css = `
     .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
     .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
     .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
     .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
     .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
-
-    /* force now visible */
 `;
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
