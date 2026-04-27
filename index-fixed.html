@@ -14,12 +14,34 @@
     .tv-guide{box-shadow:none;height:490px;display:flex;flex-direction:column;} .guide-list{flex:1;overflow-y:auto;}
     .guide-row{font-size:1.1em!important;} .guide-time{font-size:1em!important;text-align:center;} .guide-show{font-size:1.1em!important;}
     .guide-title{font-size:0.7rem!important;} .guide-badge{font-size:0.5rem!important;}
+
+    /* force now visible */
 `;
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        function f(){var g=document.getElementById('guideList');if(!g)return;var n=g.querySelector('.guide-row.now');if(!n){var a=g.querySelectorAll('.guide-row');for(var i=0;i<a.length;i++){var x=a[i].querySelector('.guide-time');if(x&&x.textContent.trim().toLowerCase()==='acum'){n=a[i];break;}}}if(!n)return;var A=g.getBoundingClientRect();var B=n.getBoundingClientRect();g.scrollTop=g.scrollTop+B.top-A.top-24;}
-        setTimeout(f,700);setTimeout(f,1500);setTimeout(f,3000);setInterval(f,4000);
+        function place(){
+          var g=document.getElementById('guideList');
+          if(!g)return;
+          var n=g.querySelector('.guide-row.now');
+          if(!n){
+            var rows=g.querySelectorAll('.guide-row');
+            for(var i=0;i<rows.length;i++){
+              var tm=rows[i].querySelector('.guide-time');
+              if(tm && tm.textContent.trim().toLowerCase()==='acum'){n=rows[i];break;}
+            }
+          }
+          if(!n) return;
+          var A=g.getBoundingClientRect();
+          var B=n.getBoundingClientRect();
+          g.scrollTop += (B.top - A.top) - 5;
+        }
+
+        setInterval(place,1000);
+        setTimeout(place,500);
+        setTimeout(place,1500);
+        setTimeout(place,3000);
+
       });
   </script>
 </head>
