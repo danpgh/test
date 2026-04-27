@@ -12,12 +12,6 @@
         html = html.replace("name:'TV 1000'","name:'KINO TV'");
         html = html.replace("International movie catalog channel.","Kino TV (fost TV 1000). ");
 
-        // remove Program button
-        html = html.replace('<button id="goToProgram" type="button">📺 Program</button>', '');
-
-        // remove Full button
-        html = html.replace('<button id="playerFullscreenBtn" class="player-ch" type="button">⛶ Full</button>', '');
-
         const css = `
     .media-row { max-width:1240px;margin:auto;padding:10px;grid-template-columns:minmax(300px,3fr) minmax(260px,2fr);align-items:start;background:#101624;border:1px solid var(--border);border-radius:14px; }
     .player{overflow:hidden;box-shadow:none;} .player-wrap{overflow:hidden;aspect-ratio:16/9;} .player-frame{width:100%;margin:0;height:100%;}
@@ -28,7 +22,6 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        // 🔥 FAVORITES persistence REAL (click-based)
         function fixFavorites(){
           const btn = document.getElementById('showFavorites');
           if (!btn) return;
@@ -53,7 +46,6 @@
         setTimeout(fixFavorites,1000);
         setTimeout(fixFavorites,2000);
 
-        // existing EPG mapping
         function mapEPG(){
           if (window.epgState && epgState.programsByChannel) {
             if (epgState.programsByChannel['TV 1000']) {
