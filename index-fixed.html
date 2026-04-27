@@ -57,25 +57,33 @@
 
         // 🔥 EPG MAPPING FIX
         function mapEPG(){
-          if (!window.epgState || !epgState.programsByChannel) return;
-          const p = epgState.programsByChannel;
+  if (!window.epgState || !epgState.programsByChannel) return;
 
-          function map(to, fromList){
-            for (let f of fromList){
-              if (p[f]){
-                p[to] = p[f];
-                return;
-              }
-            }
-          }
+  const p = epgState.programsByChannel;
 
-          map('KINO TV', ['VIASAT KINO', 'VIASAT KINO TV']);
-          map('PROCINEMA', ['PROCINEMA', 'PRO CINEMA']);
-          map('SHOWTIME 1', ['SHOWTIME 1', 'SHOWTIME ONE']);
-          map('SHOWTIME 2', ['SHOWTIME 2']);
-          map('BOLLYWOOD', ['BOLLYWOOD TV', 'ZEE CINEMA']);
-          map('AXN', ['AXN', 'AXN CE', 'AXN HD']);
-        }
+  function map(to, from){
+    if (p[from]) p[to] = p[from];
+  }
+
+  map('KINO TV','TV 1000');
+  map('PROCINEMA','PROCINEMA');
+
+  map('SHOWTIME 1','SH0WTIME 1');
+  map('SHOWTIME 2','SH0WTIME 2');
+
+  map('AXN','AXN HD');
+
+  map('BOLLYWOOD','BOLYWOOD TV');
+
+  map('FILM NOW','FlLM N0W');
+
+  map('HBO','HB0');
+  map('HBO 2','HB0 2');
+  map('HBO 3','HB0 3');
+
+  map('EUROSPORT 1','EUR0SP0RT 1');
+  map('EUROSPORT 2','EUR0SP0RT 2');
+}
         setInterval(mapEPG,1000);
 
         function place(){
