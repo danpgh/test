@@ -22,7 +22,7 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        // 🔥 REMOVE BUTTONS SAFE (NO BREAK)
+        // 🔥 REMOVE BUTTONS SAFE
         function removeButtons(){
           const b1 = document.getElementById('goToProgram');
           if(b1) b1.remove();
@@ -30,9 +30,25 @@
           const b2 = document.getElementById('playerFullscreenBtn');
           if(b2) b2.remove();
         }
-
         setInterval(removeButtons,500);
-        setTimeout(removeButtons,1000);
+
+        // 🔥 KEYBOARD CONTROL (LEFT = CH-, RIGHT = CH+)
+        function keyboardControl(){
+          document.addEventListener('keydown', function(e){
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+
+            if (e.key === 'ArrowLeft'){
+              const btn = document.getElementById('playerPrev');
+              if(btn) btn.click();
+            }
+
+            if (e.key === 'ArrowRight'){
+              const btn = document.getElementById('playerNext');
+              if(btn) btn.click();
+            }
+          });
+        }
+        setTimeout(keyboardControl,500);
 
         function fixFavorites(){
           const btn = document.getElementById('showFavorites');
@@ -53,7 +69,6 @@
             });
           }
         }
-
         setInterval(fixFavorites,500);
 
         function mapEPG(){
@@ -81,7 +96,6 @@
           var B=n.getBoundingClientRect();
           g.scrollTop += (B.top - A.top) - 5;
         }
-
         setInterval(place,1000);
 
       });
