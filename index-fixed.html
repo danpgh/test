@@ -8,7 +8,6 @@
     fetch('index.html', { cache: 'no-store' })
       .then(r => r.text())
       .then(html => {
-        // UI rename
         html = html.replace("name:'TV 1000'","name:'KINO TV'");
         html = html.replace("International movie catalog channel.","Kino TV (fost TV 1000). ");
 
@@ -22,43 +21,33 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        // 🔥 REMOVE BUTTONS SAFE
         function removeButtons(){
-          const b1 = document.getElementById('goToProgram');
-          if(b1) b1.remove();
-
-          const b2 = document.getElementById('playerFullscreenBtn');
-          if(b2) b2.remove();
+          const b1 = document.getElementById('goToProgram'); if(b1) b1.remove();
+          const b2 = document.getElementById('playerFullscreenBtn'); if(b2) b2.remove();
         }
         setInterval(removeButtons,500);
 
-        // 🔥 KEYBOARD CONTROL (LEFT = CH-, RIGHT = CH+)
-        function keyboardControl(){
+        // 🔥 ROBUST KEYBOARD
+        function keyControl(){
           document.addEventListener('keydown', function(e){
-            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+            if (e.target && (e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA')) return;
+            if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+            e.preventDefault();
 
-            if (e.key === 'ArrowLeft'){
-              const btn = document.getElementById('playerPrev');
-              if(btn) btn.click();
-            }
+            const buttons = Array.from(document.querySelectorAll('button'));
+            const prev = buttons.find(b => /CH\s*-/i.test(b.textContent));
+            const next = buttons.find(b => /CH\s*\+/i.test(b.textContent));
 
-            if (e.key === 'ArrowRight'){
-              const btn = document.getElementById('playerNext');
-              if(btn) btn.click();
-            }
-          });
+            if (e.key === 'ArrowLeft' && prev) prev.click();
+            if (e.key === 'ArrowRight' && next) next.click();
+          }, {passive:false});
         }
-        setTimeout(keyboardControl,500);
+        setTimeout(keyControl,800);
 
         function fixFavorites(){
-          const btn = document.getElementById('showFavorites');
-          if (!btn) return;
-
+          const btn = document.getElementById('showFavorites'); if (!btn) return;
           const saved = localStorage.getItem('iptv-favorites-only');
-          if (saved === '1' && !btn.classList.contains('active')) {
-            btn.click();
-          }
-
+          if (saved === '1' && !btn.classList.contains('active')) btn.click();
           if (!btn._hooked) {
             btn._hooked = true;
             btn.addEventListener('click', () => {
@@ -81,8 +70,7 @@
         setInterval(mapEPG,1000);
 
         function place(){
-          var g=document.getElementById('guideList');
-          if(!g)return;
+          var g=document.getElementById('guideList'); if(!g)return;
           var n=g.querySelector('.guide-row.now');
           if(!n){
             var rows=g.querySelectorAll('.guide-row');
@@ -92,8 +80,7 @@
             }
           }
           if(!n) return;
-          var A=g.getBoundingClientRect();
-          var B=n.getBoundingClientRect();
+          var A=g.getBoundingClientRect(); var B=n.getBoundingClientRect();
           g.scrollTop += (B.top - A.top) - 5;
         }
         setInterval(place,1000);
