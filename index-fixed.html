@@ -22,6 +22,18 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
+        // 🔥 REMOVE BUTTONS SAFE (NO BREAK)
+        function removeButtons(){
+          const b1 = document.getElementById('goToProgram');
+          if(b1) b1.remove();
+
+          const b2 = document.getElementById('playerFullscreenBtn');
+          if(b2) b2.remove();
+        }
+
+        setInterval(removeButtons,500);
+        setTimeout(removeButtons,1000);
+
         function fixFavorites(){
           const btn = document.getElementById('showFavorites');
           if (!btn) return;
@@ -43,8 +55,6 @@
         }
 
         setInterval(fixFavorites,500);
-        setTimeout(fixFavorites,1000);
-        setTimeout(fixFavorites,2000);
 
         function mapEPG(){
           if (window.epgState && epgState.programsByChannel) {
@@ -54,8 +64,6 @@
           }
         }
         setInterval(mapEPG,1000);
-        setTimeout(mapEPG,1500);
-        setTimeout(mapEPG,3000);
 
         function place(){
           var g=document.getElementById('guideList');
@@ -75,9 +83,6 @@
         }
 
         setInterval(place,1000);
-        setTimeout(place,500);
-        setTimeout(place,1500);
-        setTimeout(place,3000);
 
       });
   </script>
