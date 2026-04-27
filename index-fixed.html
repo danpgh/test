@@ -22,6 +22,32 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
+        // 🔥 Persist FAVORITES FILTER
+        function persistFavFilter(){
+          try{
+            var btn = document.getElementById('showFavorites');
+            if(!btn || !window.appState) return;
+
+            // load
+            var saved = localStorage.getItem('iptv-favorites-only');
+            if(saved !== null){
+              appState.favoritesOnly = saved === '1';
+              if(appState.favoritesOnly) btn.classList.add('active');
+              else btn.classList.remove('active');
+              if(typeof render === 'function') render();
+            }
+
+            // save on click
+            btn.addEventListener('click', function(){
+              setTimeout(function(){
+                localStorage.setItem('iptv-favorites-only', appState.favoritesOnly ? '1' : '0');
+              }, 50);
+            });
+          }catch(e){}
+        }
+        setTimeout(persistFavFilter,500);
+        setTimeout(persistFavFilter,1500);
+
         // 🔥 EPG mapping REAL (runtime)
         function mapEPG(){
           if (window.epgState && epgState.programsByChannel) {
