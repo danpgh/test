@@ -22,38 +22,30 @@
         html = html.replace('</style>', css + '</style>');
         document.open(); document.write(html); document.close();
 
-        // 🔥 Robust favorites persistence (patch render)
+        // 🔥 FAVORITES persistence REAL (click-based)
         function fixFavorites(){
-          if (!window.appState || typeof render !== 'function') return;
           const btn = document.getElementById('showFavorites');
           if (!btn) return;
 
           const saved = localStorage.getItem('iptv-favorites-only');
-          if (saved !== null) {
-            appState.favoritesOnly = saved === '1';
+          if (saved === '1' && !btn.classList.contains('active')) {
+            btn.click();
           }
 
-          const originalRender = render;
-          window.render = function(){
-            originalRender();
-            if (appState.favoritesOnly) btn.classList.add('active');
-            else btn.classList.remove('active');
-          };
-
-          render();
-
-          btn.addEventListener('click', function(){
-            setTimeout(function(){
-              localStorage.setItem('iptv-favorites-only', appState.favoritesOnly ? '1' : '0');
-            }, 50);
-          });
+          if (!btn._hooked) {
+            btn._hooked = true;
+            btn.addEventListener('click', () => {
+              setTimeout(() => {
+                const active = btn.classList.contains('active');
+                localStorage.setItem('iptv-favorites-only', active ? '1' : '0');
+              }, 50);
+            });
+          }
         }
-        const favFix = setInterval(function(){
-          if(window.appState && typeof render==='function'){
-            fixFavorites();
-            clearInterval(favFix);
-          }
-        },200);
+
+        setInterval(fixFavorites,500);
+        setTimeout(fixFavorites,1000);
+        setTimeout(fixFavorites,2000);
 
         // existing EPG mapping
         function mapEPG(){
