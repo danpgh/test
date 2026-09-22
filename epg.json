@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T16:56:16.831697Z",
+  "generatedAt": "2026-09-22T21:16:55.580237Z",
   "source": "https://iptv-epg.org/files/epg-ro.xml",
   "matched": {
     "PROTV HD": {
@@ -362,30 +362,6 @@
   "channels": {
     "PROTV HD": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Lecţii de viaţă",
-        "details": "O emisiune care prezintă diverse situații inspirate din viața reală a familiilor, în care se va pune accent pe povești de iubire, dorință, lăcomie, minciună sau"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Ştirile Pro Tv",
-        "details": "Știri de ultimă oră din țară și externe. Urmărește transmisiuni live, breaking news, reportaje și anchete."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Batem palma",
-        "details": "PRO TV prezintă un format care testează norocul și intuiția concurenților. Emisiunea Batem Palma? îl are ca prezentator pe îndrăgitul om de televiziune, Cosmin "
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "Ştirile Pro Tv",
-        "details": "Știri de ultimă oră din țară și externe. Urmărește transmisiuni live, breaking news, reportaje și anchete."
-      },
-      {
         "start": "2026-09-22T17:30:00Z",
         "stop": "2026-09-22T20:30:00Z",
         "title": "Masterchef",
@@ -400,30 +376,6 @@
     ],
     "A1 HD": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -684,36 +636,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR1": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -976,45 +934,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR2": [
-      {
-        "start": "2026-09-22T13:30:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Ferma",
-        "details": "Emisiune de: Viorel Alexandru Popescu si Eugen Daniel Iancu Cosmeriuc (Reluare)."
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "România... în bucate",
-        "details": "Sezon Nou TVR Craiova Tăst Show Emisiune realizată de TVR Craiova Prezentator : Doru Ciolacu Producător : Simona Musuroi Producator: Alice Saceanu."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:45:00Z",
-        "title": "Ora de ştiri",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:45:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "E vremea ta",
-        "details": "E vremea ta să primesti date la zi despre vreme, climă şi schimbări climatice, ecologie șsi domenii conexe! 7 zile din 7 vei afla ştiri de pe glob, informaţii d"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Comisarul Rex: aventuri la Viena",
-        "details": "Cu: Alexander Pschill, Gedeon Burkhard, Reginald von Ravenhorst."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Destine ca-n filme",
-        "details": "Sezon Nou (AP)."
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -1036,18 +988,6 @@
     ],
     "CANAL D": [
       {
-        "start": "2026-09-22T13:30:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Casa iubirii",
-        "details": "14 concurenţi, 7 fete şi 7 baieti, vor intra în Casa iubirii pentru a-şi găsi dragostea, iar Andreea Mantea le va fi alături pe tot parcursul show-ului, ghidând"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Știrile Kanal D",
-        "details": "Știrile Kanal D conectează zi de zi telespectatorii la realitățile sociale, economice, politice și mondene, din perspectiva omului și pentru omul obișnuit."
-      },
-      {
         "start": "2026-09-22T17:00:00Z",
         "stop": "2026-09-22T20:00:00Z",
         "title": "Inima de mama",
@@ -1061,30 +1001,6 @@
       }
     ],
     "CANAL D2": [
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -1348,33 +1264,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA TV": [
-      {
-        "start": "2026-09-22T13:45:00Z",
-        "stop": "2026-09-22T14:50:00Z",
-        "title": "Elisa",
-        "details": "Vittoria Puccini, Alessandro Preziosi, Tommaso Ragno."
-      },
-      {
-        "start": "2026-09-22T14:50:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Focus sport",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:15:00Z",
-        "title": "Focus 18",
-        "details": "La Focus 18, cel mai important jurnal de stiri, telespectatorii pot urmări, in fiecare zi, atât materiale în exclusivitate, cât şi rubrici dedicate sau reportaj"
-      },
-      {
-        "start": "2026-09-22T16:15:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "50/50",
-        "details": "Un format dinamic, rapid şi captivant, 50:50 aduce în prim-plan doi concurenţi care se confruntă într-o competiţie unde fiecare întrebare contează, iar şansele "
-      },
       {
         "start": "2026-09-22T17:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -1402,36 +1324,6 @@
     ],
     "NATIONAL TV": [
       {
-        "start": "2026-09-22T13:15:00Z",
-        "stop": "2026-09-22T14:15:00Z",
-        "title": "Dragoste dulce-amară",
-        "details": "Harshad Chopda, Hina Khan, Karan Mehra."
-      },
-      {
-        "start": "2026-09-22T14:15:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Cavalerii nopții",
-        "details": "Javier Gutiérrez, Guillermo Campra, David Janer."
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Ştiri Naţional TV",
-        "details": "Jurnalele Naţional TV beneficiază de studioul modern, excelent echipat, şi de suportul unor echipe de reporteri şi redactori acoperind geografic întreaga ţară. "
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Anupamaa",
-        "details": "Madalasa Sarma, Paras Kalnawat, Sudhanshu Pandey."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Dragoste dulce-amară",
-        "details": "Harshad Chopda, Hina Khan, Karan Mehra."
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:45:00Z",
         "title": "Iubire interzisă",
@@ -1445,60 +1337,6 @@
       }
     ],
     "TVR 3": [
-      {
-        "start": "2026-09-22T13:55:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Memoria tiparului",
-        "details": "Studioul teritorial Tg.Mureş Revista presei vechi prezintă, prin tema fiecărei ediții, realitatea din România interbelică, surprinsă prin intermediul fragmentel"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Calatorie cu gust",
-        "details": "Studioul teritorial Iasi Producator Raluca Aftene."
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T14:55:00Z",
-        "title": "Reporter special",
-        "details": "Investigaţii jurnalistice pornite de la sesizările telespectatorilor, poveşti de viaţă, întâmplări şi oameni deosebiţi. Anchetele şi investigaţiile atrag atenţi"
-      },
-      {
-        "start": "2026-09-22T14:55:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Maşina timpului",
-        "details": "Studioul teritorial Iaşi Producător Dan Trofin."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:55:00Z",
-        "title": "Tableta de sănătate",
-        "details": "Studioul teritorial Cluj Emisiune dedicată informaţiei şi educaţiei unui spectru larg de telespectatori având în vedere însăşi sintagma ce dă titlul. Subiectul "
-      },
-      {
-        "start": "2026-09-22T15:55:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Maşina timpului",
-        "details": "Studioul teritorial Iaşi Producător Dan Trofin."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:55:00Z",
-        "title": "Provocarea regiunilor",
-        "details": "Studioul teritorial Cluj Emisiune-spectacol care promovează valorile, tradițiile, instituțiile de cultură și oamenii din diferitele regiuni ale României. Modera"
-      },
-      {
-        "start": "2026-09-22T16:55:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Povestea zilei",
-        "details": "Producător Laurentiu Nastase."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Telejurnal regional",
-        "details": "Studioul teritorial Iasi Producator Transmisiune directă ACEST PROGRAM SE ADRESEAZĂ ŞI PERSOANELOR CU DEFICIENŢE DE AUZ (LSR)."
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T18:55:00Z",
@@ -1532,48 +1370,6 @@
     ],
     "TVR INTERNATIONAL": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Banii, azi",
-        "details": "Emisiunea explică pe înţelesul tuturor ce se întâmplă în economie, cum ne afectează şi, mai ales, care sunt soluţiile şi cum putem depăşi problemele puse în dis"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "TVR 70",
-        "details": "Gala umorului Producător Cosmin Dumitru."
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:10:00Z",
-        "title": "Călătorii cu gust",
-        "details": "Realizator şi producător Vitalie Guţu."
-      },
-      {
-        "start": "2026-09-22T15:10:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Reţeaua de idoli",
-        "details": "Jurnalist Ioana Constantin Realizator şi producător Irina Păcurariu."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:55:00Z",
-        "title": "Telejurnal",
-        "details": "Află ce s-a întâmplat relevant pentru viaţa ta, în ţară şi în lume, de la Telejurnal. În fiecare zi, pe TVR 1, la ora 14:00 şi seara, de la ora 20.00, Telejurna"
-      },
-      {
-        "start": "2026-09-22T16:55:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Zi de zi cu părintele Constantin Necula",
-        "details": "Producător Victor Dochia."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Investiţi în România",
-        "details": "Franciza pune România pe harta internaţională Invitaţi: Constantin Anton-preşedinte Asociaţia Română de Franciză, Manuela Voicilă-expert internaţional în franci"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Pulsul zilei",
@@ -1602,30 +1398,6 @@
     "ACASA TV": [],
     "ACASA GOLD": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -1886,36 +1658,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "ANTENA STARS": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -2178,27 +1956,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "NATIONAL 24 PLUS": [
-      {
-        "start": "2026-09-22T13:15:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "American Cinema",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Albumul naţional",
-        "details": "Prezentatorii Cornelia si Lupu Rednic, interpreti talentati si cu har in ale cantecului popular, invita in fiecare editie doi interpreti populari din zone folcl"
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Știri",
-        "details": "Vă sunt prezentate informaţii de ultimă oră, interne şi internaţionale, din mediul politic, economic, social, cultural-media, sport şi nu numai."
-      },
       {
         "start": "2026-09-22T17:00:00Z",
         "stop": "2026-09-22T18:30:00Z",
@@ -2220,30 +2010,6 @@
     ],
     "A3 CNN": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Stiri cu Sabrina Preda si Sergiu Cora",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Romania 360 cu Ana Roman si Robert Kiss",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "News Hour with CNN",
-        "details": "News Hour with CNN este un program de știri interne și externe, prima emisiune din România în parteneriat cu CNN."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Decisiv Prime Time cu Catalina Porumbel",
-        "details": ""
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T20:30:00Z",
         "title": "Sinteza zilei",
@@ -2259,18 +2025,6 @@
     "ROMANIA TV": [],
     "REALITATEA TV": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "100",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T17:50:00Z",
-        "title": "Culisele statului paralel",
-        "details": ""
-      },
-      {
         "start": "2026-09-22T17:50:00Z",
         "stop": "2026-09-22T21:00:00Z",
         "title": "România suverană",
@@ -2279,30 +2033,6 @@
     ],
     "PRIMA NEWS": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -2563,36 +2293,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "B1 TV": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -2853,36 +2589,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "EURONEWS ROMANIA": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -3143,36 +2885,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NEWS24": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -3435,33 +3183,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "CNN": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Stiri cu Sabrina Preda si Sergiu Cora",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Romania 360 cu Ana Roman si Robert Kiss",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "News Hour with CNN",
-        "details": "News Hour with CNN este un program de știri interne și externe, prima emisiune din România în parteneriat cu CNN."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Decisiv Prime Time cu Catalina Porumbel",
-        "details": ""
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T20:30:00Z",
@@ -3476,66 +3230,6 @@
       }
     ],
     "BBC NEWS": [
-      {
-        "start": "2026-09-22T13:45:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "BBC News Now",
-        "details": "All the big stories."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Verified Live",
-        "details": "Matthew Amroliwala presents all the latest global and UK news."
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Verified Live",
-        "details": "Matthew Amroliwala presents all the latest global and UK news."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Verified Live",
-        "details": "Matthew Amroliwala presents all the latest global and UK news."
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T15:45:00Z",
-        "title": "Business Today",
-        "details": "Business Today. Bringing the latest business news and up-to-date informed analysis from London and around the world."
-      },
-      {
-        "start": "2026-09-22T15:45:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Verified Live",
-        "details": "Matthew Amroliwala presents all the latest global and UK news."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Verified Live",
-        "details": "Matthew Amroliwala presents all the latest global and UK news."
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Focus on Africa",
-        "details": "The biggest African and international stories from the BBC."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "The World Today with Maryam Moshiri",
-        "details": "Watch the best of the BBC's journalism from around the world."
-      },
-      {
-        "start": "2026-09-22T17:30:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "The World Today with Maryam Moshiri",
-        "details": "Watch the best of the BBC's journalism from around the world."
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T18:30:00Z",
@@ -3575,30 +3269,6 @@
     ],
     "CBS REALITY": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -3861,6 +3531,36 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "SUPERSPORT 1": [],
@@ -3868,36 +3568,6 @@
     "SUPERSPORT 3": [],
     "SUPERSPORT 4": [],
     "PRO ARENA": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Viper",
-        "details": "Cu: Traci Lords, Julie Condra, Don S. Davis."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Xena: prințesa războinică",
-        "details": "Cu: Renée O'Connor, Lucy Lawless, Thomas Kiwi."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Dragul de Raymond",
-        "details": "Cu: Victor Raider-Wexler, Jon Manfrellotti, Joseph V. Perry."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Singuri",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Colecția de la Count’s Kustoms",
-        "details": ""
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -3919,30 +3589,6 @@
     ],
     "TVR SPORT": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -4203,36 +3849,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 1": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -4493,36 +4145,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 2": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -4783,36 +4441,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 3": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -5073,36 +4737,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 4": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -5363,36 +5033,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 5": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -5653,6 +5329,36 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -5662,24 +5368,6 @@
     "PPV 3": [],
     "SPORT EXTRA": [],
     "EUR0SP0RT 1": [
-      {
-        "start": "2026-09-22T12:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Ciclism: Cro Race - Etapa întâi",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:45:00Z",
-        "title": "Ciclism: Campionatul Mondial Montreal - Contratimp pe echipe",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:45:00Z",
-        "stop": "2026-09-22T16:05:00Z",
-        "title": "Mountain Bike: Cupa Mondială - Soldier Hollow - Cross country olimpic Masculin",
-        "details": ""
-      },
       {
         "start": "2026-09-22T16:05:00Z",
         "stop": "2026-09-22T18:55:00Z",
@@ -5702,24 +5390,6 @@
     "EUR0SP0RT 2": [],
     "HB0": [
       {
-        "start": "2026-09-22T13:35:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Horton",
-        "details": "- Horton\nCu: Steve Carell, Jim Carrey, Teresa Ganzel."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Sunetistul",
-        "details": "- Sunetistul\nCu."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:45:00Z",
-        "title": "The Pitt: Spitalul Sezonul 2 - Episodul 10",
-        "details": "- The Pitt: Spitalul - II, Ep. 10: 16:00\nCu: Isa Briones, Gerran Howell, Katherine LaNasa."
-      },
-      {
         "start": "2026-09-22T17:45:00Z",
         "stop": "2026-09-22T18:30:00Z",
         "title": "Cer Sezonul 1 - Episodul 4",
@@ -5740,24 +5410,6 @@
     ],
     "HB0 2": [
       {
-        "start": "2026-09-22T11:50:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Vacanța de iarnă",
-        "details": "- Vacanța de iarnă\nCu: Carrie Preston, Da'Vine Joy Randolph, Tate Donovan."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:45:00Z",
-        "title": "Sărbători și prieteni",
-        "details": "- Sărbători și prieteni\nCu: Annette Frier, Jasmin Shakeri, Laura Tonke."
-      },
-      {
-        "start": "2026-09-22T15:45:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "Trebuie să crezi",
-        "details": "- Trebuie să crezi\nCu: Molly Parker, Luke Wilson, Greg Kinnear."
-      },
-      {
         "start": "2026-09-22T17:30:00Z",
         "stop": "2026-09-22T19:10:00Z",
         "title": "Eddie Vulturul",
@@ -5772,36 +5424,6 @@
     ],
     "HB0 3": [],
     "DIVA": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Sullivan's Crossing Sezonul 2 - Episodul 7",
-        "details": "- Reuniri\nCu: Chad Michael Murray, Scott Patterson, Morgan Kohan."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Sullivan's Crossing Sezonul 2 - Episodul 8",
-        "details": "- Adevăr și consecințe\nCu: Chad Michael Murray, Scott Patterson, Morgan Kohan."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "În mintea criminalului Sezonul 5 - Episodul 11",
-        "details": "- În floarea tinereții\nCu: Simon Baker, Robin Tunney, James Di Giacomo."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "În mintea criminalului Sezonul 5 - Episodul 12",
-        "details": "- Mașinuța roșie\nCu: Simon Baker, Robin Tunney, James Di Giacomo."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "În mintea criminalului Sezonul 5 - Episodul 13",
-        "details": "- Crime vechi, piste noi\nCu: Simon Baker, Robin Tunney, James Di Giacomo."
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -5819,30 +5441,6 @@
     "FILM CAFE": [],
     "TV 1000": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -6103,36 +5701,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "FlLM N0W": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -6393,36 +5997,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "EPIC DRAMA": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -6685,21 +6295,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "AMC": [
-      {
-        "start": "2026-09-22T11:45:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Uimitorul Om-Păianjen",
-        "details": "Cu: Rhys Ifans, Martin Sheen, Andrew Garfield."
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T16:35:00Z",
-        "title": "The Scorpion King: Book of Souls",
-        "details": "Cu: Nathan Jones, Zach McGowan, Peter Mensah."
-      },
       {
         "start": "2026-09-22T16:35:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -6724,36 +6352,6 @@
     "AXN HD": [],
     "AXN SPIN": [
       {
-        "start": "2026-09-22T13:05:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Case de vacanță însorite Sezonul 2 - Episodul 20",
-        "details": "Cu: Amanda Lamb, Jonathan 'J.B.' Gill, Sam Pinkham."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Case de vacanță însorite Sezonul 2 - Episodul 21",
-        "details": "Cu: Amanda Lamb, Jonathan 'J.B.' Gill, Sam Pinkham."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Alan Cumming's Most Luxurious Train Journeys:scotland Sezonul 1 - Episodul 1",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Cum l-am prins pe criminal Sezonul 3 - Episodul 6",
-        "details": "Cu: David Holmes, Keri Nixon, Helen Meadows."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Wives With Knives Sezonul 1 - Episodul 2",
-        "details": ""
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "World's Most Evil Killers Sezonul 10 - Episodul 5",
@@ -6773,36 +6371,6 @@
       }
     ],
     "AXN BLACK": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Walker, polițist texan Sezonul 1 - Episodul 9",
-        "details": "Cu: Chuck Norris, Clarence Gilyard Jr., Sheree J. Wilson."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Justiție militară Sezonul 3 - Episodul 4",
-        "details": "Cu: John M. Jackson, Catherine Bell, David James Elliott."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Justiție militară Sezonul 3 - Episodul 5",
-        "details": "Cu: John M. Jackson, Catherine Bell, David James Elliott."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Walker, polițist texan Sezonul 1 - Episodul 10",
-        "details": "Cu: Chuck Norris, Clarence Gilyard Jr., Sheree J. Wilson."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Walker, polițist texan Sezonul 1 - Episodul 11",
-        "details": "Cu: Chuck Norris, Clarence Gilyard Jr., Sheree J. Wilson."
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T18:55:00Z",
@@ -6830,36 +6398,6 @@
     ],
     "AXN WHITE": [
       {
-        "start": "2026-09-22T13:05:00Z",
-        "stop": "2026-09-22T14:05:00Z",
-        "title": "Ferma Heartland Sezonul 3 - Episodul 18",
-        "details": "Cu: Chris Potter, Graham Wardle, Michelle Morgan."
-      },
-      {
-        "start": "2026-09-22T14:05:00Z",
-        "stop": "2026-09-22T15:05:00Z",
-        "title": "Verdict crimă Sezonul 1 - Episodul 10",
-        "details": "Cu: Angela Lansbury, James Marshall, Barney Martin."
-      },
-      {
-        "start": "2026-09-22T15:05:00Z",
-        "stop": "2026-09-22T16:05:00Z",
-        "title": "Comisarul Rex Sezonul 6 - Episodul 2",
-        "details": "Cu: Kaspar Capparoni, Pilar Abella, Fabio Ferri."
-      },
-      {
-        "start": "2026-09-22T16:05:00Z",
-        "stop": "2026-09-22T17:05:00Z",
-        "title": "Comisarul Rex Sezonul 6 - Episodul 4",
-        "details": "Cu: Kaspar Capparoni, Pilar Abella, Fabio Ferri."
-      },
-      {
-        "start": "2026-09-22T17:05:00Z",
-        "stop": "2026-09-22T18:05:00Z",
-        "title": "Cu sânge rece Sezonul 5 - Episodul 14",
-        "details": "Cu: Kathryn Morris, John Finn, Jeremy Ratchford."
-      },
-      {
         "start": "2026-09-22T18:05:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Cu sânge rece Sezonul 5 - Episodul 15",
@@ -6886,24 +6424,6 @@
     ],
     "CINEMAX": [
       {
-        "start": "2026-09-22T12:45:00Z",
-        "stop": "2026-09-22T14:25:00Z",
-        "title": "Surzenie",
-        "details": "- Surzenie\nCu: Miriam Garlo, Joaquín Notario, Elena Irureta."
-      },
-      {
-        "start": "2026-09-22T14:25:00Z",
-        "stop": "2026-09-22T16:20:00Z",
-        "title": "Lupta invizibilă",
-        "details": "- Lupta invizibilă\nCu: Ursel Tilk, Ester Kuntu, Ene Pappel."
-      },
-      {
-        "start": "2026-09-22T16:20:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Cum să devii o bibilică",
-        "details": "- Cum să devii o bibilică\nCu: Roy Chisha, Susan Chardy, Blessings Bhamjee."
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:55:00Z",
         "title": "Ficțiunea americană",
@@ -6923,18 +6443,6 @@
       }
     ],
     "CINEMAX 2": [
-      {
-        "start": "2026-09-22T12:30:00Z",
-        "stop": "2026-09-22T14:25:00Z",
-        "title": "Patty e nume de fată",
-        "details": "- Patty e nume de fată\nCu: Vangelis Mourikis, Filippa Kaye, Youla Boudali."
-      },
-      {
-        "start": "2026-09-22T14:25:00Z",
-        "stop": "2026-09-22T16:15:00Z",
-        "title": "Întâlnire explozivă",
-        "details": "- Întâlnire explozivă\nCu: Cameron Diaz, Tom Cruise, Suzanne England."
-      },
       {
         "start": "2026-09-22T16:15:00Z",
         "stop": "2026-09-22T18:30:00Z",
@@ -6956,66 +6464,6 @@
     ],
     "BOLYWOOD TV": [],
     "COMEDY CENTRAL": [
-      {
-        "start": "2026-09-22T13:35:00Z",
-        "stop": "2026-09-22T14:05:00Z",
-        "title": "Hot in Cleveland Sezonul 622 - Episodul 06",
-        "details": "Cu: Betty White, Wendie Malick, Jane Leeves."
-      },
-      {
-        "start": "2026-09-22T14:05:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Iubirea bat-o vina Sezonul 47 - Episodul 04",
-        "details": "Cu: Heather Locklear, Megyn Price, Patrick Warburton."
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Iubirea bat-o vina Sezonul 48 - Episodul 04",
-        "details": "Cu: Heather Locklear, Megyn Price, Patrick Warburton."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:25:00Z",
-        "title": "The Exes Sezonul 301 - Episodul 03",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:25:00Z",
-        "stop": "2026-09-22T15:50:00Z",
-        "title": "The Exes Sezonul 302 - Episodul 03",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:50:00Z",
-        "stop": "2026-09-22T16:20:00Z",
-        "title": "Frasier Sezonul 1012 - Episodul 10",
-        "details": "Cu: Kelsey Grammer, James Spader, Annie Wersching."
-      },
-      {
-        "start": "2026-09-22T16:20:00Z",
-        "stop": "2026-09-22T16:45:00Z",
-        "title": "Frasier Sezonul 1013 - Episodul 10",
-        "details": "Cu: Kelsey Grammer, James Spader, Annie Wersching."
-      },
-      {
-        "start": "2026-09-22T16:45:00Z",
-        "stop": "2026-09-22T17:10:00Z",
-        "title": "Orice e posibil Sezonul 514 - Episodul 05",
-        "details": "Cu: Heather Locklear, Charlie Sheen, Michael J. Fox."
-      },
-      {
-        "start": "2026-09-22T17:10:00Z",
-        "stop": "2026-09-22T17:40:00Z",
-        "title": "Orice e posibil Sezonul 515 - Episodul 05",
-        "details": "Cu: Heather Locklear, Charlie Sheen, Michael J. Fox."
-      },
-      {
-        "start": "2026-09-22T17:40:00Z",
-        "stop": "2026-09-22T18:05:00Z",
-        "title": "Doctor Becker Sezonul 513 - Episodul 05",
-        "details": "Cu: Ray Romano, Kevin James, Patrick Richwood."
-      },
       {
         "start": "2026-09-22T18:05:00Z",
         "stop": "2026-09-22T18:35:00Z",
@@ -7061,60 +6509,6 @@
     ],
     "WARNER TV": [
       {
-        "start": "2026-09-22T13:35:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "2 Broke Girls",
-        "details": "Cu: Kat Dennings, Beth Behrs, Garrett Morris."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:25:00Z",
-        "title": "Teoria Big Bang",
-        "details": "Cu: Jim Parsons, Johnny Galecki, Kaley Cuoco."
-      },
-      {
-        "start": "2026-09-22T14:25:00Z",
-        "stop": "2026-09-22T14:55:00Z",
-        "title": "Teoria Big Bang",
-        "details": "Cu: Jim Parsons, Johnny Galecki, Kaley Cuoco."
-      },
-      {
-        "start": "2026-09-22T14:55:00Z",
-        "stop": "2026-09-22T15:15:00Z",
-        "title": "Mama",
-        "details": "Cu: Nate Corddry, Sadie Calvano, Anna Faris."
-      },
-      {
-        "start": "2026-09-22T15:15:00Z",
-        "stop": "2026-09-22T15:40:00Z",
-        "title": "Mama",
-        "details": "Cu: Nate Corddry, Sadie Calvano, Anna Faris."
-      },
-      {
-        "start": "2026-09-22T15:40:00Z",
-        "stop": "2026-09-22T16:05:00Z",
-        "title": "Familia Heck",
-        "details": "Cu: Eden Sher, Neil Flynn, Patricia Heaton."
-      },
-      {
-        "start": "2026-09-22T16:05:00Z",
-        "stop": "2026-09-22T16:35:00Z",
-        "title": "Familia Heck",
-        "details": "Cu: Eden Sher, Neil Flynn, Patricia Heaton."
-      },
-      {
-        "start": "2026-09-22T16:35:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Teoria Big Bang",
-        "details": "Cu: Jim Parsons, Johnny Galecki, Kaley Cuoco."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "Teoria Big Bang",
-        "details": "Cu: Jim Parsons, Johnny Galecki, Kaley Cuoco."
-      },
-      {
         "start": "2026-09-22T17:30:00Z",
         "stop": "2026-09-22T19:10:00Z",
         "title": "Trenul de 15:17 spre Paris",
@@ -7128,30 +6522,6 @@
       }
     ],
     "BBC FIRST": [
-      {
-        "start": "2026-09-22T13:40:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Părintele Brown Sezonul 4 - Episodul 7",
-        "details": "- The Missing Man\nCu: John Burton, Sorcha Cusack, Mark Williams."
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:50:00Z",
-        "title": "Rațiune și simțire Sezonul 1 - Episodul 2",
-        "details": "- Episode 2\nCu: Leo Bill, Linda Bassett, Steve Cornwall."
-      },
-      {
-        "start": "2026-09-22T15:50:00Z",
-        "stop": "2026-09-22T16:50:00Z",
-        "title": "Lewis Sezonul 4 - Episodul 5",
-        "details": "- Your Sudden Death Question, Part 1\nCu: Clare Holman, Laurence Fox, Kevin Whately."
-      },
-      {
-        "start": "2026-09-22T16:50:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Moarte în Paradis Sezonul 2 - Episodul 1",
-        "details": "- Series 2, Episode 1\nCu: Ben Miller, Danny John-Jules, Patrick Baladi."
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -7172,60 +6542,6 @@
       }
     ],
     "MINIMAX": [
-      {
-        "start": "2026-09-22T13:45:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Garfield Show Sezonul 3 - Episodul 4",
-        "details": "Cu: Alexander Grimm, Gérard Surugue, Véronique Soufflet."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:15:00Z",
-        "title": "ALVINNN!!! și veverițele Sezonul 2 - Episodul 12",
-        "details": "Cu: Bettina Kenney, Janice Karman, Ross Bagdasarian Jr."
-      },
-      {
-        "start": "2026-09-22T14:15:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "ALVINNN!!! și veverițele Sezonul 2 - Episodul 13",
-        "details": "Cu: Bettina Kenney, Janice Karman, Ross Bagdasarian Jr."
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Surorile Sezonul 4 - Episodul 29",
-        "details": "Cu: Kelly Marot, Anaïs Delva, Nathalie Homs."
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Surorile Sezonul 4 - Episodul 30",
-        "details": "Cu: Kelly Marot, Anaïs Delva, Nathalie Homs."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Wild Kratts  Sezonul 7 - Episodul 9",
-        "details": "Cu: Chris Kratt, Martin Kratt, Ian Hanson."
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Wild Kratts  Sezonul 7 - Episodul 10",
-        "details": "Cu: Chris Kratt, Martin Kratt, Ian Hanson."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Curiosul George Sezonul 6 - Episodul 10",
-        "details": "Cu: William H. Macy, Frank Welker, Rino Romano."
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Curiosul George Sezonul 7 - Episodul 1",
-        "details": "Cu: William H. Macy, Frank Welker, Rino Romano."
-      },
       {
         "start": "2026-09-22T17:00:00Z",
         "stop": "2026-09-22T18:45:00Z",
@@ -7276,120 +6592,6 @@
       }
     ],
     "CARTOON NETWORK": [
-      {
-        "start": "2026-09-22T13:50:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:15:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T14:15:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Minunata și năstrușnica lume a lui Gumball",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Minunata și năstrușnica lume a lui Gumball",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T14:55:00Z",
-        "title": "Haideți tineri titani!",
-        "details": "Cu: Lauren Tom, Khary Payton, Scott Menville."
-      },
-      {
-        "start": "2026-09-22T14:55:00Z",
-        "stop": "2026-09-22T15:10:00Z",
-        "title": "Haideți tineri titani!",
-        "details": "Cu: Lauren Tom, Khary Payton, Scott Menville."
-      },
-      {
-        "start": "2026-09-22T15:10:00Z",
-        "stop": "2026-09-22T15:20:00Z",
-        "title": "Grădiniţa Dramei Totale",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:20:00Z",
-        "stop": "2026-09-22T15:40:00Z",
-        "title": "Grădiniţa Dramei Totale",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:40:00Z",
-        "stop": "2026-09-22T15:50:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T15:50:00Z",
-        "stop": "2026-09-22T16:10:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T16:10:00Z",
-        "stop": "2026-09-22T16:20:00Z",
-        "title": "Un show obișnuit: Casetele pierdute",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:20:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Un show obișnuit: Casetele pierdute",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T16:40:00Z",
-        "title": "Minunata și năstrușnica lume a lui Gumball",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:40:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Minunata și năstrușnica lume a lui Gumball",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:10:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T17:10:00Z",
-        "stop": "2026-09-22T17:25:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T17:25:00Z",
-        "stop": "2026-09-22T17:35:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T17:35:00Z",
-        "stop": "2026-09-22T17:55:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
-      {
-        "start": "2026-09-22T17:55:00Z",
-        "stop": "2026-09-22T18:05:00Z",
-        "title": "Uimitoarea lume a lui Gumball",
-        "details": "Cu: Jessica McDonald, Hugo Harold-Harrison, Kyla Rae Kowalewski."
-      },
       {
         "start": "2026-09-22T18:05:00Z",
         "stop": "2026-09-22T18:25:00Z",
@@ -7465,60 +6667,6 @@
     ],
     "DISNEY CHANNEL": [
       {
-        "start": "2026-09-22T13:45:00Z",
-        "stop": "2026-09-22T14:15:00Z",
-        "title": "Ciudățeni Sezonul 2 - Episodul 10",
-        "details": "Cu: Alex Hirsch, Linda Cardellini, Kristen Schaal."
-      },
-      {
-        "start": "2026-09-22T14:15:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Ciudățeni Sezonul 2 - Episodul 12",
-        "details": "Cu: Alex Hirsch, Linda Cardellini, Kristen Schaal."
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:15:00Z",
-        "title": "Ciudățeni Sezonul 2 - Episodul 13",
-        "details": "Cu: Alex Hirsch, Linda Cardellini, Kristen Schaal."
-      },
-      {
-        "start": "2026-09-22T15:15:00Z",
-        "stop": "2026-09-22T15:45:00Z",
-        "title": "Familia Green la oraș",
-        "details": "Cu: Artemis Pebdani, Marieve Herington, Nicole Byer."
-      },
-      {
-        "start": "2026-09-22T15:45:00Z",
-        "stop": "2026-09-22T16:15:00Z",
-        "title": "Familia Green la oraș",
-        "details": "Cu: Artemis Pebdani, Marieve Herington, Nicole Byer."
-      },
-      {
-        "start": "2026-09-22T16:15:00Z",
-        "stop": "2026-09-22T16:45:00Z",
-        "title": "Phineas și Ferb",
-        "details": "Cu: Vincent Martella, Thomas Brodie-Sangster, Brenda Song."
-      },
-      {
-        "start": "2026-09-22T16:45:00Z",
-        "stop": "2026-09-22T17:15:00Z",
-        "title": "Phineas și Ferb",
-        "details": "Cu: Vincent Martella, Thomas Brodie-Sangster, Brenda Song."
-      },
-      {
-        "start": "2026-09-22T17:15:00Z",
-        "stop": "2026-09-22T17:45:00Z",
-        "title": "Electric Bloom",
-        "details": "Cu: Lumi Pollack, Carmen Sanchez, John Brantley Cole."
-      },
-      {
-        "start": "2026-09-22T17:45:00Z",
-        "stop": "2026-09-22T18:15:00Z",
-        "title": "Vampirina: Teenage Vampire",
-        "details": ""
-      },
-      {
         "start": "2026-09-22T18:15:00Z",
         "stop": "2026-09-22T18:45:00Z",
         "title": "Wizards Beyond Waverly Place: Season 1",
@@ -7557,78 +6705,6 @@
     ],
     "TEEN NICK": [],
     "NICKELODEON": [
-      {
-        "start": "2026-09-22T13:55:00Z",
-        "stop": "2026-09-22T14:15:00Z",
-        "title": "Casa Loud Sezonul 4 - Episodul 420",
-        "details": "- Nu uita de mine / Fursecuri complicate\nCu: Grey DeLisle, Jessica DiCicco, Liliana Mumy."
-      },
-      {
-        "start": "2026-09-22T14:15:00Z",
-        "stop": "2026-09-22T14:40:00Z",
-        "title": "Sonic Prime Sezonul 1 - Episodul 115",
-        "details": "- Lovitură de grație\nCu: Ashleigh Ball, Shannon Chan-Kent, Kazumi Evans."
-      },
-      {
-        "start": "2026-09-22T14:40:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Un show cu Patrick Stea Sezonul 1 - Episodul 106",
-        "details": "- Vacanță în familie / Bunny Barbara\nTotul se rezumă la Patrick în această comedie falsă și trăsnită creată și interpretată de Patrick Star."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "SpongeBob Pantaloni Pătrați Sezonul 17 - Episodul 334",
-        "details": "- \"Sărutul nematodului\" /\"Forță fără creier\nCu: Tom Kenny, Bill Fagerbakke, R. Lee Ermey."
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T15:50:00Z",
-        "title": "Marsupilami  Sezonul 1 - Episodul 108",
-        "details": "- Haotica Hope/ Mar-Smoothie-Lami\nCu: Sam Wright, Steve Mackall, Jim Cummings."
-      },
-      {
-        "start": "2026-09-22T15:50:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Marsupilami  Sezonul 1 - Episodul 102",
-        "details": "- Influencerul Jade\nCu: Sam Wright, Steve Mackall, Jim Cummings."
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:25:00Z",
-        "title": "Casa Loud Sezonul 5 - Episodul 517",
-        "details": "- Mult zgomot pentru halit / Transmisiune cu bucluc\nCu: Grey DeLisle, Jessica DiCicco, Liliana Mumy."
-      },
-      {
-        "start": "2026-09-22T16:25:00Z",
-        "stop": "2026-09-22T16:50:00Z",
-        "title": "Casa Loud Sezonul 5 - Episodul 518",
-        "details": "- Tabăra\nCu: Grey DeLisle, Jessica DiCicco, Liliana Mumy."
-      },
-      {
-        "start": "2026-09-22T16:50:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Casa Loud Sezonul 8 - Episodul 808",
-        "details": "- Secretul Karei\nCu: Grey DeLisle, Jessica DiCicco, Liliana Mumy."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:25:00Z",
-        "title": "Lay Lay Sezonul 2 - Episodul 225",
-        "details": "- Oracolul Sadie\nCu: Peyton Perrin, Tiffany Daniels, Thomas Hobson."
-      },
-      {
-        "start": "2026-09-22T17:25:00Z",
-        "stop": "2026-09-22T17:50:00Z",
-        "title": "Familia Thunderman: sub acoperire Sezonul 1 - Episodul 107",
-        "details": "- Nu atât de furios și iute\nCu: Jack Griffo, Kira Kosarin, Maya Le Clark."
-      },
-      {
-        "start": "2026-09-22T17:50:00Z",
-        "stop": "2026-09-22T18:15:00Z",
-        "title": "Henry Pericol Sezonul 5 - Episodul 512",
-        "details": "- Toată Familia Bilsky\nCu: Jace Norman, Riele Downs, Cooper Barnes."
-      },
       {
         "start": "2026-09-22T18:15:00Z",
         "stop": "2026-09-22T18:35:00Z",
@@ -7674,126 +6750,6 @@
     ],
     "DISNEY JR": [],
     "CARTOONITO": [
-      {
-        "start": "2026-09-22T13:55:00Z",
-        "stop": "2026-09-22T14:05:00Z",
-        "title": "Mr. Bean: Seria animată",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:05:00Z",
-        "stop": "2026-09-22T14:20:00Z",
-        "title": "Mr. Bean: Seria animată",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:20:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Mr. Bean: Seria animată",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T14:50:00Z",
-        "title": "Mr. Bean: Seria animată",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:50:00Z",
-        "stop": "2026-09-22T14:55:00Z",
-        "title": "Micuții lemingi",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:55:00Z",
-        "stop": "2026-09-22T15:05:00Z",
-        "title": "Micuții lemingi",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:05:00Z",
-        "stop": "2026-09-22T15:20:00Z",
-        "title": "Micuții lemingi",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:20:00Z",
-        "stop": "2026-09-22T15:25:00Z",
-        "title": "Noile Looney Tunes",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:25:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Noile Looney Tunes",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T15:35:00Z",
-        "title": "Noile Looney Tunes",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:35:00Z",
-        "stop": "2026-09-22T15:50:00Z",
-        "title": "Noile Looney Tunes",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:50:00Z",
-        "stop": "2026-09-22T16:15:00Z",
-        "title": "Fii tare, Scooby-Doo!",
-        "details": "Cu: Kate Micucci, Grey DeLisle, Matthew Lillard."
-      },
-      {
-        "start": "2026-09-22T16:15:00Z",
-        "stop": "2026-09-22T16:45:00Z",
-        "title": "Fii tare, Scooby-Doo!",
-        "details": "Cu: Kate Micucci, Grey DeLisle, Matthew Lillard."
-      },
-      {
-        "start": "2026-09-22T16:45:00Z",
-        "stop": "2026-09-22T16:55:00Z",
-        "title": "Mr. Bean: Seria animată",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:55:00Z",
-        "stop": "2026-09-22T17:15:00Z",
-        "title": "Mr. Bean: Seria animată",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T17:15:00Z",
-        "stop": "2026-09-22T17:25:00Z",
-        "title": "Tom și Jerry se dau în spectacol",
-        "details": "Cu: Tom Kenny, Grey DeLisle, Gary Cole (I)."
-      },
-      {
-        "start": "2026-09-22T17:25:00Z",
-        "stop": "2026-09-22T17:45:00Z",
-        "title": "Tom și Jerry se dau în spectacol",
-        "details": "Cu: Tom Kenny, Grey DeLisle, Gary Cole (I)."
-      },
-      {
-        "start": "2026-09-22T17:45:00Z",
-        "stop": "2026-09-22T17:50:00Z",
-        "title": "Grizzy şi lemingii",
-        "details": "Cu: Pierre-Alain de Garrigues, Josselin Charier, Jade Locquet."
-      },
-      {
-        "start": "2026-09-22T17:50:00Z",
-        "stop": "2026-09-22T17:55:00Z",
-        "title": "Grizzy şi lemingii",
-        "details": "Cu: Pierre-Alain de Garrigues, Josselin Charier, Jade Locquet."
-      },
-      {
-        "start": "2026-09-22T17:55:00Z",
-        "stop": "2026-09-22T18:10:00Z",
-        "title": "Grizzy şi lemingii",
-        "details": "Cu: Pierre-Alain de Garrigues, Josselin Charier, Jade Locquet."
-      },
       {
         "start": "2026-09-22T18:10:00Z",
         "stop": "2026-09-22T18:20:00Z",
@@ -7887,30 +6843,6 @@
     ],
     "NICKTOONS": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -8171,36 +7103,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NICK JR": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -8461,6 +7399,36 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -8468,30 +7436,6 @@
     "JIM JAM": [],
     "DUCK TV": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -8754,45 +7698,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "DISCOVERY CH": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Comori arhitecturale recuperate Sezonul 11 - Episodul 12",
-        "details": "- Oameni excentrici\nÎn Districtul Lacurilor, Drew găseşte un îngrijitor de alpaca şi colecţionar de vechituri, pasionat de lucruri neobişnuite. În castelul Staf"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Comori arhitecturale recuperate Sezonul 12 - Episodul 1",
-        "details": "- Cotswolds\nDrew își deschide în sfârșit un magazin de antichități în orașul lui natal, Conwy, și caută comori în Cotswold, într-unul dintre cele mai mari magaz"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Maşini pe alese Sezonul 8 - Episodul 7",
-        "details": "- DeLorean\nMike vine în SUA să caute un DeLorean, una dintre cele mai uşor de recunoscut maşini din lume. Va reuşi Edd să refacă acest model celebru şi să mărea"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Cum se fabrică ? Sezonul 6 - Episodul 77",
-        "details": "- Încălzitoare de apă/Air-bag-uri/Drajeuri/Curăţătoare de gheaţă pentru patinoare\nAir bag-uri, bomboane cu jeleu şi încălzitoare de apă: noi articole din viaţa "
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Cum se fabrică ? Sezonul 6 - Episodul 78",
-        "details": "- Vehicule amfibie/Crose de golf/Machete de ambarcaţiuni/Creioane colorate\nCreioane colorate, machete de ambarcaţiuni şi vehicule amfibie: noi articole din viaţ"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Detectivii canini Sezonul 1 - Episodul 3",
-        "details": "- Împreună suntem mai puternici\nChico, un nou recrut canin, găsește pe o alee din Liverpool o cantitate mare de canabis, perturbând astfel o operațiune de propo"
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -8814,42 +7752,6 @@
     ],
     "HISTORY CHANNEL": [],
     "NAT GEO PEOPLE": [
-      {
-        "start": "2026-09-22T13:15:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Comori pierdute ale Egiptului",
-        "details": "- Hoții piramidelor\nArheologii dezvăluie cum hoții au jefuit piramidele și mormintele Egiptului Antic și indiciile pe care le-au lăsat în urmă. Într-o necropolă"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Atlasul locurilor blestemate",
-        "details": "- Blestemul Triunghiului Bermudelor\nTriunghiul Bermudelor. Toată lumea a auzit despre această întindere blestemată de ocean de lângă coasta de est a Americii, u"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:45:00Z",
-        "title": "Veterinar în Yukon",
-        "details": "- Prieten la nevoie\nDr. Oakley trebuie să castreze un bou moscat de dimensiuni impresionante. Însă, odată ce animalul este sedat, rivalul său devine un pericol "
-      },
-      {
-        "start": "2026-09-22T15:45:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Comori pierdute ale Egiptului",
-        "details": "- Hoții piramidelor\nArheologii dezvăluie cum hoții au jefuit piramidele și mormintele Egiptului Antic și indiciile pe care le-au lăsat în urmă. Într-o necropolă"
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:15:00Z",
-        "title": "Vedete în sălbăticie, cu Bear Grylls",
-        "details": "- Gina Carano în Munții Dolomiți\nBear Grylls o ajută pe luptătoarea MMA Gina Carano, devenită actriță, să-și învingă teama de înălțime, însoțind-o pe culmile mu"
-      },
-      {
-        "start": "2026-09-22T17:15:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Salvatorii animalelor",
-        "details": "- veterinari la țară: Dosare medicale\nVeterinarii noștri luptă contracronometru pentru a îndepărta o jucărie din stomacul unui câine, înainte ca aceasta să prov"
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T18:45:00Z",
@@ -8877,36 +7779,6 @@
     ],
     "NATIONAL GEOGRAPHIC": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Dezastre în aer",
-        "details": "- Decolare fatală\nAvând destinația Republica Dominicană, zborul 101 al Fine Air decolează din Miami. La doar câteva minute distanță, avionul se prăbușește peste"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Traficanți",
-        "details": "- Contrabandă tropicală: Cocaină la bord\nAgenții de operațiuni aeriene și maritime din Insulele Virgine americane înrolează echipa tactică BORTAC a Patrolei de "
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Aeroport",
-        "details": "- Lost & Found: Diamante, costume și bani gheață\nÎn Pittsburgh, o tânără mireasă pierde un diamant după ce acesta îi cade de pe inel. În Tampa, echipa caută o g"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Salvatori pe drumuri înghețate",
-        "details": "- Presiune în creștere\nPoliția pune presiune pe Thord pentru a salva un camion care bloca un tunel pe ruta expresă. Bjoern salvează un camion care a alunecat pe"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Accident aviatic",
-        "details": "- Reconstituirea : Accident aviatic: Reconstituirea 8\nÎn data de 5 februarie 2009, un avion al companiei Turkish Airlines s-a prăbușit la doar un kilometru de a"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Insule misterioase",
@@ -8926,36 +7798,6 @@
       }
     ],
     "ID INVESTIGATION": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Persoane dispărute Sezonul 2 - Episodul 14",
-        "details": "- Treburi neterminate\nMaşina unui bărbat e găsită abandonată, a doua zi după ce acesta plecase la serviciu. Prietenii şi familia se întreabă dacă dispariţia e l"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Criminalul de lângă mine Sezonul 5 - Episodul 18",
-        "details": "Semne suspecte conduc spre revelații șocante în aceste povești adevărate ale unor oameni care au descoperit că trăiau alături de un criminal. [9-AT."
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Criminalul de lângă mine Sezonul 5 - Episodul 12",
-        "details": "- Măcelarul vârcolac\nLumea credea că Jack \"Roy\" Spillman era doar un tip cu un hobby ciudat. Dar au aflat apoi că avea hobby-uri mult mai sinistre decât și-ar f"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Fete mortale Sezonul 1 - Episodul 8",
-        "details": "- Vicii în Minnesota\nCheyenne, mamă adolescentă, găsește un grup care o acceptă. Se mută cu două fete și iubiții lor, dar după ce își găsește și ea un iubit, li"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Fete mortale Sezonul 2 - Episodul 1",
-        "details": "- Ucigașul din tabăra religioasă\nUn grup de fete leagă o prietenie trainică într-o tabără religioasă. Viața le poartă mai apoi pe drumuri diferite, dar legătura"
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -8982,42 +7824,6 @@
       }
     ],
     "CRIME & INVESTIGATION": [
-      {
-        "start": "2026-09-22T13:15:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Medici care ucid Sezonul 4 - Episodul 6",
-        "details": "- Niels Hogel\nLa Spitalul Delmenhorst, Germania, se observă că rata mortalității la terapie intensivă crește brusc. Asistentul Niels Hogel devine suspect, și se"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Medici care ucid Sezonul 3 - Episodul 5",
-        "details": "- Roger Dean\nUnsprezece rezidenți vulnerabili și în vârstă ai unui azil din Sydney pier în urma unui incendiu distrugător. Asistentul Roger Dean ajută la evacua"
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Medici care ucid Sezonul 4 - Episodul 1",
-        "details": "- John Brown\nCând un bărbat e găsit mort într-un motel din San Diego, fără picior, poliția crede inițial că e un accident de mașină. Dovezile aruncă curând susp"
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T16:15:00Z",
-        "title": "Medici care ucid Sezonul 3 - Episodul 6",
-        "details": "- Orville Lyn Majors\nLa un spital din Clinton, Indiana, rata mortalității se triplează în doar un an. Majoritatea oamenilor din această comunitate mică cunosc p"
-      },
-      {
-        "start": "2026-09-22T16:15:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Medici care ucid Sezonul 4 - Episodul 2",
-        "details": "- Jack Kevorkian\n22 nov. 1998. Dr. Jack Kevorkian ajută la moartea unui pacient în fază terminală, în direct la TV. E judecat pentru crimă, iar națiunea e diviz"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:45:00Z",
-        "title": "Crima: Cele 60 de minute esențiale Sezonul 2 - Episodul 2",
-        "details": "- Fred Banks\nCeea ce începe ca o zi normală în care Fred, în vârstă de 89 de ani, face comisioane, se transformă în ultima oră din viața sa, deoarece devine țin"
-      },
       {
         "start": "2026-09-22T17:45:00Z",
         "stop": "2026-09-22T18:30:00Z",
@@ -9051,42 +7857,6 @@
     ],
     "TLC": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Clinica pentru pacienți obezi - Italia Sezonul 2 - Episodul 6",
-        "details": "O clinică de specialitate din Napoli ajută persoane suferind de obezitate morbidă. Încercând să slăbească, acești oameni vor începe aici cel mai dificil an din "
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Câștigător la loterie, cumpăr casă Sezonul 12 - Episodul 13",
-        "details": "- Mama milionară\nCu cei 1.000.000$ câștigați la loterie, o mamă își caută o casă de vis în Miami. Vrea una individuală, dar David îi arată niște case superbe, î"
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Câștigător la loterie, cumpăr casă Sezonul 12 - Episodul 14",
-        "details": "- Inspirație din inimă\nLa trei ani după o tragedie, un cuplu își caută casa visată în Burleson, Texas. Vor să deschidă prima berărie din zonă administrată de o "
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Câștigător la loterie, cumpăr casă Sezonul 7 - Episodul 1",
-        "details": "- O casă de vis în Big Sky\nDavid Bromstad ajută un cuplu din Montana să cheltuiască milionul câștigat la loterie. Soțul vrea o fermă mare. Soția vrea ceva mai u"
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Câștigător la loterie, cumpăr casă Sezonul 7 - Episodul 2",
-        "details": "- La noroc în Lafayette\nUn bărbat din Louisiana, fără locuință, locuia cu fiul lui când a câștigat 2 milioane $. David Bromstad îi caută o proprietate perfectă "
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Viaţa la 300 kg Sezonul 10 - Episodul 16",
-        "details": "- Povestea lui Charles\nCharles și-a înlocuit o dependență cu alta când a renunțat la drogurile dure. Acum însă, indicele masei lui corporale depășește 100 și om"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Micii mari prieteni Sezonul 1 - Episodul 7",
@@ -9108,30 +7878,6 @@
     "NAT GEO WILD": [],
     "BBC EARTH": [
       {
-        "start": "2026-09-22T13:30:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Paddy şi Chris în călătorie prin Europa Sezonul 1 - Episodul 2",
-        "details": "A doua etapă din aventura lui Paddy și Chris în Europa, aflați în căutarea celor mai bune remedii pentru o viață sănătoasă, îi aduce în Ikaria, insula longevită"
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:55:00Z",
-        "title": "Planeta verde Sezonul 1 - Episodul 2",
-        "details": "Plantele de apă crează lumi superbe și bizare. Florile pun stăpânire pe râuri și lacuri. Plantele luptă și vânează. Râurile fac spumă mai ceva ca șampania atunc"
-      },
-      {
-        "start": "2026-09-22T15:55:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Revoluții: Idei care au schimbat lumea Sezonul 1 - Episodul 2",
-        "details": "Dintre toate invențiile omenirii, racheta este cea care chiar are potențialul de a schimba întreaga specie, permițându-ne să ne părăsim locuințele pământești, d"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Sub zero grade Sezonul 6 - Episodul 12",
-        "details": "Glenn urmărește renii sălbatici în timp ce resursele din magazinele sale se împuținează. Ricko își învață fiica să vâneze gâște. Familia Hailstone se pregătește"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Întoarcerea lui Ben Fogle în sălbăticia din Regatul Unit Sezonul 1 - Episodul 6",
@@ -9152,30 +7898,6 @@
     ],
     "VIASAT HISTORY": [
       {
-        "start": "2026-09-22T13:30:00Z",
-        "stop": "2026-09-22T14:45:00Z",
-        "title": "Mormintele preoteselor egiptene",
-        "details": "Arheologii egipteni au descoperit un cimitir pierdut, în care sunt înmormântate femei din elitele secolului 8 î.Hr., când regii kușiți au domnit peste Egipt, îm"
-      },
-      {
-        "start": "2026-09-22T14:45:00Z",
-        "stop": "2026-09-22T15:50:00Z",
-        "title": "Al Doilea Război Mondial în culori: Cele mai importante evenimente Sezonul 1 - Episodul 9",
-        "details": "Eliberarea Lagărului Buchenwald. Ascensiunea lui Hitler a fost unică în istorie. Înfrântă umilitor în Primul Război Mondial, Germania era schilodită de compensa"
-      },
-      {
-        "start": "2026-09-22T15:50:00Z",
-        "stop": "2026-09-22T16:50:00Z",
-        "title": "Diversiuni din Al Doilea Război Mondial Sezonul 1 - Episodul 1",
-        "details": "Cum se construiește o diversiune. Al Doilea Război Mondial începe cu o știre falsă: un post de radio din Polonia ar fi fost atacat. Au urmat multe asemenea isto"
-      },
-      {
-        "start": "2026-09-22T16:50:00Z",
-        "stop": "2026-09-22T17:50:00Z",
-        "title": "Istoria interzisă Sezonul 7 - Episodul 2",
-        "details": "Secrete din Biblia Diavolului. Biblia Diavolului îi intrigă de mult pe experți. Cine a scris-o? Ca să aflăm, vizităm un castel unde s-ar afla un portal spre Iad"
-      },
-      {
         "start": "2026-09-22T17:50:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Imperiul Roman: Dincolo de mituri Sezonul 1 - Episodul 2",
@@ -9195,36 +7917,6 @@
       }
     ],
     "VIASAT NATURE": [
-      {
-        "start": "2026-09-22T13:40:00Z",
-        "stop": "2026-09-22T14:25:00Z",
-        "title": "Viața sub zero grade Sezonul 5 - Episodul 6",
-        "details": "În ghearele iernii. Ninsorile neobișnuit de sărace și perioada mai lungă de îngheț complică viața localnicilor din Alaska. Ieșirile lor în sălbăticie, pe cărări"
-      },
-      {
-        "start": "2026-09-22T14:25:00Z",
-        "stop": "2026-09-22T15:15:00Z",
-        "title": "Pacificul Sezonul 1 - Episodul 2",
-        "details": "Ape puțin adânci. Explorăm apele puțin adânci ale Pacificului și urmărim delfini remarcabili, cel mai mare recif de corali din lume și viitoare mămici țestoase,"
-      },
-      {
-        "start": "2026-09-22T15:15:00Z",
-        "stop": "2026-09-22T16:05:00Z",
-        "title": "În mintea prădătorului Sezonul 1 - Episodul 1",
-        "details": "Pisici sălbatice. Felinele sunt unii dintre cei mai de succes vânători de pe glob. Au aceleași trăsături de bază, dar provocările unice din habitatul fiecăreia "
-      },
-      {
-        "start": "2026-09-22T16:05:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Monştrii apelor Sezonul 3 - Episodul 5",
-        "details": "Călăul electric. Ajuns în „Vestul Sălbatic\" din Brazilia, pe urmele unui monstru al apelor care a ucis trei văcari, Jeremy trebuie să-și învingă toate spaimele "
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:40:00Z",
-        "title": "Viața sub zero grade Sezonul 5 - Episodul 7",
-        "details": "La adăpost de furtună. Iarna își pierde din putere. Localnicii din Alaska încep noi proiecte și își dezvoltă noi tehnici de supraviețuire. Călătoresc ca să-și f"
-      },
       {
         "start": "2026-09-22T17:40:00Z",
         "stop": "2026-09-22T18:40:00Z",
@@ -9252,60 +7944,6 @@
     ],
     "VIASAT EXPLORER": [],
     "TRAVEL MIX": [
-      {
-        "start": "2026-09-22T13:30:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Info trip",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Romania mea",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Travel experience",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T15:30:00Z",
-        "title": "Muzee sub lupa",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:30:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Unicool prin lumea mare",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Unicool prin lumea mare",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Ceck in show",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "Ceck in show",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T17:30:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Travel guide",
-        "details": ""
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T18:30:00Z",
@@ -9345,42 +7983,6 @@
     ],
     "PAPRIKA": [
       {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T14:15:00Z",
-        "title": "Campionatul deserturilor",
-        "details": "În emisiunea distractivă și captivantă, ne propunem să-l găsim pe cel mai bun cofetar amator din Marea Britanie. Membrii juriului, printre care Mary Berry și ma"
-      },
-      {
-        "start": "2026-09-22T14:15:00Z",
-        "stop": "2026-09-22T15:15:00Z",
-        "title": "James Martin: Mâncăruri de suflet",
-        "details": "James Martin ne invită în propria bucătărie ca să ne împărtăşească reţetele cu gusturi de acasă, precum şi secretele şi practicile care merită ştiute de orice g"
-      },
-      {
-        "start": "2026-09-22T15:15:00Z",
-        "stop": "2026-09-22T16:10:00Z",
-        "title": "Aventurile lui James Martin în Marea Britanie",
-        "details": "\"Inspirat de aventurile sale în Franța, maestrul bucătar James Martin își continuă circuitul gastronomic, următoarea stație a acestuia fiind Statele Unite ale A"
-      },
-      {
-        "start": "2026-09-22T16:10:00Z",
-        "stop": "2026-09-22T17:05:00Z",
-        "title": "Prue Leith: Bucătăria mea din Cotswold",
-        "details": "Prue găteşte mai multe preparate ideale pentru musafiri, înainte să i se alăture Alison Hammond pentru a pregăti un desert. Încercând să arate cât este de poliv"
-      },
-      {
-        "start": "2026-09-22T17:05:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "Silvia: Bucătăria italiană",
-        "details": "Puţine lucruri sunt mai liniştitoare decât un bol de paste calde. În acest episod, Silvia ne prezintă reţetele ei preferate cu paste, direct din carneţelul buni"
-      },
-      {
-        "start": "2026-09-22T17:30:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "David Rocco: Mâncând pe bune",
-        "details": "De data aceasta, David se află în Palermo pentru a explora una dintre cele mai zgomotoase şi mai sălbatice pieţe stradale din Europa, iar apoi se delectează cu "
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T18:30:00Z",
         "title": "Un tur culinar în Canada",
@@ -9407,54 +8009,6 @@
     ],
     "HGTV": [
       {
-        "start": "2026-09-22T13:30:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Case cu potențial ascuns Sezonul 1 - Episodul 2",
-        "details": "- Totul rămâne în familie\nJasmine Roth, constructor și designer din California, transformă case absolut banale în locuințe de vis, adăugându-le caracteristici u"
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Case pe plajă la prețuri bune Sezonul 27 - Episodul 8",
-        "details": "- A treia oară e cu noroc\nCei care își caută o locuință descoperă opțiuni accesibile pe plajă, demonstrând că visul de a avea o casă pe țărmul mării poate deven"
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Case pe plajă la prețuri bune Sezonul 27 - Episodul 9",
-        "details": "- Evadare cu fetele\nCei care își caută o locuință descoperă opțiuni accesibile pe plajă, demonstrând că visul de a avea o casă pe țărmul mării poate deveni real"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Amenajări neconvenționale Sezonul 1 - Episodul 5",
-        "details": "- Piscina făcută dintr-un container\nCappie și Alex creează oaza perfectă pentru o familie de localnici ocupați. Un container de mărfuri devine o piscină de lux,"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T16:30:00Z",
-        "title": "Câștigător la loterie, cumpăr casă Sezonul 18 - Episodul 10",
-        "details": "- Bani mulți în Boca Raton\nDupă mai multe câștiguri norocoase, un cuplu îl roagă pe David Bromstad să-i ajute din nou. Acum își caută a treia casă de vis în Boc"
-      },
-      {
-        "start": "2026-09-22T16:30:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "Câștigător la loterie, cumpăr casă Sezonul 18 - Episodul 11",
-        "details": "- Alabama ne așteaptă\nDupă nouă ani de facultate, un proaspăt doctor și soția lui își caută în Alabama casa visurilor lor."
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T17:30:00Z",
-        "title": "Design în deșert Sezonul 2 - Episodul 7",
-        "details": "- O amenajare capricioasă\nEric și Lindsey Bennett, experți în renovări, au o misiune: renovează case părăsite din deșert, în însoritul Palm Springs, California,"
-      },
-      {
-        "start": "2026-09-22T17:30:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Design în deșert Sezonul 2 - Episodul 8",
-        "details": "- Piscină cu priveliște\nEric și Lindsey Bennett, experți în renovări, au o misiune: renovează case părăsite din deșert, în însoritul Palm Springs, California, u"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "Constructorii de hambare Sezonul 11 - Episodul 8",
@@ -9475,30 +8029,6 @@
     ],
     "TARAF TV": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -9759,6 +8289,36 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -9769,30 +8329,6 @@
     "BALCAN MUSIC": [],
     "UTV": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -10055,21 +8591,39 @@
         "stop": "2026-09-24T14:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
       }
     ],
     "KISS TV": [
-      {
-        "start": "2026-09-22T13:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Hits For Hours",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Kiss Alert",
-        "details": ""
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T23:00:00Z",
@@ -10078,36 +8632,6 @@
       }
     ],
     "MUSIC CHANNEL": [
-      {
-        "start": "2026-09-22T11:00:00Z",
-        "stop": "2026-09-22T14:00:00Z",
-        "title": "Shuffle Hits",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T14:30:00Z",
-        "title": "Top 5 At 5",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T14:30:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "Shuffle Hits",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "Star Wars",
-        "details": ""
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "Shuffle Hits",
-        "details": ""
-      },
       {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
@@ -10129,30 +8653,6 @@
     ],
     "ZU TV": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -10413,6 +8913,36 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -10420,30 +8950,6 @@
     "Fish & Hunting TV": [],
     "F1lm B0X": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -10704,36 +9210,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "F1lm B0X Extra": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -10994,36 +9506,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "F1lm B0X Premium": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -11284,36 +9802,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "Canal 33": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -11574,36 +10098,42 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "Dizi": [
       {
-        "start": "2026-09-22T14:00:00Z",
-        "stop": "2026-09-22T15:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T15:00:00Z",
-        "stop": "2026-09-22T16:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T16:00:00Z",
-        "stop": "2026-09-22T17:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-09-22T17:00:00Z",
-        "stop": "2026-09-22T18:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-09-22T18:00:00Z",
         "stop": "2026-09-22T19:00:00Z",
         "title": "No Data",
@@ -11864,6 +10394,36 @@
       {
         "start": "2026-09-24T13:00:00Z",
         "stop": "2026-09-24T14:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T14:00:00Z",
+        "stop": "2026-09-24T15:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T15:00:00Z",
+        "stop": "2026-09-24T16:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T16:00:00Z",
+        "stop": "2026-09-24T17:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T17:00:00Z",
+        "stop": "2026-09-24T18:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-09-24T18:00:00Z",
+        "stop": "2026-09-24T19:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
