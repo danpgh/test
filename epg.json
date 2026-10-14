@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T22:43:17.391312Z",
+  "generatedAt": "2026-10-14T04:51:05.557573Z",
   "source": "https://iptv-epg.org/files/epg-ro.xml",
   "matched": {
     "PROTV HD": {
@@ -362,24 +362,6 @@
   "channels": {
     "PROTV HD": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -634,30 +616,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "A1 HD": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -912,30 +912,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR1": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -1190,30 +1208,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -1468,30 +1504,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CANAL D": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -1746,30 +1800,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CANAL D2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -2024,30 +2096,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -2302,30 +2392,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NATIONAL TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -2580,30 +2688,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR 3": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -2858,30 +2984,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR INTERNATIONAL": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -3136,6 +3280,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -3144,24 +3324,6 @@
     "ACASA TV": [],
     "ACASA GOLD": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -3416,30 +3578,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "ANTENA STARS": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -3694,30 +3874,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NATIONAL 24 PLUS": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -3972,30 +4170,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "A3 CNN": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -4250,6 +4466,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -4257,24 +4509,6 @@
     "ROMANIA TV": [],
     "REALITATEA TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -4529,30 +4763,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA NEWS": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -4807,30 +5059,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "B1 TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -5085,30 +5355,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "EURONEWS ROMANIA": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -5363,30 +5651,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NEWS24": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -5641,30 +5947,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CNN": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -5919,30 +6243,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "BBC NEWS": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -6197,30 +6539,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CBS REALITY": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -6475,30 +6835,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "SUPERSPORT 1": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -6753,30 +7131,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "SUPERSPORT 2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -7031,30 +7427,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "SUPERSPORT 3": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -7309,30 +7723,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "SUPERSPORT 4": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -7587,30 +8019,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRO ARENA": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -7865,30 +8315,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TVR SPORT": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -8143,30 +8611,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 1": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -8421,30 +8907,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -8699,30 +9203,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 3": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -8977,30 +9499,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 4": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -9255,30 +9795,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PRIMA SPORT 5": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -9533,6 +10091,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -9542,24 +10136,6 @@
     "PPV 3": [],
     "SPORT EXTRA": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -9814,30 +10390,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "EUR0SP0RT 1": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -10092,30 +10686,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "EUR0SP0RT 2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -10370,30 +10982,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "HB0": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -10648,30 +11278,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "HB0 2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -10926,30 +11574,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "HB0 3": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -11204,30 +11870,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "DIVA": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -11482,6 +12166,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -11490,24 +12210,6 @@
     "FILM CAFE": [],
     "TV 1000": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -11762,30 +12464,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "FlLM N0W": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -12040,30 +12760,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "EPIC DRAMA": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -12318,30 +13056,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "AMC": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -12596,6 +13352,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -12605,24 +13397,6 @@
     "AXN HD": [],
     "AXN SPIN": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -12877,30 +13651,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "AXN BLACK": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -13155,30 +13947,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "AXN WHITE": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -13433,30 +14243,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CINEMAX": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -13711,30 +14539,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CINEMAX 2": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -13989,6 +14835,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -13996,24 +14878,6 @@
     "BOLYWOOD TV": [],
     "COMEDY CENTRAL": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -14268,30 +15132,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "WARNER TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -14546,30 +15428,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "BBC FIRST": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -14824,30 +15724,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "MINIMAX": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -15102,30 +16020,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CARTOON NETWORK": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -15380,30 +16316,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "DISNEY CHANNEL": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -15658,6 +16612,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -15665,24 +16655,6 @@
     "TEEN NICK": [],
     "NICKELODEON": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -15937,6 +16909,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -15944,24 +16952,6 @@
     "DISNEY JR": [],
     "CARTOONITO": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -16216,30 +17206,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NICKTOONS": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -16494,30 +17502,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NICK JR": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -16772,6 +17798,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -16779,24 +17841,6 @@
     "JIM JAM": [],
     "DUCK TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -17051,30 +18095,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "DISCOVERY CH": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -17329,6 +18391,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -17336,24 +18434,6 @@
     "HISTORY CHANNEL": [],
     "NAT GEO PEOPLE": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -17608,30 +18688,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "NATIONAL GEOGRAPHIC": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -17886,30 +18984,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "ID INVESTIGATION": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -18164,30 +19280,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "CRIME & INVESTIGATION": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -18442,30 +19576,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TLC": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -18720,6 +19872,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -18727,24 +19915,6 @@
     "NAT GEO WILD": [],
     "BBC EARTH": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -18999,30 +20169,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "VIASAT HISTORY": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -19277,30 +20465,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "VIASAT NATURE": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -19555,6 +20761,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -19562,24 +20804,6 @@
     "VIASAT EXPLORER": [],
     "TRAVEL MIX": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -19834,30 +21058,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "PAPRIKA": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -20112,30 +21354,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "HGTV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -20390,30 +21650,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "TARAF TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -20668,6 +21946,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -20675,24 +21989,6 @@
     "FAVORIT TV": [],
     "ETNO TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -20947,6 +22243,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -20955,24 +22287,6 @@
     "BALCAN MUSIC": [],
     "UTV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -21227,30 +22541,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "KISS TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -21505,30 +22837,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "MUSIC CHANNEL": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -21783,30 +23133,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "ZU TV": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -22061,6 +23429,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
@@ -22068,24 +23472,6 @@
     "Fish & Hunting TV": [],
     "F1lm B0X": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -22340,30 +23726,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "F1lm B0X Extra": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -22618,30 +24022,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "F1lm B0X Premium": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -22896,30 +24318,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "Canal 33": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -23174,30 +24614,48 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
     ],
     "Dizi": [
       {
-        "start": "2026-10-13T22:00:00Z",
-        "stop": "2026-10-13T23:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-13T23:00:00Z",
-        "stop": "2026-10-14T00:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
-        "start": "2026-10-14T00:00:00Z",
-        "stop": "2026-10-14T01:00:00Z",
-        "title": "No Data",
-        "details": "https://iptv-epg.org/help"
-      },
-      {
         "start": "2026-10-14T01:00:00Z",
         "stop": "2026-10-14T02:00:00Z",
         "title": "No Data",
@@ -23452,6 +24910,42 @@
       {
         "start": "2026-10-15T19:00:00Z",
         "stop": "2026-10-15T20:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T20:00:00Z",
+        "stop": "2026-10-15T21:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T21:00:00Z",
+        "stop": "2026-10-15T22:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T22:00:00Z",
+        "stop": "2026-10-15T23:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-15T23:00:00Z",
+        "stop": "2026-10-16T00:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T00:00:00Z",
+        "stop": "2026-10-16T01:00:00Z",
+        "title": "No Data",
+        "details": "https://iptv-epg.org/help"
+      },
+      {
+        "start": "2026-10-16T01:00:00Z",
+        "stop": "2026-10-16T02:00:00Z",
         "title": "No Data",
         "details": "https://iptv-epg.org/help"
       }
